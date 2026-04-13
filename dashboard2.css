@@ -926,7 +926,7 @@ body.dashboard-body {
   border-color: var(--clr-primary);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .header-left h1 {
     font-size: 1.3rem;
     margin-bottom: 4px;
@@ -959,4 +959,56 @@ body.dashboard-body {
 
 .material-icons i {
   color: #0fcc7c;
+}
+
+.status-monitor {
+  padding-right: 20px;
+}
+
+.gapps {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-menu-wrap {
+  margin-left: 10px;
+}
+
+.user-avatar {
+  cursor: pointer;
+  background: #0fcc7c;
+  color: white;
+  font-weight: bold;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+@media screen and (max-width: 460px) {
+  .status-monitor {
+    padding-right: 8px;
+  }
+  .gapps {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .profile-menu-wrap {
+    margin-left: 5px;
+  }
+  .header-left h1 {
+    font-size: 1.1rem;
+  }
+  .user-avatar { 
+    width: 30px;
+    height: 30px;
+  }
+  .top-header {
+    padding: 16px 10px;
+  }
 }

@@ -239,17 +239,17 @@
             <div class="input-row">
               <div class="input-group">
                 <label>Full Name</label>
-                <input type="text" placeholder="Dr. John Doe" />
+                <input type="text" placeholder="Dr. John Doe" required/>
               </div>
               <div class="input-group">
                 <label>Organization</label>
-                <input type="text" placeholder="Energy Corp" />
+                <input type="text" placeholder="Energy Corp"  required/>
               </div>
             </div>
             <div class="input-group">
               <label>Requirement Type</label>
-              <select>
-                <option>Select Industry Sector</option>
+              <select required>
+                <option value="" disabled selected>Select Industry Sector</option>
                 <option>Medical Device Power</option>
                 <option>EV Battery Systems</option>
                 <option>Grid-Scale Storage</option>
