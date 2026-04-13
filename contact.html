@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electric Battery Industry</title>
+    <link rel="icon" href="./Assets/icon.webp" />
+    <link rel="stylesheet" href="./contact.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header1">
+        <div class="container1">
+          <h3>Welcome to Stackly – Shopping Service Connect and Enjoy</h3>
+        </div>
+        <div class="container2">
+          <div>
+            <i class="fa-solid fa-phone-volume"></i>
+            <p>(123)456-7890</p>
+          </div>
+          <div>
+            <i class="fa-regular fa-envelope"></i>
+            <p>Support@stackly.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="header2">
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./Assets/logo.webp" alt="Logo" />
+          </a>
+        </div>
+
+        <div class="div">
+          <nav>
+            <ul>
+              <li class="dropdown">
+                <a href="./index.html">Home</a>
+
+                <!-- <span class="drop-toggle">
+                  <i class="fa-solid fa-caret-down"></i>
+                </span> -->
+
+                <ul class="dropdown-menu">
+                  <li><a href="./index2.html">Home 2</a></li>
+                </ul>
+              </li>
+
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./service.html">Services</a></li>
+              <li><a href="./blog.html">Blog</a></li>
+              <li><a href="./contact.html">Contact Us</a></li>
+              <!-- <li><a href="./dashboard.html">Dashboard</a></li> -->
+            </ul>
+          </nav>
+
+          <div class="icons">
+            <div
+              class="cart-trigger"
+              onclick="toggleCart()"
+              style="
+                cursor: pointer;
+                color: #0fcc7c;
+                position: relative;
+                font-size: 24px;
+              "
+            >
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span
+                id="cart-count"
+                style="
+                  position: absolute;
+                  top: -10px;
+                  right: -10px;
+                  background: white;
+                  color: black;
+                  font-size: 12px;
+                  padding: 2px 6px;
+                  border-radius: 50%;
+                  font-weight: bold;
+                "
+                >0</span
+              >
+            </div>
+
+            <div class="login">
+              <a href="./login.html">
+                <button class="log-btn">Login</button>
+              </a>
+            </div>
+
+            <div class="mobilebar">
+              <div class="hamburger-box">
+                <div class="hamburger">
+                  <div class="line line1"></div>
+                  <div class="line line2"></div>
+                  <div class="line line3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li class="has-dropdown menu-item">
+          <div class="dropdown-header">
+            <a href="./index.html">Home</a>
+            <!-- <span class="drop-caret" id="home-caret">▾</span> -->
+          </div>
+          <!-- <ul class="submenu" id="home-dropdown">
+            <li><a href="./index2.html">Home 2</a></li>
+          </ul> -->
+        </li>
+
+        <li class="menu-item">
+          <a href="./about.html">About</a>
+        </li>
+        <li class="menu-item">
+          <a href="./service.html">Services</a>
+        </li>
+        <li class="menu-item">
+          <a href="./blog.html">Blog</a>
+        </li>
+        <li class="menu-item">
+          <a href="./contact.html">Contact Us</a>
+        </li>
+        <!-- <li class="menu-item">
+          <a href="./dashboard.html">Dashboard</a>
+        </li> -->
+        <li class="menu-item">
+          <a href="./login.html">Login</a>
+        </li>
+      </ul>
+
+      <div class="sidebar-login">
+        <!-- <a href="./app.html">
+            <button class="login-btn">Buy Now</button>
+          </a> -->
+      </div>
+    </div>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h2 style="color: #90ee90">Shopping Cart</h2>
+        <span class="close-cart" onclick="toggleCart()">&times;</span>
+      </div>
+      <div id="cart-items-container">
+        <p style="text-align: center; margin-top: 50px; color: #666">
+          Your cart is empty.
+        </p>
+      </div>
+      <div class="cart-footer">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+          "
+        >
+          <span>Total:</span>
+          <span style="color: #90ee90; font-weight: bold"
+            >$<span id="total-price">0</span></span
+          >
+        </div>
+        <a href="./error.html">
+          <button
+            class="login-btn"
+            style="width: 100%; background: #90ee90; color: black; border: none"
+          >
+            Checkout Now
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <section class="contact-hero">
+      <div class="contact-bg-glow"></div>
+
+      <div class="contact-hero-content gsap-contact-hero">
+        <div class="status-chip">
+          <span class="pulse-dot"></span>
+          <span class="chip-text">Systems Operational</span>
+        </div>
+
+        <h1 class="hero-title">
+          Let’s Build the Future <br />
+          <span class="accent-text">of Energy Together</span>
+        </h1>
+
+        <p class="hero-description">
+          Partner with our engineering team to scale high-density storage
+          solutions and next-gen medical power systems.
+        </p>
+
+        <div class="contact-comms-grid">
+          <div class="comm-item">
+            <span class="label">Response Time</span>
+            <span class="value">&lt; 24 Hours</span>
+          </div>
+          <div class="comm-item">
+            <span class="label">Global Support</span>
+            <span class="value">24/7 Technical</span>
+          </div>
+          <div class="comm-item">
+            <span class="label">Security</span>
+            <span class="value">End-to-End Encrypted</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-form-section">
+      <div class="section-header gsap-form-header">
+        <h2 class="gradient-title">Technical Inquiry</h2>
+        <p class="section-subtitle">
+          Initialize a secure connection with our engineering department for
+          custom power requirements.
+        </p>
+      </div>
+      <div class="form-container gsap-form-reveal">
+        <div class="form-main">
+          <form id="energy-request-form" action="./error.html">
+            <div class="input-row">
+              <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Dr. John Doe" />
+              </div>
+              <div class="input-group">
+                <label>Organization</label>
+                <input type="text" placeholder="Energy Corp" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label>Requirement Type</label>
+              <select>
+                <option>Select Industry Sector</option>
+                <option>Medical Device Power</option>
+                <option>EV Battery Systems</option>
+                <option>Grid-Scale Storage</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Technical Query</label>
+              <textarea
+                rows="5"
+                placeholder="Specify voltage, capacity, and thermal requirements..."
+              ></textarea>
+            </div>
+            <button type="submit" class="glow-cta red-variant">
+              Initialize Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <div class="section-header gsap-map-header">
+        <h2 class="gradient-title">Global Operations</h2>
+        <p class="section-subtitle">
+          Tracking our international manufacturing footprint and high-capacity
+          research nodes in real-time.
+        </p>
+      </div>
+
+      <div class="map-wrapper gsap-map-reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d-122.4194155!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050c62!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1647231234567!5m2!1sen!2sus"
+          width="100%"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+        <div class="map-overlay"></div>
+      </div>
+    </section>
+
+    <section class="locations-section">
+      <div class="section-header gsap-locations-header">
+        <h2 class="gradient-title">Global Installations</h2>
+        <p class="section-subtitle">
+          Direct access to our specialized R&D hubs and manufacturing
+          facilities.
+        </p>
+      </div>
+      <div class="locations-grid gsap-locations-grid">
+        <div class="location-card">
+          <div class="loc-header">
+            <span class="loc-type">Global HQ</span>
+            <span class="loc-status">Operational</span>
+          </div>
+          <h3>Zürich Hub</h3>
+          <p>Technoparkstrasse 1, 8005 Zürich, Switzerland</p>
+          <div class="loc-contact">
+            <span><i class="fa-solid fa-phone"></i> +41 44 123 4567</span>
+            <span
+              ><i class="fa-solid fa-envelope"></i> hq@energy-future.com</span
+            >
+          </div>
+        </div>
+
+        <div class="location-card">
+          <div class="loc-header">
+            <span class="loc-type">R&D Center</span>
+            <span class="loc-status">Restricted</span>
+          </div>
+          <h3>Silicon Valley Lab</h3>
+          <p>Sand Hill Rd, Menlo Park, CA 94025, USA</p>
+          <div class="loc-contact">
+            <span><i class="fa-solid fa-phone"></i> +1 650 555 0199</span>
+            <span
+              ><i class="fa-solid fa-envelope"></i> lab@energy-future.com</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="footer-grid">
+        <div class="footer-brand gsap-contact">
+          <div class="logo" style="margin-bottom: 20px">
+            <a href="./index.html">
+              <img
+                src="./Assets/logo.webp"
+                alt="Logo"
+                style="max-width: 180px"
+              />
+            </a>
+          </div>
+
+          <p>
+            Powering the future of sustainable mobility. Enter your email to
+            receive technical datasheets and exclusive updates on our latest
+            lithium-ion and solid-state battery innovations.
+          </p>
+        </div>
+
+        <div class="footer-links gsap-contact">
+          <h4>Quick Links</h4>
+
+          <a href="./about.html">About Us</a>
+          <a href="./service.html">Services</a>
+          <a href="./blog.html">Blog</a>
+          <a href="./contact.html">Contact</a>
+          <a href="./login.html">Login</a>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>
+            Stay ahead in energy storage. Subscribe to get notified about
+            production batch availability and high-density cell breakthroughs.
+          </p>
+          <form action="./error.html">
+            <div class="news-input">
+              <input
+                type="email"
+                placeholder="Corporate Email Address"
+                required
+              />
+              <button type="submit">→</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Battery Innovations Ltd. All Rights Reserved.</p>
+        <div class="legal-links">
+          <a href="./error.html">Privacy Policy</a>
+          <a href="./error.html">ISO 9001 Compliance</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./script.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 1000,
+    easing: "ease-out-cubic",
+    startEvent: "aos:ready", // manual trigger
+  });
+</script>
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- hero -->
+
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap) {
+      const contactTl = gsap.timeline();
+
+      // Set initial positions
+      gsap.set(".gsap-contact-hero > *", { opacity: 0, y: 40 });
+
+      contactTl
+        .to(".gsap-contact-hero > *", {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power4.out",
+        })
+        .from(
+          ".contact-bg-glow",
+          {
+            scale: 0.5,
+            opacity: 0,
+            duration: 2,
+            ease: "power2.out",
+          },
+          "-=1",
+        );
+    }
+  });
+</script>
+
+<!-- 1 , 2 , 3 -->
+
+<script>
+  // Fade in the Form
+  gsap.from(".gsap-form-reveal", {
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: { trigger: ".contact-form-section", start: "top 80%" },
+  });
+
+  // Stagger Locations
+  gsap.from(".location-card", {
+    opacity: 1,
+    stagger: 0.2,
+    duration: 0.8,
+    scrollTrigger: { trigger: ".gsap-locations-grid", start: "top 85%" },
+  });
+</script>
+
+<!-- heading -->
+
+<script>
+  // Header reveals
+  gsap.from(".gsap-form-header, .gsap-locations-header", {
+    opacity: 0,
+    duration: 1,
+    stagger: 0.3,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".contact-form-section",
+      start: "top 85%",
+    },
+  });
+</script>
+
+<script>
+  // Map Section Header Animation
+  gsap.to(".gsap-map-header", {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".map-section",
+      start: "top 85%",
+    },
+  });
+</script>

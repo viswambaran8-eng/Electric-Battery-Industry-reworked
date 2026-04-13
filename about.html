@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electric Battery Industry</title>
+    <link rel="icon" href="./Assets/icon.webp" />
+    <link rel="stylesheet" href="./about.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header1">
+        <div class="container1">
+          <h3>Welcome to Stackly – Shopping Service Connect and Enjoy</h3>
+        </div>
+        <div class="container2">
+          <div>
+            <i class="fa-solid fa-phone-volume"></i>
+            <p>(123)456-7890</p>
+          </div>
+          <div>
+            <i class="fa-regular fa-envelope"></i>
+            <p>Support@stackly.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="header2">
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./Assets/logo.webp" alt="Logo" />
+          </a>
+        </div>
+
+        <div class="div">
+          <nav>
+            <ul>
+              <li class="dropdown">
+                <a href="./index.html">Home</a>
+
+                <!-- <span class="drop-toggle">
+                  <i class="fa-solid fa-caret-down"></i>
+                </span> -->
+
+                <ul class="dropdown-menu">
+                  <li><a href="./index2.html">Home 2</a></li>
+                </ul>
+              </li>
+
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./service.html">Services</a></li>
+              <li><a href="./blog.html">Blog</a></li>
+              <li><a href="./contact.html">Contact Us</a></li>
+              <!-- <li><a href="./dashboard.html">Dashboard</a></li> -->
+            </ul>
+          </nav>
+
+          <div class="icons">
+            <div
+              class="cart-trigger"
+              onclick="toggleCart()"
+              style="
+                cursor: pointer;
+                color: #0fcc7c;
+                position: relative;
+                font-size: 24px;
+              "
+            >
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span
+                id="cart-count"
+                style="
+                  position: absolute;
+                  top: -10px;
+                  right: -10px;
+                  background: white;
+                  color: black;
+                  font-size: 12px;
+                  padding: 2px 6px;
+                  border-radius: 50%;
+                  font-weight: bold;
+                "
+                >0</span
+              >
+            </div>
+
+            <div class="login">
+              <a href="./login.html">
+                <button class="log-btn">Login</button>
+              </a>
+            </div>
+
+            <div class="mobilebar">
+              <div class="hamburger-box">
+                <div class="hamburger">
+                  <div class="line line1"></div>
+                  <div class="line line2"></div>
+                  <div class="line line3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li class="has-dropdown menu-item">
+          <div class="dropdown-header">
+            <a href="./index.html">Home</a>
+            <!-- <span class="drop-caret" id="home-caret">▾</span> -->
+          </div>
+          <!-- <ul class="submenu" id="home-dropdown">
+            <li><a href="./index2.html">Home 2</a></li>
+          </ul> -->
+        </li>
+
+        <li class="menu-item">
+          <a href="./about.html">About</a>
+        </li>
+        <li class="menu-item">
+          <a href="./service.html">Services</a>
+        </li>
+        <li class="menu-item">
+          <a href="./blog.html">Blog</a>
+        </li>
+        <li class="menu-item">
+          <a href="./contact.html">Contact Us</a>
+        </li>
+        <!-- <li class="menu-item">
+          <a href="./dashboard.html">Dashboard</a>
+        </li> -->
+        <li class="menu-item">
+          <a href="./login.html">Login</a>
+        </li>
+      </ul>
+
+      <div class="sidebar-login">
+        <!-- <a href="./app.html">
+            <button class="login-btn">Buy Now</button>
+          </a> -->
+      </div>
+    </div>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h2 style="color: #90ee90">Shopping Cart</h2>
+        <span class="close-cart" onclick="toggleCart()">&times;</span>
+      </div>
+      <div id="cart-items-container">
+        <p style="text-align: center; margin-top: 50px; color: #666">
+          Your cart is empty.
+        </p>
+      </div>
+      <div class="cart-footer">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+          "
+        >
+          <span>Total:</span>
+          <span style="color: #90ee90; font-weight: bold"
+            >$<span id="total-price">0</span></span
+          >
+        </div>
+        <a href="./error.html">
+          <button
+            class="login-btn"
+            style="width: 100%; background: #90ee90; color: black; border: none"
+          >
+            Checkout Now
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <section class="about-hero">
+      <div class="hero-grid-overlay"></div>
+
+      <div class="about-hero-container">
+        <div class="hero-content gsap-about-fade">
+          <span class="badge">Est. 2026</span>
+          <h1 class="hero-title">
+            Driving the <span class="highlight">Energy Revolution</span>
+          </h1>
+          <p class="hero-subtext">
+            We are a next-generation battery technology company focused on
+            sustainable and efficient power solutions for a zero-emission
+            future.
+          </p>
+          <div class="hero-actions">
+            <button class="glow-cta">Explore Tech</button>
+            <button class="view-btn">Our Story</button>
+          </div>
+        </div>
+
+        <div class="hero-visual gsap-about-visual">
+          <div class="visual-wrapper">
+            <img
+              src="./Assets/Sustainable Energy_11zon_11zon.webp"
+              alt="Sustainable Energy"
+              class="main-hero-img"
+            />
+            <div class="floating-stat">
+              <span class="stat-number">98%</span>
+              <span class="stat-label">Efficiency</span>
+            </div>
+            <div class="energy-node node-1"></div>
+            <div class="energy-node node-2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+
+    <section class="story-section">
+      <div class="story-container">
+        <div class="story-progress-line">
+          <div class="progress-fill"></div>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-visual gsap-story-img">
+            <div class="image-stack">
+              <img
+                src="./Assets/innovation lab_11zon_11zon.webp"
+                alt="Innovation Lab"
+                class="main-img"
+              />
+              <div class="img-accent-border"></div>
+            </div>
+          </div>
+
+          <div class="story-content">
+            <div class="gsap-story-text">
+              <span class="story-label">01 // Our Story</span>
+              <h2 class="story-title">Revolutionizing <br />Power Storage</h2>
+              <p class="story-para">
+                Founded with a mission to accelerate clean energy adoption, we
+                have grown into a trusted partner in battery innovation. Our
+                journey began in a small lab with one goal: making high-capacity
+                energy accessible to everyone.
+              </p>
+
+              <div class="story-stats">
+                <div class="stat-box">
+                  <h3 class="stat-val" data-target="2026">0</h3>
+                  <p>Founded</p>
+                </div>
+                <div class="stat-box">
+                  <h3 class="stat-val" data-target="150">0</h3>
+                  <p>Patents</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 -->
+
+    <section class="mission-vision">
+      <div class="section-header gsap-mission-header">
+        <h2 class="gradient-title">Our Core Blueprint</h2>
+        <p class="section-subtitle">
+          Defining the roadmap for a sustainable, high-capacity future.
+        </p>
+      </div>
+
+      <div class="mission-container">
+        <div class="core-card gsap-mission">
+          <div class="core-visual">
+            <div class="pulse-ring"></div>
+            <i class="fa-solid fa-bolt-lightning"></i>
+          </div>
+          <div class="core-content">
+            <span class="core-label">02 // Our Mission</span>
+            <h2 class="core-title">Empower the Future</h2>
+            <p class="core-text">
+              Deliver reliable and sustainable energy solutions that redefine
+              how the world stores and utilizes power.
+            </p>
+            <div class="mission-image">
+              <img
+                src="./Assets/Battery Tech_11zon_11zon.webp"
+                alt="Battery Tech"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="core-card gsap-vision">
+          <div class="core-visual">
+            <div class="pulse-ring"></div>
+            <i class="fa-solid fa-earth-americas"></i>
+          </div>
+          <div class="core-content">
+            <span class="core-label">03 // Our Vision</span>
+            <h2 class="core-title">Global Transition</h2>
+            <p class="core-text">
+              Lead the global transition to clean energy storage through
+              disruptive innovation and scalable technology.
+            </p>
+            <div class="mission-image">
+              <img
+                src="./Assets/Mini-Storage Module_11zon_11zon.webp"
+                alt="Solar Energy Storage"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 -->
+
+    <section class="leadership-section">
+      <div class="section-header gsap-lead-header">
+        <h2 class="gradient-title">Executive Visionaries</h2>
+        <p class="section-subtitle">
+          Industry experts and innovators shaping the future of battery
+          technology.
+        </p>
+      </div>
+
+      <div class="leader-grid">
+        <div class="leader-card gsap-leader">
+          <div class="leader-ocular">
+            <div class="scan-line"></div>
+            <div class="iris-border"></div>
+            <img
+              src="./Assets/4_11zon.webp"
+              alt="CEO"
+              class="leader-img"
+            />
+          </div>
+          <div class="leader-info">
+            <h4>Dr. Aris Thorne</h4>
+            <span class="leader-role">Chief Executive Officer</span>
+            <div class="leader-bio">
+              Ex-Tesla Engineer with 15+ years in solid-state chemistry.
+            </div>
+            <div class="leader-social">
+              <a href="./error.html"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="./error.html"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="leader-card gsap-leader">
+          <div class="leader-ocular">
+            <div class="scan-line"></div>
+            <div class="iris-border"></div>
+            <img
+              src="./Assets/11_11zon.webp"
+              alt="CTO"
+              class="leader-img"
+            />
+          </div>
+          <div class="leader-info">
+            <h4>Elena Petrova</h4>
+            <span class="leader-role">Chief Tech Officer</span>
+            <div class="leader-bio">
+              Pioneer in BMS architecture and AI-driven thermal optimization.
+            </div>
+            <div class="leader-social">
+              <a href="./error.html"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="./error.html"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="leader-card gsap-leader">
+          <div class="leader-ocular">
+            <div class="scan-line"></div>
+            <div class="iris-border"></div>
+            <img
+              src="./Assets/17_11zon.webp"
+              alt="COO"
+              class="leader-img"
+            />
+          </div>
+          <div class="leader-info">
+            <h4>Marcus Chen</h4>
+            <span class="leader-role">Operations Director</span>
+            <div class="leader-bio">
+              Leading global supply chain logistics for renewable materials.
+            </div>
+            <div class="leader-social">
+              <a href="./error.html"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="./error.html"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 -->
+
+    <section class="achievements-section">
+      <div class="section-header gsap-achieve-header">
+        <h2 class="gradient-title">Milestones of Excellence</h2>
+        <p class="section-subtitle">
+          Recognized for excellence in energy innovation and battery safety
+          standards.
+        </p>
+      </div>
+
+      <div class="achieve-grid">
+        <div class="achieve-card gsap-achieve-item">
+          <div class="achieve-icon-wrapper">
+            <svg class="progress-ring" width="80" height="80">
+              <circle
+                class="progress-ring-circle"
+                stroke="#0fcc7c"
+                stroke-width="2"
+                fill="transparent"
+                r="36"
+                cx="40"
+                cy="40"
+              />
+            </svg>
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="achieve-meta">
+            <span class="achieve-year">2024</span>
+            <h4>Safety Innovation Award</h4>
+            <p>
+              Awarded for setting new global benchmarks in thermal runaway
+              prevention systems.
+            </p>
+          </div>
+          <div class="achieve-decryption-line"></div>
+        </div>
+
+        <div class="achieve-card gsap-achieve-item">
+          <div class="achieve-icon-wrapper">
+            <svg class="progress-ring" width="80" height="80">
+              <circle
+                class="progress-ring-circle"
+                stroke="#0fcc7c"
+                stroke-width="2"
+                fill="transparent"
+                r="36"
+                cx="40"
+                cy="40"
+              />
+            </svg>
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <div class="achieve-meta">
+            <span class="achieve-year">2025</span>
+            <h4>Solid-State Patent</h4>
+            <p>
+              Secured proprietary rights for our proprietary "Quantum Anode"
+              1000Wh/kg technology.
+            </p>
+          </div>
+          <div class="achieve-decryption-line"></div>
+        </div>
+
+        <div class="achieve-card gsap-achieve-item">
+          <div class="achieve-icon-wrapper">
+            <svg class="progress-ring" width="80" height="80">
+              <circle
+                class="progress-ring-circle"
+                stroke="#0fcc7c"
+                stroke-width="2"
+                fill="transparent"
+                r="36"
+                cx="40"
+                cy="40"
+              />
+            </svg>
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <div class="achieve-meta">
+            <span class="achieve-year">2026</span>
+            <h4>Eco-Impact Standard</h4>
+            <p>
+              First battery manufacturer to achieve a 100% closed-loop recycling
+              certificate.
+            </p>
+          </div>
+          <div class="achieve-decryption-line"></div>
+        </div>
+      </div>
+
+      <div class="achieve-bg-image">
+        <img
+          src="./Assets/battery testing lab_11zon_11zon.webp"
+          alt="Battery Testing Lab"
+        />
+      </div>
+    </section>
+
+    <!-- 6 -->
+
+    <section class="culture-section">
+      <div class="section-header gsap-achieve-header">
+        <h2 class="gradient-title">Our Internal Core</h2>
+        <p class="section-subtitle">
+          Driven by innovation, sustainability, and continuous improvement.
+        </p>
+      </div>
+
+      <div class="culture-flow-container">
+        <div class="circuit-path">
+          <div class="circuit-energy"></div>
+        </div>
+
+        <div class="culture-node gsap-culture-node">
+          <div class="node-point"></div>
+          <div class="node-content">
+            <div class="node-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3>Radical Innovation</h3>
+            <p>
+              We don't just improve existing tech; we redefine the chemistry of
+              what's possible in energy storage.
+            </p>
+          </div>
+        </div>
+
+        <div class="culture-node gsap-culture-node">
+          <div class="node-point"></div>
+          <div class="node-content">
+            <div class="node-icon"><i class="fa-solid fa-seedling"></i></div>
+            <h3>True Sustainability</h3>
+            <p>
+              Sustainability isn't a department; it's our DNA. Every watt we
+              store is a step toward a cleaner planet.
+            </p>
+          </div>
+        </div>
+
+        <div class="culture-node gsap-culture-node">
+          <div class="node-point"></div>
+          <div class="node-content">
+            <div class="node-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Kaisen Mindset</h3>
+            <p>
+              Continuous improvement is our pulse. We iterate, test, and perfect
+              until excellence becomes the standard.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-cta gsap-culture-btn">
+        <a href="./error.html">
+          <button class="glow-cta">Join the Revolution</button>
+        </a>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="footer-grid">
+        <div class="footer-brand gsap-contact">
+          <div class="logo" style="margin-bottom: 20px">
+            <a href="./index.html">
+              <img
+                src="./Assets/logo.webp"
+                alt="Logo"
+                style="max-width: 180px"
+              />
+            </a>
+          </div>
+
+          <p>
+            Powering the future of sustainable mobility. Enter your email to
+            receive technical datasheets and exclusive updates on our latest
+            lithium-ion and solid-state battery innovations.
+          </p>
+        </div>
+
+        <div class="footer-links gsap-contact">
+          <h4>Quick Links</h4>
+
+          <a href="./about.html">About Us</a>
+          <a href="./service.html">Services</a>
+          <a href="./blog.html">Blog</a>
+          <a href="./contact.html">Contact</a>
+          <a href="./login.html">Login</a>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>
+            Stay ahead in energy storage. Subscribe to get notified about
+            production batch availability and high-density cell breakthroughs.
+          </p>
+          <form action="./error.html">
+            <div class="news-input">
+              <input
+                type="email"
+                placeholder="Corporate Email Address"
+                required
+              />
+              <button type="submit">→</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Battery Innovations Ltd. All Rights Reserved.</p>
+        <div class="legal-links">
+          <a href="./error.html">Privacy Policy</a>
+          <a href="./error.html">ISO 9001 Compliance</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./script.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 1000,
+    easing: "ease-out-cubic",
+    startEvent: "aos:ready", // manual trigger
+  });
+</script>
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- hero -->
+
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const tl = gsap.timeline();
+
+      // Entrance Animation
+      tl.to(".gsap-about-fade", {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power4.out",
+      }).to(
+        ".gsap-about-visual",
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out",
+        },
+        "-=0.8",
+      );
+
+      // Continuous Floating Animation for Visuals
+      gsap.to(".floating-stat", {
+        y: 15,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      // Grid Parallax Effect
+      window.addEventListener("mousemove", (e) => {
+        const xPos = (e.clientX / window.innerWidth - 0.5) * 20;
+        const yPos = (e.clientY / window.innerHeight - 0.5) * 20;
+
+        gsap.to(".hero-grid-overlay", {
+          x: xPos,
+          y: yPos,
+          duration: 2,
+          ease: "power2.out",
+        });
+      });
+    }
+  });
+</script>
+
+<script>
+  const stats = {
+    carbonSaved: 1240, // in tons
+    energyGenerated: 8500, // in MWh
+  };
+
+  function updateHeroStats() {
+    // Logic to increment numbers on scroll or load
+    console.log(`Company Impact: ${stats.carbonSaved} Tons of Carbon Saved`);
+  }
+</script>
+
+<!-- 2 -->
+
+<script>
+  function animateCounters() {
+    const counters = document.querySelectorAll(".stat-val");
+    counters.forEach((counter) => {
+      const target = +counter.getAttribute("data-target");
+      const increment = target / 100;
+
+      const updateCount = () => {
+        const count = +counter.innerText;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target + (target === 150 ? "+" : "");
+        }
+      };
+      updateCount();
+    });
+  }
+</script>
+
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 1. Reveal Content
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".story-section",
+          start: "top 70%",
+        },
+      });
+
+      tl.to(".image-stack", { opacity: 1, x: 0, duration: 1 })
+        .to(".gsap-story-text", { opacity: 1, x: 0, duration: 1 }, "-=0.6")
+        .call(animateCounters);
+
+      // 2. Progress Line Fill
+      gsap.to(".progress-fill", {
+        height: "100%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".story-section",
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+        },
+      });
+
+      // 3. Image Parallax
+      gsap.to(".main-img", {
+        y: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".story-section",
+          scrub: true,
+        },
+      });
+    }
+  });
+</script>
+
+<!-- 3 -->
+
+<script>
+  // Function to add a "Glow Follow" effect to cards
+  function initCoreTracker() {
+    const cards = document.querySelectorAll(".core-card");
+    cards.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+      });
+    });
+  }
+</script>
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Fade in and Slide up cards
+      gsap.to(".gsap-mission", {
+        opacity: 1,
+        x: 0,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".mission-vision",
+          start: "top 70%",
+        },
+      });
+
+      gsap.to(".gsap-vision", {
+        opacity: 1,
+        x: 0,
+        y: 0,
+        duration: 1,
+        delay: 0.2, // Stagger effect
+        scrollTrigger: {
+          trigger: ".mission-vision",
+          start: "top 70%",
+        },
+      });
+
+      // Tilt animation on scroll
+      gsap.to(".core-card", {
+        rotateY: 5,
+        scrollTrigger: {
+          trigger: ".mission-vision",
+          scrub: true,
+        },
+      });
+
+      initCoreTracker();
+    }
+  });
+</script>
+<script>
+  // Reveal Section Header
+  gsap.to(".gsap-mission-header", {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".mission-vision",
+      start: "top 85%",
+    },
+  });
+</script>
+
+<!-- 4 -->
+
+<script>
+  // Function to generate unique ID badges for leaders
+  function generateLeaderID() {
+    const bios = document.querySelectorAll(".leader-bio");
+    bios.forEach((bio, index) => {
+      const idTag = document.createElement("div");
+      idTag.style.fontSize = "10px";
+      idTag.style.color = "#333";
+      idTag.style.marginTop = "10px";
+      idTag.innerText = `AUTH_ID: ${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
+      bio.appendChild(idTag);
+    });
+  }
+</script>
+
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Header Reveal
+      gsap.to(".gsap-lead-header", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".leadership-section",
+          start: "top 80%",
+        },
+      });
+
+      // Staggered Cards Reveal
+      gsap.to(".gsap-leader", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".leader-grid",
+          start: "top 75%",
+        },
+      });
+
+      generateLeaderID();
+    }
+  });
+</script>
+
+<!-- 5 -->
+
+<script>
+  function typeWriterEffect() {
+    const subtitle = document.querySelector(".section-subtitle");
+    const text = subtitle.innerText;
+    subtitle.innerText = "";
+    let i = 0;
+
+    function type() {
+      if (i < text.length) {
+        subtitle.innerText += text.charAt(i);
+        i++;
+        setTimeout(type, 30);
+      }
+    }
+    type();
+  }
+</script>
+
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Entrance Animation
+      gsap.to(".gsap-achieve-header", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        onComplete: typeWriterEffect,
+        scrollTrigger: {
+          trigger: ".achievements-section",
+          start: "top 80%",
+        },
+      });
+
+      // Staggered achievement blocks
+      gsap.to(".gsap-achieve-item", {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        stagger: 0.3,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".achieve-grid",
+          start: "top 75%",
+        },
+      });
+    }
+  });
+</script>
+
+<!-- 6 -->
+
+<script>
+  function createEnergySpark() {
+    const container = document.querySelector(".culture-flow-container");
+    const spark = document.createElement("div");
+    spark.className = "energy-spark";
+
+    // Style the spark dynamically
+    Object.assign(spark.style, {
+      position: "absolute",
+      left: "50%",
+      top: "0",
+      width: "4px",
+      height: "20px",
+      background: "#0fcc7c",
+      boxShadow: "0 0 10px #0fcc7c",
+      transform: "translateX(-50%)",
+      zIndex: "10",
+    });
+
+    container.appendChild(spark);
+
+    gsap.to(spark, {
+      top: "100%",
+      duration: 3,
+      ease: "none",
+      onComplete: () => spark.remove(),
+    });
+  }
+</script>
+
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 1. Line Growth Animation
+      gsap.to(".circuit-energy", {
+        height: "100%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".culture-flow-container",
+          start: "top center",
+          end: "bottom center",
+          scrub: 1,
+        },
+      });
+
+      // 2. Node Entrance
+      gsap.to(".gsap-culture-node", {
+        opacity: 1,
+        x: 0,
+        stagger: 0.4,
+        scrollTrigger: {
+          trigger: ".culture-flow-container",
+          start: "top 70%",
+        },
+      });
+
+      // 3. CTA Reveal
+      gsap.to(".gsap-culture-btn", {
+        opacity: 1,
+        y: 0,
+        delay: 1,
+        scrollTrigger: {
+          trigger: ".work-cta",
+          start: "top 90%",
+        },
+      });
+
+      // Spawn sparks periodically
+      setInterval(createEnergySpark, 2000);
+    }
+  });
+</script>
+
+<!-- header -->
+
+<!-- <script>
+  // Register ScrollTrigger if not already done
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Timeline for the Culture Header
+  const cultureHeaderTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".gsap-culture-header",
+      start: "top 85%", // Starts when the header is 85% from the top of the viewport
+      toggleActions: "play none none none",
+    },
+  });
+
+  cultureHeaderTl
+    // 1. Reveal the Title with a blur-to-clear and scale effect
+    .to(".gsap-culture-header .gradient-title", {
+      opacity: 1,
+      scale: 1,
+      duration: 1.2,
+      ease: "expo.out",
+    })
+    // 2. Reveal the Subtitle with a "slide-up" and fade
+    .to(
+      ".gsap-culture-header .section-subtitle",
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      },
+      "-=0.6",
+    ); // Starts 0.6 seconds before the title finish
+</script> -->

@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electric Battery Industry</title>
+    <link rel="icon" href="./Assets/icon.webp" />
+    <link rel="stylesheet" href="./blog.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header1">
+        <div class="container1">
+          <h3>Welcome to Stackly – Shopping Service Connect and Enjoy</h3>
+        </div>
+        <div class="container2">
+          <div>
+            <i class="fa-solid fa-phone-volume"></i>
+            <p>(123)456-7890</p>
+          </div>
+          <div>
+            <i class="fa-regular fa-envelope"></i>
+            <p>Support@stackly.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="header2">
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./Assets/logo.webp" alt="Logo" />
+          </a>
+        </div>
+
+        <div class="div">
+          <nav>
+            <ul>
+              <li class="dropdown">
+                <a href="./index.html">Home</a>
+
+                <!-- <span class="drop-toggle">
+                  <i class="fa-solid fa-caret-down"></i>
+                </span> -->
+
+                <ul class="dropdown-menu">
+                  <li><a href="./index2.html">Home 2</a></li>
+                </ul>
+              </li>
+
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./service.html">Services</a></li>
+              <li><a href="./blog.html">Blog</a></li>
+              <li><a href="./contact.html">Contact Us</a></li>
+              <!-- <li><a href="./dashboard.html">Dashboard</a></li> -->
+            </ul>
+          </nav>
+
+          <div class="icons">
+            <div
+              class="cart-trigger"
+              onclick="toggleCart()"
+              style="
+                cursor: pointer;
+                color: #0fcc7c;
+                position: relative;
+                font-size: 24px;
+              "
+            >
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span
+                id="cart-count"
+                style="
+                  position: absolute;
+                  top: -10px;
+                  right: -10px;
+                  background: white;
+                  color: black;
+                  font-size: 12px;
+                  padding: 2px 6px;
+                  border-radius: 50%;
+                  font-weight: bold;
+                "
+                >0</span
+              >
+            </div>
+
+            <div class="login">
+              <a href="./login.html">
+                <button class="log-btn">Login</button>
+              </a>
+            </div>
+
+            <div class="mobilebar">
+              <div class="hamburger-box">
+                <div class="hamburger">
+                  <div class="line line1"></div>
+                  <div class="line line2"></div>
+                  <div class="line line3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li class="has-dropdown menu-item">
+          <div class="dropdown-header">
+            <a href="./index.html">Home</a>
+            <!-- <span class="drop-caret" id="home-caret">▾</span> -->
+          </div>
+          <!-- <ul class="submenu" id="home-dropdown">
+            <li><a href="./index2.html">Home 2</a></li>
+          </ul> -->
+        </li>
+
+        <li class="menu-item">
+          <a href="./about.html">About</a>
+        </li>
+        <li class="menu-item">
+          <a href="./service.html">Services</a>
+        </li>
+        <li class="menu-item">
+          <a href="./blog.html">Blog</a>
+        </li>
+        <li class="menu-item">
+          <a href="./contact.html">Contact Us</a>
+        </li>
+        <!-- <li class="menu-item">
+          <a href="./dashboard.html">Dashboard</a>
+        </li> -->
+        <li class="menu-item">
+          <a href="./login.html">Login</a>
+        </li>
+      </ul>
+
+      <div class="sidebar-login">
+        <!-- <a href="./app.html">
+            <button class="login-btn">Buy Now</button>
+          </a> -->
+      </div>
+    </div>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h2 style="color: #90ee90">Shopping Cart</h2>
+        <span class="close-cart" onclick="toggleCart()">&times;</span>
+      </div>
+      <div id="cart-items-container">
+        <p style="text-align: center; margin-top: 50px; color: #666">
+          Your cart is empty.
+        </p>
+      </div>
+      <div class="cart-footer">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+          "
+        >
+          <span>Total:</span>
+          <span style="color: #90ee90; font-weight: bold"
+            >$<span id="total-price">0</span></span
+          >
+        </div>
+        <a href="./error.html">
+          <button
+            class="login-btn"
+            style="width: 100%; background: #90ee90; color: black; border: none"
+          >
+            Checkout Now
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <section class="blog-hero">
+      <div class="blog-grid-overlay"></div>
+
+      <div class="blog-hero-content gsap-blog-hero">
+        <div class="blog-badge">
+          <span class="badge-line"></span>
+          <span class="badge-text">Intelligence Briefing</span>
+        </div>
+
+        <h1 class="hero-title">
+          Energy Insights, <br />
+          <span class="gradient-text">Trends & Innovations</span>
+        </h1>
+
+        <p class="hero-description">
+          Deep dives into the chemistry, engineering, and global logistics
+          shaping the future of high-density power.
+        </p>
+
+        <div class="blog-ticker">
+          <span class="ticker-label">Latest:</span>
+          <div class="ticker-wrap">
+            <div class="ticker-move">
+              <span class="ticker-item"
+                >Solid-state electrolyte breakthroughs.</span
+              >
+              <span class="ticker-item"
+                >Global supply chain analysis 2026.</span
+              >
+              <span class="ticker-item">Next-gen BMS safety protocols.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="./error.html">
+            <button class="glow-cta">Subscribe to Insights</button>
+          </a>
+          <form class="search-bar" action="./error.html">
+            <input type="text" placeholder="Search topics..." />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-blog-section">
+      <div class="section-header gsap-blog-header">
+        <h2 class="gradient-title">Industry Intelligence</h2>
+        <p class="section-subtitle">
+          Technical briefings and frontline innovations in energy storage.
+        </p>
+      </div>
+      <div class="featured-container gsap-featured-reveal">
+        <div class="featured-image-box">
+          <img
+            src="./Assets/Solid State Battery Lab_11zon_11zon.webp"
+            alt="Solid State Battery Lab"
+          />
+          <div class="image-shimmer"></div>
+        </div>
+
+        <div class="featured-content">
+          <div class="featured-meta">
+            <span class="category">Breakthrough</span>
+            <span class="date">April 2026</span>
+          </div>
+
+          <h2 class="featured-title">
+            The Solid-State Revolution: Beyond Lithium-Ion Limits
+          </h2>
+
+          <p class="featured-excerpt">
+            Our R&D team has successfully stabilized silicon-anode interfaces,
+            paving the way for 500Wh/kg energy density. This shift represents
+            the most significant leap in electrochemical storage since the
+            1990s.
+          </p>
+
+          <div class="featured-footer">
+            <div class="author">
+              <img
+                src="./Assets/author_11zon.webp"
+                alt="Author"
+                class="author-img"
+              />
+              <span>Dr. Aris Thorne — Lead Researcher</span>
+            </div>
+            <a href="./error.html">
+              <button class="glow-cta small">Read Full Briefing</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-categories-section">
+      <div class="section-header gsap-blog-header">
+        <h2 class="gradient-title">Core Disciplines</h2>
+        <p class="section-subtitle">
+          Navigate through our specialized technical categories and industry
+          research.
+        </p>
+      </div>
+
+      <div class="categories-grid gsap-categories-grid">
+        <div class="category-card" data-category="ev">
+          <div class="card-bg-glow"></div>
+          <div class="card-inner">
+            <div class="category-icon">
+              <i class="fa-solid fa-car-battery"></i>
+            </div>
+            <h3>EV Technology</h3>
+            <p>
+              Next-gen propulsion and cell chemistry for the automotive sector.
+            </p>
+            <div class="category-stats">24 Articles</div>
+          </div>
+          <div class="card-corner-tag">High-Voltage</div>
+        </div>
+
+        <div class="category-card" data-category="storage">
+          <div class="card-bg-glow"></div>
+          <div class="card-inner">
+            <div class="category-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Energy Storage</h3>
+            <p>Grid-scale solutions and residential BESS architectures.</p>
+            <div class="category-stats">18 Articles</div>
+          </div>
+          <div class="card-corner-tag">Grid-Sync</div>
+        </div>
+
+        <div class="category-card" data-category="safety">
+          <div class="card-bg-glow"></div>
+          <div class="card-inner">
+            <div class="category-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Battery Safety</h3>
+            <p>
+              Thermal management, containment, and clinical safety standards.
+            </p>
+            <div class="category-stats">12 Articles</div>
+          </div>
+          <div class="card-corner-tag">Certified</div>
+        </div>
+
+        <div class="category-card" data-category="infra">
+          <div class="card-bg-glow"></div>
+          <div class="card-inner">
+            <div class="category-icon">
+              <i class="fa-solid fa-plug-circle-bolt"></i>
+            </div>
+            <h3>Charging Tech</h3>
+            <p>Megawatt charging systems and wireless energy transfer.</p>
+            <div class="category-stats">15 Articles</div>
+          </div>
+          <div class="card-corner-tag">Fast-Charge</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="latest-posts-section">
+      <div class="section-header gsap-blog-header">
+        <h2 class="gradient-title">Latest Updates</h2>
+        <p class="section-subtitle">
+          Real-time technical briefings from the frontlines of energy R&D.
+        </p>
+      </div>
+
+      <div class="latest-grid gsap-latest-grid">
+        <article class="latest-card">
+          <div class="latest-img">
+            <img
+              src="./Assets/Tech Analysis_11zon.webp"
+              alt="Tech Analysis"
+            />
+            <span class="status-badge pulse">New</span>
+          </div>
+          <div class="latest-body">
+            <span class="latest-tag">Research</span>
+            <h3>Stabilizing High-Nickel Cathodes</h3>
+            <p>
+              A deep dive into the chemical additives preventing degradation in
+              2026 cell architectures.
+            </p>
+            <a href="./error.html" class="read-link"
+              >Read Briefing <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </article>
+
+        <article class="latest-card">
+          <div class="latest-img">
+            <img
+              src="./Assets/Grid Tech_11zon_11zon.webp"
+              alt="Grid Tech"
+            />
+          </div>
+          <div class="latest-body">
+            <span class="latest-tag">Infrastructure</span>
+            <h3>Modular BESS Deployment in SE Asia</h3>
+            <p>
+              How containerized storage is stabilizing microgrids in remote
+              island territories.
+            </p>
+            <a href="./error.html" class="read-link"
+              >Read Briefing <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="popular-posts-section">
+      <div class="popular-container">
+        <div class="section-header gsap-blog-header">
+          <h2 class="gradient-title">Popular Insights</h2>
+          <p>Most referenced guides in the industry.</p>
+        </div>
+
+        <div class="popular-list gsap-popular-list">
+          <div class="popular-item">
+            <div class="item-rank">01</div>
+            <div class="item-info">
+              <h3>The Global Lithium Supply Chain Report</h3>
+              <p>
+                Analyzing the 2026-2030 projected deficit and alternative
+                sourcing.
+              </p>
+              <span class="read-time"
+                ><i class="fa-regular fa-clock"></i> 12 min read</span
+              >
+            </div>
+          </div>
+
+          <div class="popular-item">
+            <div class="item-rank">02</div>
+            <div class="item-info">
+              <h3>BMS Safety Protocols: Tier-1 Standards</h3>
+              <p>
+                A complete checklist for ISO compliance in medical-grade battery
+                packs.
+              </p>
+              <span class="read-time"
+                ><i class="fa-regular fa-clock"></i> 8 min read</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="author-spotlight-section">
+      <div class="section-header gsap-blog-header">
+        <h2 class="gradient-title">Engineering Council</h2>
+        <p class="section-subtitle">
+          The minds driving our 2026 battery safety and chemical research
+          initiatives.
+        </p>
+      </div>
+
+      <div class="author-grid gsap-author-grid">
+        <div class="author-id-card">
+          <div class="card-scanner-line"></div>
+          <div class="author-header">
+            <div class="author-avatar-wrapper">
+              <img
+                src="./Assets/autho2_11zon.webp"
+                alt="Expert"
+                class="author-avatar"
+              />
+              <div class="status-indicator"></div>
+            </div>
+            <div class="author-identity">
+              <h3>Dr. Elena Vance</h3>
+              <span class="designation">Lead Electrochemical Engineer</span>
+            </div>
+          </div>
+
+          <div class="author-bio">
+            <p>
+              Specializing in solid-state electrolyte stability and high-nickel
+              cathode degradation prevention.
+            </p>
+          </div>
+
+          <div class="author-credentials">
+            <div class="credential-tag">Ph.D. Material Science</div>
+            <div class="credential-tag">Ex-Tesla R&D</div>
+          </div>
+
+          <div class="author-footer">
+            <a href="./error.html" class="author-link"
+              >View Research <i class="fa-solid fa-microscope"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="author-id-card">
+          <div class="card-scanner-line"></div>
+          <div class="author-header">
+            <div class="author-avatar-wrapper">
+              <img
+                src="./Assets/17_11zon.webp"
+                alt="Expert"
+                class="author-avatar"
+              />
+              <div class="status-indicator"></div>
+            </div>
+            <div class="author-identity">
+              <h3>Marcus Sterling</h3>
+              <span class="designation">BMS Software Architect</span>
+            </div>
+          </div>
+
+          <div class="author-bio">
+            <p>
+              Expert in AI-driven thermal management systems and real-time
+              telemetry for grid-scale storage.
+            </p>
+          </div>
+
+          <div class="author-credentials">
+            <div class="credential-tag">M.Sc. Robotics</div>
+            <div class="credential-tag">IEEE Fellow</div>
+          </div>
+
+          <div class="author-footer">
+            <a href="./error.html" class="author-link"
+              >View Systems <i class="fa-solid fa-code"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="footer-grid">
+        <div class="footer-brand gsap-contact">
+          <div class="logo" style="margin-bottom: 20px">
+            <a href="./index.html">
+              <img
+                src="./Assets/logo.webp"
+                alt="Logo"
+                style="max-width: 180px"
+              />
+            </a>
+          </div>
+
+          <p>
+            Powering the future of sustainable mobility. Enter your email to
+            receive technical datasheets and exclusive updates on our latest
+            lithium-ion and solid-state battery innovations.
+          </p>
+        </div>
+
+        <div class="footer-links gsap-contact">
+          <h4>Quick Links</h4>
+
+          <a href="./about.html">About Us</a>
+          <a href="./service.html">Services</a>
+          <a href="./blog.html">Blog</a>
+          <a href="./contact.html">Contact</a>
+          <a href="./login.html">Login</a>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>
+            Stay ahead in energy storage. Subscribe to get notified about
+            production batch availability and high-density cell breakthroughs.
+          </p>
+          <form action="./error.html">
+            <div class="news-input">
+              <input
+                type="email"
+                placeholder="Corporate Email Address"
+                required
+              />
+              <button type="submit">→</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Battery Innovations Ltd. All Rights Reserved.</p>
+        <div class="legal-links">
+          <a href="./error.html">Privacy Policy</a>
+          <a href="./error.html">ISO 9001 Compliance</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./script.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 1000,
+    easing: "ease-out-cubic",
+    startEvent: "aos:ready", // manual trigger
+  });
+</script>
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- hero -->
+
+<script>
+  const blogInput = document.querySelector(".search-bar input");
+  const searchIcon = document.querySelector(".search-bar i");
+
+  blogInput.addEventListener("input", (e) => {
+    if (e.target.value.length > 0) {
+      searchIcon.style.color = "#0fcc7c";
+      searchIcon.style.textShadow = "0 0 8px #0fcc7c";
+    } else {
+      searchIcon.style.color = "#555";
+      searchIcon.style.textShadow = "none";
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap) {
+      const blogTl = gsap.timeline();
+
+      // Initial state setup via JS if not in CSS
+      gsap.set(".gsap-blog-hero > *", { opacity: 0, y: 30 });
+
+      blogTl
+        .to(".gsap-blog-hero > *", {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out",
+        })
+        .from(
+          ".blog-grid-overlay",
+          {
+            opacity: 0,
+            scale: 1.1,
+            duration: 2,
+            ease: "power2.out",
+          },
+          "-=1",
+        );
+    }
+  });
+</script>
+
+<!-- 1 -->
+
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap) {
+      // Reveal Section Header
+      gsap.from(".gsap-blog-header", {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".gsap-blog-header",
+          start: "top 85%",
+        },
+      });
+
+      // Reveal Featured Card
+      gsap.from(".gsap-featured-reveal", {
+        opacity: 0,
+        y: 50,
+        duration: 1.2,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: ".featured-blog-section",
+          start: "top 80%",
+        },
+      });
+    }
+  });
+</script>
+
+<!-- section-header -->
+
+<script>
+  // Register the plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  const blogHeaderTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".gsap-blog-header",
+      start: "top 85%", // Trigger when the top of the header hits 85% of the viewport height
+      toggleActions: "play none none none",
+    },
+  });
+
+  blogHeaderTl
+    // 1. Reveal Title: Blur to Clear + Scale Up
+    .to(".gsap-blog-header .gradient-title", {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: "blur(0px)",
+      duration: 1.2,
+      ease: "expo.out",
+    })
+    // 2. Reveal Subtitle: Slide up shortly after
+    .to(
+      ".gsap-blog-header .section-subtitle",
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      },
+      "-=0.8",
+    ); // Overlap with title animation for a smoother feel
+</script>
+
+<!-- 3 -->
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 1. Reveal Section Header First
+      gsap.to(".gsap-category-header", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".blog-categories-section",
+          start: "top 85%",
+        },
+      });
+
+      // 2. Staggered Entrance for Cards
+      gsap.to(".category-card", {
+        opacity: 1, // Set to 1
+        y: 0, // Return to original position
+        stagger: 0.15, // Smooth stagger between cards
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".gsap-categories-grid",
+          start: "top 80%",
+        },
+      });
+
+      // 3. Mouse Tracking for Glow Effect
+      const cards = document.querySelectorAll(".category-card");
+      cards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          card.style.setProperty("--x", `${x}px`);
+          card.style.setProperty("--y", `${y}px`);
+        });
+      });
+    }
+  });
+</script>
+
+<!-- 4 , 5 -->
+
+<script>
+  // Latest Posts Stagger
+  gsap.from(".latest-card", {
+    opacity: 1,
+    stagger: 0.2,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".gsap-latest-grid",
+      start: "top 80%",
+    },
+  });
+
+  // Popular Posts Slide-in
+  gsap.from(".popular-item", {
+    opacity: 1,
+    stagger: 0.15,
+    duration: 0.8,
+    scrollTrigger: {
+      trigger: ".gsap-popular-list",
+      start: "top 85%",
+    },
+  });
+</script>
+
+<!-- author -->
+
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap && window.ScrollTrigger) {
+      // Reveal Header
+      gsap.to(".gsap-author-header", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".author-spotlight-section",
+          start: "top 85%",
+        },
+      });
+
+      // Staggered ID Card Reveal
+      gsap.to(".author-id-card", {
+        opacity: 1,
+        y: 0,
+        stagger: 0.2,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".gsap-author-grid",
+          start: "top 80%",
+        },
+      });
+    }
+  });
+</script>

@@ -1,0 +1,1524 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT Solutions</title>
+    <link rel="icon" href="./Assets/icon.webp" />
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <a href="index.html" class="brand">
+            <img src="./Assets/logo.webp" alt="logo" class="logo" />
+          </a>
+          <button class="mobile-toggle" id="close-sidebar">
+            <span class="material-symbols-outlined" style="color: #0fcc7c">
+              <i class="fa-solid fa-xmark"></i>
+            </span>
+          </button>
+        </div>
+
+        <nav class="nav-menu">
+          <p class="nav-label">Energy Terminal</p>
+
+          <button class="nav-item active" data-target="view-health">
+            <span class="material-symbols-outlined">
+              <i class="fa-solid fa-battery-three-quarters"></i>
+            </span>
+            Cell Diagnostics
+          </button>
+
+          <button class="nav-item" data-target="view-instances">
+            <span class="material-symbols-outlined">
+              <i class="fa-solid fa-bolt"></i>
+            </span>
+            Live Load Metrics
+          </button>
+
+          <button class="nav-item" data-target="view-security">
+            <span class="material-symbols-outlined">
+              <i class="fa-solid fa-temperature-half"></i>
+            </span>
+            Thermal Safety
+          </button>
+
+          <button class="nav-item" data-target="view-support">
+            <span class="material-symbols-outlined">
+              <i class="fa-solid fa-microchip"></i>
+            </span>
+            BMS Configuration
+          </button>
+
+          <button class="nav-item" data-target="view-billing">
+            <span class="material-symbols-outlined">
+              <i class="fa-solid fa-chart-line"></i>
+            </span>
+            Cycle Analytics
+          </button>
+
+          <p class="nav-label">Fleet Operations</p>
+
+          <button
+            onclick="window.location.href = './error.html'"
+            class="nav-item"
+          >
+            <span class="material-symbols-outlined">
+              <i class="fa-solid fa-charging-station"></i>
+            </span>
+            Station Profile
+          </button>
+
+          <button
+            onclick="window.location.href = 'login.html'"
+            class="nav-item"
+          >
+            <span class="material-symbols-outlined">
+              <i class="fa-solid fa-power-off"></i>
+            </span>
+            Secure Logout
+          </button>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="top-navbar">
+          <div style="display: flex; align-items: center; gap: 12px">
+            <button class="mobile-toggle" id="open-sidebar">
+              <span class="material-symbols-outlined">
+                <i class="fa-solid fa-bars"></i>
+              </span>
+            </button>
+            <h3
+              class="brand-font"
+              style="color: #0fcc7c; font-weight: 400; letter-spacing: 1px"
+            >
+              <span style="font-weight: 700">Stackly</span> Energy
+            </h3>
+          </div>
+
+          <div class="user-controls">
+            <button
+              onclick="window.location.href = './error.html'"
+              class="icon-btn"
+              style="position: relative"
+            >
+              <span
+                class="material-symbols-outlined"
+                style="color: rgba(255, 255, 255, 0.6)"
+              >
+                <i class="fa-solid fa-bell"></i>
+              </span>
+              <span
+                style="
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  width: 8px;
+                  height: 8px;
+                  background: #0fcc7c;
+                  border-radius: 50%;
+                  border: 2px solid #000;
+                  box-shadow: 0 0 8px #0fcc7c;
+                "
+              ></span>
+            </button>
+
+            <div class="profile-menu-wrap">
+              <div
+                class="avatar"
+                id="profile-avatar"
+                style="background: #0fcc7c; color: #000; font-weight: 700"
+              >
+                JD
+              </div>
+
+              <div class="profile-dropdown glass-panel" id="profile-dropdown">
+                <div class="dropdown-user-info">
+                  <div
+                    class="avatar"
+                    style="
+                      width: 36px;
+                      height: 36px;
+                      font-size: 0.9rem;
+                      background: #0fcc7c;
+                      color: #000;
+                    "
+                  >
+                    JD
+                  </div>
+                  <div>
+                    <p class="dropdown-name">John Doe</p>
+                    <p
+                      id="userEmailDisplay"
+                      style="font-size: 0.75rem; opacity: 0.7"
+                    >
+                      Lead Systems Engineer
+                    </p>
+                  </div>
+                </div>
+
+                <div class="dropdown-divider"></div>
+
+                <a href="./error.html" class="dropdown-item">
+                  <span class="material-symbols-outlined">
+                    <i class="fa-solid fa-unlock-keyhole"></i>
+                  </span>
+                  Encryption Keys
+                </a>
+                <a href="./error.html" class="dropdown-item">
+                  <span class="material-symbols-outlined">
+                    <i class="fa-solid fa-microchip"></i>
+                  </span>
+                  Hardware Specs
+                </a>
+                <a href="./error.html" class="dropdown-item">
+                  <span class="material-symbols-outlined">
+                    <i class="fa-solid fa-database"></i>
+                  </span>
+                  Data Telemetry
+                </a>
+
+                <div class="dropdown-divider"></div>
+
+                <a
+                  href="login.html"
+                  class="dropdown-item logout-action"
+                  style="color: #0fcc7c"
+                >
+                  <span class="material-symbols-outlined">
+                    <i class="fa-solid fa-power-off"></i>
+                  </span>
+                  Secure Terminate
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="dashboard-body">
+          <section id="view-health" class="content-section active-section">
+            <div style="margin-bottom: 32px">
+              <h1 class="page-title">Battery Intelligence Terminal</h1>
+              <p style="color: var(--text-muted)">
+                <span
+                  class="live-indicator"
+                  style="background: #0fcc7c; box-shadow: 0 0 10px #0fcc7c"
+                ></span>
+                BMS Modules Online • Real-Time Cell Balancing: Just now
+              </p>
+            </div>
+
+            <div class="grid-4">
+              <div
+                class="glass-panel"
+                style="margin-bottom: 0; border-left: 3px solid #0fcc7c"
+              >
+                <div class="kpi-header">
+                  <span>Active Cell Packs</span>
+                  <span
+                    class="material-symbols-outlined"
+                    style="color: #0fcc7c"
+                  >
+                    <i class="fa-solid fa-battery-full"></i>
+                  </span>
+                </div>
+                <div class="kpi-value">4.2k</div>
+                <div
+                  style="color: #0fcc7c; font-size: 0.85rem; font-weight: 500"
+                >
+                  +5.2% discharge efficiency
+                </div>
+              </div>
+
+              <div
+                class="glass-panel"
+                style="margin-bottom: 0; border-left: 3px solid #0fcc7c"
+              >
+                <div class="kpi-header">
+                  <span>Avg. State of Health (SoH)</span>
+                  <span
+                    class="material-symbols-outlined"
+                    style="color: #0fcc7c"
+                  >
+                    <i class="fa-solid fa-shield-heart"></i>
+                  </span>
+                </div>
+                <div class="kpi-value">
+                  99<span style="font-size: 1.5rem; color: var(--text-muted)"
+                    >.98%</span
+                  >
+                </div>
+                <div
+                  style="color: #0fcc7c; font-size: 0.85rem; font-weight: 500"
+                >
+                  Grade-A Lithium Stability
+                </div>
+              </div>
+
+              <div
+                class="glass-panel"
+                style="margin-bottom: 0; border-left: 3px solid #0fcc7c"
+              >
+                <div class="kpi-header">
+                  <span>Critical Thermal Alerts</span>
+                  <span
+                    class="material-symbols-outlined"
+                    style="color: #0fcc7c"
+                  >
+                    <i class="fa-solid fa-temperature-arrow-up"></i>
+                  </span>
+                </div>
+                <div class="kpi-value">02</div>
+                <div
+                  style="color: #ff4d4d; font-size: 0.85rem; font-weight: 500"
+                >
+                  Cell-Pack 14: High Resistance
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-2-layout">
+              <div
+                class="glass-panel"
+                style="display: flex; flex-direction: column"
+              >
+                <div class="kpi-header" style="margin-bottom: 24px">
+                  <h3 style="color: var(--text-main); font-size: 1.1rem">
+                    Energy Throughput (kWh/s)
+                  </h3>
+                </div>
+                <div style="position: relative; height: 250px">
+                  <div class="canvas-holder">
+                    <canvas id="healthChart"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glass-panel">
+                <div class="kpi-header" style="margin-bottom: 24px">
+                  <h3 style="color: var(--text-main); font-size: 1.1rem">
+                    BMS & Circuit Events
+                  </h3>
+                </div>
+                <div class="table-container">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td
+                          style="
+                            font-family: &quot;DM Sans&quot;;
+                            font-weight: 500;
+                          "
+                        >
+                          Module Alpha - Cell 09
+                        </td>
+                        <td>
+                          <span
+                            class="status-pill"
+                            style="color: #0fcc7c; border: 1px solid #0fcc7c"
+                          >
+                            Balanced
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            font-family: &quot;DM Sans&quot;;
+                            font-weight: 500;
+                          "
+                        >
+                          Inverter Hub 04
+                        </td>
+                        <td>
+                          <span
+                            class="status-pill"
+                            style="
+                              background: rgba(0, 255, 255, 0.1);
+                              color: #00ffff;
+                              border: 1px solid #00ffff;
+                            "
+                          >
+                            Active
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            font-family: &quot;DM Sans&quot;;
+                            font-weight: 500;
+                          "
+                        >
+                          Cooling Loop B
+                        </td>
+                        <td>
+                          <span
+                            class="status-pill"
+                            style="
+                              background: rgba(255, 165, 0, 0.1);
+                              color:  #0fcc7c;
+                              border: 1px solid  #0fcc7c;
+                            "
+                          >
+                            Standby
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-3">
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">Cell Resource Capacity</h3>
+                <div style="display: flex; flex-direction: column; gap: 12px">
+                  <div>
+                    <p style="font-size: 0.85rem">Pack Capacity (Ah)</p>
+                    <div class="progress-track">
+                      <div
+                        class="progress-fill"
+                        style="width: 72%; background: #0fcc7c"
+                      ></div>
+                    </div>
+                  </div>
+                  <div>
+                    <p style="font-size: 0.85rem">Buffer Reserve</p>
+                    <div class="progress-track">
+                      <div
+                        class="progress-fill"
+                        style="width: 40%; background: #00ffff"
+                      ></div>
+                    </div>
+                  </div>
+                  <div>
+                    <p style="font-size: 0.85rem">Hardware Cycles</p>
+                    <div class="progress-track">
+                      <div
+                        class="progress-fill"
+                        style="width: 100%; background: #ffffff"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">BMS Operation Log</h3>
+                <ul
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    font-size: 0.9rem;
+                    list-style: none;
+                    padding: 0;
+                  "
+                >
+                  <li>🔋 Charging: Constant Current mode active</li>
+                  <li>🌡️ Thermal: Liquid cooling circulation active</li>
+                  <li>⚡ Grid: Peak shaving protocol engaged</li>
+                </ul>
+              </div>
+
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">Safety Compliance</h3>
+                <div style="display: flex; flex-direction: column; gap: 10px">
+                  <p>Standard: <strong>UL 1973 / IEC 62619</strong></p>
+                  <p>Fire Suppression: <strong>Aerosol Ready</strong></p>
+                  <p>Inverter Efficiency: <strong>98.4% Peak</strong></p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-instances" class="content-section">
+            <div
+              class="myflex"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                margin-bottom: 32px;
+              "
+            >
+              <div>
+                <h1 class="page-title">Energy Hub Controller</h1>
+                <p style="color: var(--text-muted)">
+                  Manage industrial battery arrays, oversee power conversion
+                  systems, and coordinate discharge schedules across regional
+                  energy nodes.
+                </p>
+              </div>
+              <button
+                onclick="window.location.href = './error.html'"
+                class="btn-primary"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  background: #0fcc7c;
+                  color: #fff;
+                  border: none;
+                  padding: 10px 20px;
+                  border-radius: 8px;
+                  font-weight: bold;
+                  cursor: pointer;
+                  box-shadow: 0 0 15px rgba(15, 204, 124, 0.4);
+                "
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-size: 1.2rem"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                </span>
+                Sync New Module
+              </button>
+            </div>
+
+            <div class="glass-panel">
+              <div style="display: flex; gap: 16px; margin-bottom: 24px">
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="icon-btn"
+                  style="
+                    border-radius: 8px;
+                    width: auto;
+                    padding: 0 16px;
+                    display: flex;
+                    gap: 8px;
+                    border: 1px solid rgba(15, 204, 124, 0.3);
+                    color: #0fcc7c;
+                  "
+                >
+                  <span class="material-symbols-outlined">
+                    <i class="fa-solid fa-bolt-lightning"></i>
+                  </span>
+                  Phase Filters
+                </button>
+              </div>
+
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Module ID</th>
+                      <th>Chemistry & Type</th>
+                      <th>Operational Status</th>
+                      <th>Voltage / Current</th>
+                      <th>Cycle Integrity</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="background: rgba(15, 204, 124, 0.03)">
+                      <td
+                        style="
+                          font-family: &quot;DM Sans&quot;;
+                          font-weight: 500;
+                        "
+                      >
+                        BESS-US-WEST-01
+                      </td>
+                      <td>LiFePO4 (High-Density)</td>
+                      <td>
+                        <span
+                          style="
+                            color: #0fcc7c;
+                            font-weight: 600;
+                            font-size: 0.85rem;
+                          "
+                        >
+                          <span
+                            class="material-symbols-outlined"
+                            style="font-size: 1rem; vertical-align: middle"
+                          >
+                            <i class="fa-solid fa-charging-station"></i>
+                          </span>
+                          DISCHARGING / ACTIVE
+                        </span>
+                      </td>
+                      <td>480V • 1200A Peak</td>
+                      <td>
+                        <span
+                          class="status-pill"
+                          style="color: #0fcc7c; border: 1px solid #0fcc7c"
+                        >
+                          <span
+                            class="live-indicator"
+                            style="width: 6px; height: 6px; background: #0fcc7c"
+                          ></span>
+                          Degradation < 0.1%
+                        </span>
+                      </td>
+                      <td>
+                        <button
+                          onclick="window.location.href = './error.html'"
+                          class="icon-btn"
+                          style="width: 32px; height: 32px; color: #0fcc7c"
+                        >
+                          <span
+                            class="material-symbols-outlined"
+                            style="font-size: 1.1rem"
+                          >
+                            <i class="fa-solid fa-sliders"></i>
+                          </span>
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        style="
+                          font-family: &quot;DM Sans&quot;;
+                          font-weight: 500;
+                        "
+                      >
+                        INV-CORE-PRIMARY
+                      </td>
+                      <td>Hybrid Inverter (Grid-Tied)</td>
+                      <td style="color: var(--text-muted); font-size: 0.85rem">
+                        Synchronizing...
+                      </td>
+                      <td>415V • 50.01 Hz</td>
+                      <td>
+                        <span class="status-pill status-success">Balanced</span>
+                      </td>
+                      <td>
+                        <button
+                          onclick="window.location.href = './error.html'"
+                          class="icon-btn"
+                          style="width: 32px; height: 32px"
+                        >
+                          <span
+                            class="material-symbols-outlined"
+                            style="font-size: 1.1rem"
+                          >
+                            <i class="fa-solid fa-plug"></i>
+                          </span>
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        style="
+                          font-family: &quot;DM Sans&quot;;
+                          font-weight: 500;
+                        "
+                      >
+                        AUX-STORAGE-EU
+                      </td>
+                      <td>LTO (Rapid Charge)</td>
+                      <td style="color: #ff4d4d; font-size: 0.85rem">
+                        Cooling Required
+                      </td>
+                      <td>240V • 400A RMS</td>
+                      <td>
+                        <span
+                          class="status-pill"
+                          style="
+                            background: rgba(255, 77, 77, 0.1);
+                            color: #ff4d4d;
+                            border: 1px solid #ff4d4d;
+                          "
+                        >
+                          Thermal Warning
+                        </span>
+                      </td>
+                      <td>
+                        <button
+                          onclick="window.location.href = './error.html'"
+                          class="icon-btn"
+                          style="width: 32px; height: 32px"
+                        >
+                          <span
+                            class="material-symbols-outlined"
+                            style="font-size: 1.1rem"
+                          >
+                            <i class="fa-solid fa-snowflake"></i>
+                          </span>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="grid-3">
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px; color: #0fcc7c">
+                  Storage Analytics
+                </h3>
+                <p>Total Capacity: <strong>1.4 GWh Active</strong></p>
+                <p>Global Hubs: <strong>12 Utility Zones</strong></p>
+                <p>Current SOC: <strong>82% Avg. Charge</strong></p>
+              </div>
+
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">BESS Telemetry Feed</h3>
+                <ul
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    font-size: 0.9rem;
+                    list-style: none;
+                    padding: 0;
+                  "
+                >
+                  <li>⚡ Grid: Frequency response protocol active</li>
+                  <li>🌡️ Thermal: Rack-level HVAC status nominal</li>
+                  <li>🛡️ Safety: Ground-fault detection verified</li>
+                </ul>
+              </div>
+
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">Chemistry Mix</h3>
+                <p>LFP (Long Life): 65%</p>
+                <p>NMC (Energy Dense): 25%</p>
+                <p>Solid-State (Pilot): 10%</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-security" class="content-section">
+            <div style="margin-bottom: 32px">
+              <h1 class="page-title">Thermal Safety & Regulation</h1>
+              <p style="color: var(--text-muted)">
+                Real-time monitoring of cell temperature gradients, liquid
+                cooling circulation, and automated fire suppression protocols
+                across the battery matrix.
+              </p>
+            </div>
+
+            <div class="grid-3">
+              <div class="glass-panel" style="border-top: 2px solid  #0fcc7c">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                  "
+                >
+                  <div>
+                    <h3 style="margin-bottom: 4px">COOLANT-LOOP V.2</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted)">
+                      ID: THM-CL-880 • Rack Perimeter
+                    </p>
+                  </div>
+                  <span
+                    class="status-pill"
+                    style="
+                      padding: 2px 8px;
+                      font-size: 0.65rem;
+                      background:  #0fcc7c;
+                      color: white;
+                      border: none;
+                    "
+                  >
+                    <span
+                      class="live-indicator"
+                      style="width: 6px; height: 6px; background: white"
+                    ></span>
+                    ACTIVE REGULATION
+                  </span>
+                </div>
+
+                <div
+                  style="
+                    margin-top: 24px;
+                    background: rgba(0, 0, 0, 0.4);
+                    height: 120px;
+                    border-radius: 12px;
+                    border: var(--border-subtle);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    overflow: hidden;
+                  "
+                >
+                  <i
+                    class="fa-solid fa-temperature-arrow-down"
+                    style="font-size: 2.5rem; color:  #0fcc7c"
+                  ></i>
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 8px;
+                      left: 12px;
+                      font-family: monospace;
+                      font-size: 0.8rem;
+                      color: #0fcc7c;
+                    "
+                  >
+                    SYS_LOG: Optimal-Flow-Rate.seq
+                  </div>
+                </div>
+
+                <div style="margin-top: 24px">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      font-size: 0.85rem;
+                      margin-bottom: 8px;
+                    "
+                  >
+                    <span>Coolant Reservoir Level</span>
+                    <span style="color: #0fcc7c">94%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div
+                      class="progress-fill"
+                      style="
+                        width: 94%;
+                        background: linear-gradient(90deg,  #0fcc7c, #0fcc7c);
+                        box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+                      "
+                    ></div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 24px;
+                    border-top: var(--border-subtle);
+                    padding-top: 16px;
+                  "
+                >
+                  <div>
+                    <p
+                      style="
+                        font-size: 0.7rem;
+                        color: var(--text-muted);
+                        text-transform: uppercase;
+                      "
+                    >
+                      Average Core Temp
+                    </p>
+                    <p style="font-weight: 500; color:  #0fcc7c">28.4°C</p>
+                  </div>
+                  <div style="text-align: right">
+                    <p
+                      style="
+                        font-size: 0.7rem;
+                        color: var(--text-muted);
+                        text-transform: uppercase;
+                      "
+                    >
+                      Last Cycle
+                    </p>
+                    <p style="font-weight: 500">45s ago</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glass-panel" style="border-top: 2px solid #555">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                  "
+                >
+                  <div>
+                    <h3 style="margin-bottom: 4px">SUPPRESSION READY</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted)">
+                      Aerosol Unit • Hardware-Bound
+                    </p>
+                  </div>
+                  <span
+                    class="status-pill status-success"
+                    style="
+                      padding: 2px 8px;
+                      font-size: 0.65rem;
+                      border: 1px solid  #0fcc7c;
+                      color:  #0fcc7c;
+                    "
+                    >ENFORCED</span
+                  >
+                </div>
+
+                <div
+                  style="
+                    margin-top: 24px;
+                    background: rgba(139, 0, 0, 0.05);
+                    padding: 16px;
+                    border-radius: 12px;
+                    border: var(--border-subtle);
+                    text-align: center;
+                  "
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 2rem; color:  #0fcc7c; margin-bottom: 8px"
+                  >
+                    <i class="fa-solid fa-fire-extinguisher"></i>
+                  </span>
+                  <p style="font-size: 0.9rem; color: var(--text-muted)">
+                    Automated discharge locked. Pressure sensors within nominal
+                    range. Emergency manual override verified at Main Gate.
+                  </p>
+                </div>
+
+                <a href="./error.html">
+                  <button
+                    class="btn-primary"
+                    style="
+                      width: 100%;
+                      margin-top: 24px;
+                      background:  #0fcc7c;
+                      color: #fff;
+                      border: none;
+                      padding: 10px;
+                      font-weight: bold;
+                      cursor: pointer;
+                      border-radius: 4px;
+                    "
+                  >
+                    <i
+                      class="fa-solid fa-gauge-high"
+                      style="margin-right: 8px"
+                    ></i>
+                    Audit PSI Sensors
+                  </button>
+                </a>
+              </div>
+
+              <div
+                class="glass-panel"
+                style="border-top: 2px solid var(--amber)"
+              >
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                  "
+                >
+                  <div>
+                    <h3 style="margin-bottom: 4px">THERMAL HUNTER</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted)">
+                      Pattern Analysis • Heuristics
+                    </p>
+                  </div>
+                  <span
+                    class="status-pill status-warning"
+                    style="padding: 2px 8px; font-size: 0.65rem"
+                    >SCANNING</span
+                  >
+                </div>
+
+                <div
+                  style="
+                    margin-top: 24px;
+                    background: rgba(245, 158, 11, 0.05);
+                    padding: 16px;
+                    border-radius: 12px;
+                    border: 1px solid rgba(245, 158, 11, 0.2);
+                  "
+                >
+                  <p
+                    style="
+                      font-size: 0.8rem;
+                      color: var(--amber);
+                      margin-bottom: 4px;
+                    "
+                  >
+                    Hot-Spot Alert Detected
+                  </p>
+                  <p style="font-weight: 500; font-size: 0.9rem">
+                    Isolated rise (+4°C) in Cell Block US-WEST-02. Increased
+                    airflow redirection initiated.
+                  </p>
+                </div>
+
+                <a href="./error.html">
+                  <button
+                    class="btn-primary"
+                    style="
+                      width: 100%;
+                      margin-top: 24px;
+                      background: transparent;
+                      color: var(--amber);
+                      border: 1px solid var(--amber);
+                    "
+                  >
+                    <i
+                      class="fa-solid fa-magnifying-glass-chart"
+                      style="margin-right: 8px"
+                    ></i>
+                    Trace Cell Origin
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="grid-3">
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">HVAC Uptime</h3>
+                <p>Cooling Availability (MTD)</p>
+                <h2 style="color: #fff">100.00%</h2>
+                <p style="margin-top: 10px">Active Heat Dissipation</p>
+                <h3 style="color:  #0fcc7c">124 kW /hr</h3>
+              </div>
+
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">Safety Feed</h3>
+                <ul
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    font-size: 0.9rem;
+                    color: var(--text-muted);
+                    list-style: none;
+                    padding: 0;
+                  "
+                >
+                  <li>
+                    <i
+                      class="fa-solid fa-fan"
+                      style="margin-right: 8px; color:  #0fcc7c"
+                    ></i>
+                    Fan Speed increased: Block 4
+                  </li>
+                  <li>
+                    <i
+                      class="fa-solid fa-droplet"
+                      style="margin-right: 8px; color:  #0fcc7c"
+                    ></i>
+                    Coolant pressure stabilized
+                  </li>
+                  <li>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="margin-right: 8px; color:  #0fcc7c"
+                    ></i>
+                    Block 7 recalibration complete
+                  </li>
+                </ul>
+              </div>
+
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">Safety Compliance</h3>
+                <p style="color:  #0fcc7c">NFPA 855: 2026 Ready</p>
+                <p style="margin-top: 10px">
+                  UL 9540A Certification: Valid thru Oct 2026
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-support" class="content-section">
+            <div style="margin-bottom: 32px">
+              <h1 class="page-title">BMS Configuration & Logic</h1>
+              <p style="color: var(--text-muted)">
+                <span
+                  class="live-indicator"
+                  style="background:  #0fcc7c; box-shadow: 0 0 10px  #0fcc7c"
+                ></span>
+                System Status: 2 Balancing Divergences requiring automated
+                re-leveling
+              </p>
+            </div>
+
+            <div class="grid-3">
+              <div class="glass-panel" style="border-left: 3px solid  #0fcc7c">
+                <div class="kpi-header">
+                  <span>Voltage Drift</span>
+                  <i
+                    class="fa-solid fa-bolt-lightning"
+                    style="color:  #0fcc7c"
+                  ></i>
+                </div>
+                <div class="kpi-value">12mV</div>
+                <div
+                  style="color:  #0fcc7c; font-size: 0.85rem; font-weight: 500"
+                >
+                  Deviation Threshold Met
+                </div>
+              </div>
+
+              <div class="glass-panel" style="border-left: 3px solid #f5c518">
+                <div class="kpi-header">
+                  <span>Active Balancing</span>
+                  <i class="fa-solid fa-microchip" style="color: #f5c518"></i>
+                </div>
+                <div class="kpi-value">04</div>
+                <div
+                  style="color: #f5c518; font-size: 0.85rem; font-weight: 500"
+                >
+                  Racks Under Shunting
+                </div>
+              </div>
+
+              <div class="glass-panel" style="border-left: 3px solid #555">
+                <div class="kpi-header">
+                  <span>Cycle Life (Avg)</span>
+                  <i class="fa-solid fa-arrows-spin" style="color:  #0fcc7c"></i>
+                </div>
+                <div class="kpi-value">4.2k</div>
+                <div
+                  style="color:  #0fcc7c; font-size: 0.85rem; font-weight: 500"
+                >
+                  Remaining Discharge cycles
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel">
+              <h3 style="margin-bottom: 24px">Module Configuration Command</h3>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr
+                      style="
+                        color: var(--text-muted);
+                        font-size: 0.8rem;
+                        text-transform: uppercase;
+                      "
+                    >
+                      <th>Module ID</th>
+                      <th>Parametric Issue</th>
+                      <th>Stack Position</th>
+                      <th>BMS Logic Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>#BMS-MOD-881</strong></td>
+                      <td>Cell Impedance Spike</td>
+                      <td>West Cluster B-4</td>
+                      <td>
+                        <span
+                          class="status-pill"
+                          style="
+                            background: rgba(139, 0, 0, 0.2);
+                            color: #ff4d4d;
+                            border: 1px solid  #0fcc7c;
+                          "
+                          >ISOLATING</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>#BMS-MOD-202</strong></td>
+                      <td>SOC Sync Latency</td>
+                      <td>Main Backup Hub</td>
+                      <td>
+                        <span
+                          class="status-pill"
+                          style="
+                            background: rgba(245, 197, 24, 0.1);
+                            color: #f5c518;
+                            border: 1px solid #f5c518;
+                          "
+                          >RE-SYNCING</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-billing" class="content-section">
+            <div style="margin-bottom: 32px">
+              <h1 class="page-title">Cycle Analytics & Health</h1>
+              <p style="color: var(--text-muted)">
+                Real-time monitoring of discharge depth, cumulative cycle aging,
+                and thermal-stress impacts on lithium-ion cell longevity.
+              </p>
+            </div>
+
+            <div class="grid-2-layout">
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 20px">Cumulative Life Cycle Usage</h3>
+                <div
+                  style="
+                    padding: 20px;
+                    background: rgba(139, 0, 0, 0.05);
+                    border-radius: 12px;
+                    border: 1px solid rgba(139, 0, 0, 0.2);
+                  "
+                >
+                  <p
+                    style="
+                      font-size: 0.8rem;
+                      color:  #0fcc7c;
+                      text-transform: uppercase;
+                      font-weight: 600;
+                    "
+                  >
+                    Current Cell Degradation Tier
+                  </p>
+                  <h2 style="margin: 10px 0">
+                    4,250 Cycles
+                    <span style="font-size: 1rem; color: var(--text-muted)"
+                      >/ 6,000</span
+                    >
+                  </h2>
+                  <div
+                    class="progress-track"
+                    style="
+                      margin-top: 15px;
+                      background: rgba(255, 255, 255, 0.1);
+                      height: 8px;
+                      border-radius: 4px;
+                      overflow: hidden;
+                    "
+                  >
+                    <div
+                      class="progress-fill"
+                      style="
+                        width: 71%;
+                        background:  #0fcc7c;
+                        height: 100%;
+                        box-shadow: 0 0 10px  #0fcc7c;
+                      "
+                    ></div>
+                  </div>
+                  <p
+                    style="
+                      font-size: 0.8rem;
+                      margin-top: 10px;
+                      color: var(--text-muted);
+                    "
+                  >
+                    71% of Warrantied Cycle Capacity Utilized
+                  </p>
+                </div>
+              </div>
+
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 20px">Energy Throughput Ledger</h3>
+                <div style="display: flex; flex-direction: column; gap: 15px">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                      padding-bottom: 10px;
+                    "
+                  >
+                    <div>
+                      <p style="margin: 0; font-weight: 500">RES-2026-089</p>
+                      <p
+                        style="
+                          margin: 0;
+                          font-size: 0.8rem;
+                          color: var(--text-muted);
+                        "
+                      >
+                        Peak Load: Discharge Event 04
+                      </p>
+                    </div>
+                    <span style="color:  #0fcc7c; font-weight: 600"
+                      >42.8 MWh</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                    "
+                  >
+                    <div>
+                      <p style="margin: 0; font-weight: 500">RES-2026-088</p>
+                      <p
+                        style="
+                          margin: 0;
+                          font-size: 0.8rem;
+                          color: var(--text-muted);
+                        "
+                      >
+                        Standby Loss (Internal Resistance)
+                      </p>
+                    </div>
+                    <span style="color:  #0fcc7c; font-weight: 600"
+                      >1.2k Watts</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-3" style="margin-top: 24px">
+              <div
+                class="glass-panel"
+                style="text-align: center; cursor: pointer"
+              >
+                <a
+                  href="./error.html"
+                  style="text-decoration: none; color: inherit"
+                >
+                  <i
+                    class="fa-solid fa-file-contract"
+                    style="font-size: 2rem; color:  #0fcc7c; margin-bottom: 10px"
+                  ></i>
+                  <p style="font-size: 0.9rem">
+                    Performance Warranty Agreement
+                  </p>
+                </a>
+              </div>
+              <div
+                class="glass-panel"
+                style="text-align: center; cursor: pointer"
+              >
+                <a
+                  href="./error.html"
+                  style="text-decoration: none; color: inherit"
+                >
+                  <i
+                    class="fa-solid fa-battery-three-quarters"
+                    style="font-size: 2rem; color:  #0fcc7c; margin-bottom: 10px"
+                  ></i>
+                  <p style="font-size: 0.9rem">Adjust Charge Parameters</p>
+                </a>
+              </div>
+              <div
+                class="glass-panel"
+                style="text-align: center; cursor: pointer"
+              >
+                <a
+                  href="./error.html"
+                  style="text-decoration: none; color: inherit"
+                >
+                  <i
+                    class="fa-solid fa-chart-area"
+                    style="font-size: 2rem; color:  #0fcc7c; margin-bottom: 10px"
+                  ></i>
+                  <p style="font-size: 0.9rem">SOH Trend Analysis</p>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./script.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 1000,
+    easing: "ease-out-cubic",
+    startEvent: "aos:ready", // manual trigger
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const userEmail = sessionStorage.getItem("userEmail");
+    const adminEmail = sessionStorage.getItem("adminEmail");
+
+    const displayEmail = userEmail || adminEmail;
+
+    if (displayEmail) {
+      document.getElementById("userEmailDisplay").textContent =
+        "Welcome, " + displayEmail;
+    } else {
+      window.location.href = "login.html";
+    }
+  });
+</script> -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // ✅ Get email (clean way)
+    const emailEl = document.getElementById("userEmailDisplay");
+    const email = sessionStorage.getItem("loggedInUser");
+
+    if (email) {
+      emailEl.textContent = "Welcome, " + email;
+    } else {
+      window.location.href = "login.html";
+    }
+
+    // ✅ Sidebar toggle (Remains functional for the new layout)
+    const sidebar = document.getElementById("sidebar");
+
+    document
+      .getElementById("open-sidebar")
+      .addEventListener("click", () => sidebar.classList.add("open"));
+
+    document
+      .getElementById("close-sidebar")
+      .addEventListener("click", () => sidebar.classList.remove("open"));
+
+    // ✅ Hardware Utilization Chart (Operational Uptime)
+    const ctx = document.getElementById("healthChart");
+
+    if (ctx) {
+      const context = ctx.getContext("2d");
+
+      // Medical-Grade Gradient:  #0fcc7c to Transparent
+      let gradient = context.createLinearGradient(0, 0, 0, 400);
+      gradient.addColorStop(0, "#0fcc7c"); //  #0fcc7c at 50% opacity
+      gradient.addColorStop(1, "#0fcc7c"); // Fully transparent
+
+      new Chart(context, {
+        type: "line",
+        data: {
+          labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          datasets: [
+            {
+              label: "Fleet Uptime (Hours)",
+              data: [18, 22, 19, 24, 21, 14, 12], // Average hours active per day
+              borderColor: "white", // Signature  #0fcc7c
+              backgroundColor: gradient,
+              fill: true,
+              tension: 0.4, // Smooth curve for a high-end UI feel
+              pointRadius: 4,
+              pointBackgroundColor: "#0fcc7c",
+              pointBorderColor: "red",
+              pointBorderWidth: 2,
+              pointHoverRadius: 6,
+              pointHoverBackgroundColor: "#0fcc7c",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false, // Cleaner for analytical dashboards
+            },
+            tooltip: {
+              backgroundColor: "rgba(20, 0, 0, 0.9)",
+              titleColor: "#0fcc7c",
+              bodyColor: "#fff",
+              borderColor: "rgba(139, 0, 0, 0.3)",
+              borderWidth: 1,
+              displayColors: false,
+              padding: 12,
+              callbacks: {
+                label: function (context) {
+                  return `Utilization: ${context.raw} Hours`;
+                },
+              },
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 24, // Cap at 24 hours for daily utilization
+              grid: {
+                color: "rgba(255, 255, 255, 0.05)",
+                drawBorder: false,
+              },
+              ticks: {
+                color: "rgba(255, 255, 255, 0.5)",
+                font: {
+                  family: "'Inter', sans-serif",
+                  size: 11,
+                },
+                callback: function (value) {
+                  return value + "h"; // Adds 'h' suffix to Y-axis
+                },
+              },
+            },
+            x: {
+              grid: {
+                display: false,
+              },
+              ticks: {
+                color: "rgba(255, 255, 255, 0.5)",
+                font: {
+                  family: "'Inter', sans-serif",
+                  size: 11,
+                },
+              },
+            },
+          },
+        },
+      });
+    }
+    // ✅ Navigation tabs (Updated to match Viewer Section IDs)
+    const navItems = document.querySelectorAll(".nav-item[data-target]");
+    const contentSections = document.querySelectorAll(".content-section");
+
+    navItems.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        // Check if the button has a data-target (prevents breaking Logout/Home links)
+        const targetId = item.getAttribute("data-target");
+        if (!targetId) return;
+
+        e.preventDefault();
+
+        // 1. Reset active states on navigation
+        navItems.forEach((nav) => nav.classList.remove("active"));
+        item.classList.add("active");
+
+        // 2. Switch content sections
+        contentSections.forEach((section) =>
+          section.classList.remove("active-section"),
+        );
+
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.classList.add("active-section");
+        }
+
+        // 3. Mobile auto-close
+        if (window.innerWidth <= 768) {
+          sidebar.classList.remove("open");
+        }
+      });
+    });
+
+    // ✅ Profile dropdown (FIXED inside DOMContentLoaded)
+    const avatarBtn = document.getElementById("profile-avatar");
+    const profileDropdown = document.getElementById("profile-dropdown");
+
+    if (avatarBtn && profileDropdown) {
+      avatarBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        profileDropdown.classList.toggle("show");
+      });
+
+      document.addEventListener("click", (event) => {
+        if (
+          profileDropdown.classList.contains("show") &&
+          !profileDropdown.contains(event.target)
+        ) {
+          profileDropdown.classList.remove("show");
+        }
+      });
+    }
+  });
+</script>

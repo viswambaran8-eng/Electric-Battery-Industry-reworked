@@ -1,0 +1,1011 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electric Battery Industry</title>
+    <link rel="icon" href="./Assets/icon.webp" />
+    <link rel="stylesheet" href="./service.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header1">
+        <div class="container1">
+          <h3>Welcome to Stackly – Shopping Service Connect and Enjoy</h3>
+        </div>
+        <div class="container2">
+          <div>
+            <i class="fa-solid fa-phone-volume"></i>
+            <p>(123)456-7890</p>
+          </div>
+          <div>
+            <i class="fa-regular fa-envelope"></i>
+            <p>Support@stackly.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="header2">
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./Assets/logo.webp" alt="Logo" />
+          </a>
+        </div>
+
+        <div class="div">
+          <nav>
+            <ul>
+              <li class="dropdown">
+                <a href="./index.html">Home</a>
+
+                <!-- <span class="drop-toggle">
+                  <i class="fa-solid fa-caret-down"></i>
+                </span> -->
+
+                <ul class="dropdown-menu">
+                  <li><a href="./index2.html">Home 2</a></li>
+                </ul>
+              </li>
+
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./service.html">Services</a></li>
+              <li><a href="./blog.html">Blog</a></li>
+              <li><a href="./contact.html">Contact Us</a></li>
+              <!-- <li><a href="./dashboard.html">Dashboard</a></li> -->
+            </ul>
+          </nav>
+
+          <div class="icons">
+            <div
+              class="cart-trigger"
+              onclick="toggleCart()"
+              style="
+                cursor: pointer;
+                color: #0fcc7c;
+                position: relative;
+                font-size: 24px;
+              "
+            >
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span
+                id="cart-count"
+                style="
+                  position: absolute;
+                  top: -10px;
+                  right: -10px;
+                  background: white;
+                  color: black;
+                  font-size: 12px;
+                  padding: 2px 6px;
+                  border-radius: 50%;
+                  font-weight: bold;
+                "
+                >0</span
+              >
+            </div>
+
+            <div class="login">
+              <a href="./login.html">
+                <button class="log-btn">Login</button>
+              </a>
+            </div>
+
+            <div class="mobilebar">
+              <div class="hamburger-box">
+                <div class="hamburger">
+                  <div class="line line1"></div>
+                  <div class="line line2"></div>
+                  <div class="line line3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li class="has-dropdown menu-item">
+          <div class="dropdown-header">
+            <a href="./index.html">Home</a>
+            <!-- <span class="drop-caret" id="home-caret">▾</span> -->
+          </div>
+          <!-- <ul class="submenu" id="home-dropdown">
+            <li><a href="./index2.html">Home 2</a></li>
+          </ul> -->
+        </li>
+
+        <li class="menu-item">
+          <a href="./about.html">About</a>
+        </li>
+        <li class="menu-item">
+          <a href="./service.html">Services</a>
+        </li>
+        <li class="menu-item">
+          <a href="./blog.html">Blog</a>
+        </li>
+        <li class="menu-item">
+          <a href="./contact.html">Contact Us</a>
+        </li>
+        <!-- <li class="menu-item">
+          <a href="./dashboard.html">Dashboard</a>
+        </li> -->
+        <li class="menu-item">
+          <a href="./login.html">Login</a>
+        </li>
+      </ul>
+
+      <div class="sidebar-login">
+        <!-- <a href="./app.html">
+            <button class="login-btn">Buy Now</button>
+          </a> -->
+      </div>
+    </div>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h2 style="color: #90ee90">Shopping Cart</h2>
+        <span class="close-cart" onclick="toggleCart()">&times;</span>
+      </div>
+      <div id="cart-items-container">
+        <p style="text-align: center; margin-top: 50px; color: #666">
+          Your cart is empty.
+        </p>
+      </div>
+      <div class="cart-footer">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+          "
+        >
+          <span>Total:</span>
+          <span style="color: #90ee90; font-weight: bold"
+            >$<span id="total-price">0</span></span
+          >
+        </div>
+        <a href="./error.html">
+          <button
+            class="login-btn"
+            style="width: 100%; background: #90ee90; color: black; border: none"
+          >
+            Checkout Now
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <section class="services-hero">
+      <div class="service-hud-bg"></div>
+
+      <div class="services-hero-container">
+        <div class="hero-content-block gsap-service-fade">
+          <div class="status-indicator">
+            <span class="pulse-dot"></span>
+            <span class="status-text">System Status: Optimal</span>
+          </div>
+
+          <h1 class="hero-title">
+            Complete
+            <span class="gradient-text">Battery & Energy</span> Solutions
+          </h1>
+
+          <p class="hero-description">
+            From quantum-cell architecture to global grid integration, we
+            provide the full-spectrum engineering required to power the next
+            generation of sustainable industry.
+          </p>
+
+          <div class="service-tags">
+            <span class="tag">Cell Design</span>
+            <span class="tag">BMS Development</span>
+            <span class="tag">Grid Storage</span>
+            <span class="tag">Testing & QA</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="./error.html">
+              <button class="glow-cta">Request Technical Specs</button>
+            </a>
+            <a href="./error.html">
+              <button class="view-btn">View Lab Capabilities</button>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-dashboard gsap-service-visual">
+          <div class="dashboard-frame">
+            <img
+              src="./Assets/Energy Infrastructure_11zon_11zon.webp"
+              alt="Energy Infrastructure"
+              class="dashboard-img"
+            />
+            <div class="data-overlay">
+              <div class="data-item">
+                <span class="label">Voltage Output</span>
+                <span class="value">800V DC</span>
+              </div>
+              <div class="data-item">
+                <span class="label">Response Time</span>
+                <span class="value">< 20ms</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-grid-section">
+      <div class="section-header gsap-service-header">
+        <h2 class="gradient-title">Engineering Ecosystem</h2>
+        <p class="section-subtitle">
+          Explore our wide range of battery and power solutions designed for
+          industrial resilience.
+        </p>
+      </div>
+
+      <div class="services-container">
+        <div class="service-hex gsap-hex">
+          <div class="hex-internal">
+            <div class="hex-icon"><i class="fa-solid fa-microchip"></i></div>
+            <h3>Custom Cell Design</h3>
+            <p>
+              Bespoke lithium-ion and solid-state architectures tailored to
+              specific energy density requirements.
+            </p>
+            <ul class="hex-list">
+              <li>Quantum Anodes</li>
+              <li>Thermal Stability</li>
+            </ul>
+          </div>
+          <div class="hex-border-glow"></div>
+        </div>
+
+        <div class="service-hex gsap-hex">
+          <div class="hex-internal">
+            <div class="hex-icon"><i class="fa-solid fa-gears"></i></div>
+            <h3>BMS Engineering</h3>
+            <p>
+              Smart Battery Management Systems with AI-driven balancing and
+              predictive failure analytics.
+            </p>
+            <ul class="hex-list">
+              <li>Real-time Monitoring</li>
+              <li>Cloud Integration</li>
+            </ul>
+          </div>
+          <div class="hex-border-glow"></div>
+        </div>
+
+        <div class="service-hex gsap-hex">
+          <div class="hex-internal">
+            <div class="hex-icon">
+              <i class="fa-solid fa-tower-broadcast"></i>
+            </div>
+            <h3>Grid Integration</h3>
+            <p>
+              Large-scale energy storage solutions (BESS) for stabilizing
+              renewable energy grids and microgrids.
+            </p>
+            <ul class="hex-list">
+              <li>Peak Shaving</li>
+              <li>Frequency Reg.</li>
+            </ul>
+          </div>
+          <div class="hex-border-glow"></div>
+        </div>
+
+        <div class="service-hex gsap-hex">
+          <div class="hex-internal">
+            <div class="hex-icon"><i class="fa-solid fa-flask-vial"></i></div>
+            <h3>Rapid Prototyping</h3>
+            <p>
+              Accelerated R&D cycles with advanced simulation and in-house
+              safety testing facilities.
+            </p>
+            <ul class="hex-list">
+              <li>Safety Stress Tests</li>
+              <li>Material Analysis</li>
+            </ul>
+          </div>
+          <div class="hex-border-glow"></div>
+        </div>
+
+        <div class="service-hex gsap-hex">
+          <div class="hex-internal">
+            <div class="hex-icon"><i class="fa-solid fa-recycle"></i></div>
+            <h3>Circular Lifecycle</h3>
+            <p>
+              End-to-end battery management featuring second-life repurposing
+              and closed-loop material recovery protocols.
+            </p>
+            <ul class="hex-list">
+              <li>Eco-Recovery</li>
+              <li>Second-Life Ops</li>
+            </ul>
+          </div>
+          <div class="hex-border-glow"></div>
+        </div>
+
+        <div class="service-hex gsap-hex">
+          <div class="hex-internal">
+            <div class="hex-icon">
+              <i class="fa-solid fa-charging-station"></i>
+            </div>
+            <h3>E-Mobility Systems</h3>
+            <p>
+              High-power charging infrastructure deployment with integrated load
+              balancing for commercial and private fleets.
+            </p>
+            <ul class="hex-list">
+              <li>Fast-Charge Tech</li>
+              <li>Fleet V2G</li>
+            </ul>
+          </div>
+          <div class="hex-border-glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-tabs-section">
+      <div class="section-header gsap-service-header">
+        <h2 class="gradient-title">Technical Specifications</h2>
+        <p class="section-subtitle">
+          Deep-dive into our core engineering pillars and high-performance
+          energy architectures.
+        </p>
+      </div>
+
+      <div class="tabs-container">
+        <div class="tabs-nav gsap-tabs-nav">
+          <div class="tab-btn active" data-tab="ev">
+            <span class="tab-id">01</span>
+            <span class="tab-label">EV Systems</span>
+            <div class="tab-indicator"></div>
+          </div>
+          <div class="tab-btn" data-tab="ess">
+            <span class="tab-id">02</span>
+            <span class="tab-label">Energy Storage</span>
+            <div class="tab-indicator"></div>
+          </div>
+          <div class="tab-btn" data-tab="bms">
+            <span class="tab-id">03</span>
+            <span class="tab-label">BMS Architecture</span>
+            <div class="tab-indicator"></div>
+          </div>
+          <div class="tab-btn" data-tab="infra">
+            <span class="tab-id">04</span>
+            <span class="tab-label">Charging Infra</span>
+            <div class="tab-indicator"></div>
+          </div>
+        </div>
+
+        <div class="tabs-display gsap-tabs-content">
+          <div class="tab-panel active" id="ev">
+            <div class="panel-grid">
+              <div class="panel-text">
+                <h2 class="gradient-title">EV Systems</h2>
+                <p>
+                  High-nickel and Solid-State solutions engineered for maximum
+                  range and rapid thermal dissipation. Our modules are designed
+                  for extreme vibration resistance and 800V architecture
+                  compatibility.
+                </p>
+                <ul class="spec-list">
+                  <li><span>Density:</span> 350 Wh/kg</li>
+                  <li><span>Life Cycles:</span> 3000+</li>
+                  <li><span>Fast Charge:</span> 10% to 80% in 12 min</li>
+                </ul>
+              </div>
+              <div class="panel-visual">
+                <img
+                  src="./Assets/EV Battery Packs_11zon_11zon.webp"
+                  alt="EV Battery"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="ess">
+            <div class="panel-grid">
+              <div class="panel-text">
+                <h2 class="gradient-title">Energy Storage</h2>
+                <p>
+                  Containerized BESS solutions for grid stabilization and
+                  industrial peak shaving. Scalable from 1MWh to GWh levels with
+                  integrated fire suppression.
+                </p>
+                <ul class="spec-list">
+                  <li><span>Response:</span> < 20ms</li>
+                  <li><span>Scale:</span> Modular GWh</li>
+                  <li><span>Safety:</span> AI-Fire Monitoring</li>
+                </ul>
+              </div>
+              <div class="panel-visual">
+                <img
+                  src="./Assets/grid storage_11zon_11zon.webp"
+                  alt="Storage Systems"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="bms">
+            <div class="panel-grid">
+              <div class="panel-text">
+                <h2 class="gradient-title">BMS Architecture</h2>
+                <p>
+                  Proprietary AI-driven Battery Management Systems featuring
+                  wireless cell monitoring and predictive health analytics. Our
+                  5G-enabled controllers ensure millisecond-precision load
+                  balancing across global fleets.
+                </p>
+                <ul class="spec-list">
+                  <li><span>Protocol:</span> CAN Bus / Wireless</li>
+                  <li><span>Precision:</span> ±1mV Cell Accuracy</li>
+                  <li><span>Intelligence:</span> Edge-AI Analytics</li>
+                </ul>
+              </div>
+              <div class="panel-visual">
+                <img
+                  src="./Assets/BMS Circuitry_11zon_11zon.webp"
+                  alt="BMS Circuitry"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="infra">
+            <div class="panel-grid">
+              <div class="panel-text">
+                <h2 class="gradient-title">Charging Infrastructure</h2>
+                <p>
+                  Next-generation MCS (Megawatt Charging System) deployment for
+                  heavy-duty electric transport. Integrated V2G
+                  (Vehicle-to-Grid) capabilities allow your fleet to act as a
+                  secondary revenue stream.
+                </p>
+                <ul class="spec-list">
+                  <li><span>Capacity:</span> Up to 1.2MW</li>
+                  <li><span>Efficiency:</span> 98% Peak Efficiency</li>
+                  <li><span>Ready for:</span> Fleet & V2X</li>
+                </ul>
+              </div>
+              <div class="panel-visual">
+                <img
+                  src="./Assets/High Power Charging_11zon_11zon.webp"
+                  alt="High Power Charging"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-process-section">
+      <div class="section-header gsap-service-header">
+        <h2 class="gradient-title">Development Workflow</h2>
+        <p class="section-subtitle">
+          A high-precision engineering pipeline from molecular theory to
+          industrial deployment.
+        </p>
+      </div>
+
+      <div class="process-pipeline">
+        <div class="pipeline-line"></div>
+
+        <div class="process-step gsap-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Cell Simulation</h3>
+            <p>
+              Digital twin modeling to predict chemical behavior and thermal
+              stability before physical assembly.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step gsap-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Rapid Prototyping</h3>
+            <p>
+              In-house 3D electrode printing and electrolyte synthesis for
+              accelerated physical testing.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step gsap-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Stress Validation</h3>
+            <p>
+              Rigorous safety testing including nail penetration, overcharge,
+              and extreme temperature cycles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <div class="section-header gsap-service-header">
+        <h2 class="gradient-title">Lab Infrastructure</h2>
+        <p class="section-subtitle">
+          Powered by advanced simulation, AI analytics, and IoT monitoring
+          systems.
+        </p>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card gsap-tool-card">
+          <div class="tool-ui-header">
+            <span class="dot"></span><span class="dot"></span
+            ><span class="dot"></span>
+          </div>
+          <div class="tool-body">
+            <i class="fa-solid fa-microscope"></i>
+            <h3>Quantum Sim v4.0</h3>
+            <p>
+              Molecular dynamics engine for predicting anode-cathode
+              interactions.
+            </p>
+          </div>
+        </div>
+
+        <div class="tool-card gsap-tool-card">
+          <div class="tool-ui-header">
+            <span class="dot"></span><span class="dot"></span
+            ><span class="dot"></span>
+          </div>
+          <div class="tool-body">
+            <i class="fa-solid fa-brain"></i>
+            <h3>AI Diagnostics</h3>
+            <p>
+              Neural networks that detect early-stage dendrite formation during
+              cycling.
+            </p>
+          </div>
+        </div>
+
+        <div class="tool-card gsap-tool-card">
+          <div class="tool-ui-header">
+            <span class="dot"></span><span class="dot"></span
+            ><span class="dot"></span>
+          </div>
+          <div class="tool-body">
+            <i class="fa-solid fa-satellite-dish"></i>
+            <h3>IoT Nexus</h3>
+            <p>
+              Real-time telemetry for deployed energy storage units across the
+              globe.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- pricing -->
+
+    <section class="pricing-section">
+      <div class="section-header gsap-service-header">
+        <h2 class="gradient-title ">Flexible Energy Solutions</h2>
+        <div class="billing-toggle">
+          <span>Monthly</span>
+          <label class="switch">
+            <input type="checkbox" id="price-toggle" />
+            <span class="slider round"></span>
+          </label>
+          <span
+            >Yearly
+            <small class="discount" style="color: #0fcc7c">-20%</small></span
+          >
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card gsap-price" data-plan="starter">
+          <div class="plan-header">
+            <h3>Starter</h3>
+            <p>Small-scale energy needs</p>
+          </div>
+          <div class="amount">
+            ₹<span class="price-val">4,999</span><small>/mo</small>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> 5kWh Storage Capacity</li>
+            <li><i class="fa-solid fa-check"></i> Single-Phase Support</li>
+            <li><i class="fa-solid fa-check"></i> Mobile App Access</li>
+            <li class="disabled">
+              <i class="fa-solid fa-xmark"></i> Industrial BMS
+            </li>
+          </ul>
+          <a href="./error.html">
+            <button class="plan-btn">Choose Starter</button>
+          </a>
+        </div>
+
+        <div class="price-card popular gsap-price" data-plan="professional">
+          <div class="popular-tag">Most Recommended</div>
+          <div class="plan-header">
+            <h3>Professional</h3>
+            <p>Commercial applications</p>
+          </div>
+          <div class="amount">
+            ₹<span class="price-val">15,999</span><small>/mo</small>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> 25kWh Storage Capacity</li>
+            <li><i class="fa-solid fa-check"></i> Three-Phase Support</li>
+            <li><i class="fa-solid fa-check"></i> Advanced Smart BMS</li>
+            <li><i class="fa-solid fa-check"></i> 24/7 Remote Monitoring</li>
+          </ul>
+          <a href="./error.html">
+            <button class="plan-btn">Go Professional</button>
+          </a>
+        </div>
+
+        <div class="price-card gsap-price" data-plan="enterprise">
+          <div class="plan-header">
+            <h3>Enterprise</h3>
+            <p>Industrial & Grid solutions</p>
+          </div>
+          <div class="amount">Custom</div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> 1MWh+ Grid Storage</li>
+            <li><i class="fa-solid fa-check"></i> Custom System Design</li>
+            <li><i class="fa-solid fa-check"></i> On-site Maintenance</li>
+            <li><i class="fa-solid fa-check"></i> Dedicated Engineer</li>
+          </ul>
+          <a href="./error.html">
+            <button class="plan-btn">Contact Sales</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="footer-grid">
+        <div class="footer-brand gsap-contact">
+          <div class="logo" style="margin-bottom: 20px">
+            <a href="./index.html">
+              <img
+                src="./Assets/logo.webp"
+                alt="Logo"
+                style="max-width: 180px"
+              />
+            </a>
+          </div>
+
+          <p>
+            Powering the future of sustainable mobility. Enter your email to
+            receive technical datasheets and exclusive updates on our latest
+            lithium-ion and solid-state battery innovations.
+          </p>
+        </div>
+
+        <div class="footer-links gsap-contact">
+          <h4>Quick Links</h4>
+
+          <a href="./about.html">About Us</a>
+          <a href="./service.html">Services</a>
+          <a href="./blog.html">Blog</a>
+          <a href="./contact.html">Contact</a>
+          <a href="./login.html">Login</a>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>
+            Stay ahead in energy storage. Subscribe to get notified about
+            production batch availability and high-density cell breakthroughs.
+          </p>
+          <form action="./error.html">
+            <div class="news-input">
+              <input
+                type="email"
+                placeholder="Corporate Email Address"
+                required
+              />
+              <button type="submit">→</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Battery Innovations Ltd. All Rights Reserved.</p>
+        <div class="legal-links">
+          <a href="./error.html">Privacy Policy</a>
+          <a href="./error.html">ISO 9001 Compliance</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./script.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 1000,
+    easing: "ease-out-cubic",
+    startEvent: "aos:ready", // manual trigger
+  });
+</script>
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- hero -->
+
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap) {
+      const tl = gsap.timeline();
+
+      // Entrance Animation
+      tl.to(".gsap-service-fade", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.5,
+        ease: "power4.out",
+      }).to(
+        ".gsap-service-visual",
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power3.out",
+        },
+        "-=0.6",
+      );
+
+      // HUD Background Parallax
+      window.addEventListener("mousemove", (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 30;
+        const y = (e.clientY / window.innerHeight - 0.5) * 30;
+        gsap.to(".service-hud-bg", {
+          x: x,
+          y: y,
+          duration: 2,
+          ease: "power2.out",
+        });
+      });
+    }
+  });
+</script>
+
+<script>
+  function updateLiveMetrics() {
+    const voltageElement = document.querySelector(
+      ".data-item:nth-child(1) .value",
+    );
+    if (voltageElement) {
+      // Simulates slight voltage fluctuations for realism
+      const baseVoltage = 800;
+      const jitter = (Math.random() * 2).toFixed(1);
+      voltageElement.innerText = `${baseVoltage + parseFloat(jitter)}V DC`;
+    }
+  }
+
+  setInterval(updateLiveMetrics, 3000);
+</script>
+
+<!-- 2 -->
+
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Reveal Header
+      gsap.to(".gsap-service-header", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".services-grid-section",
+          start: "top 80%",
+        },
+      });
+
+      // Staggered Hex Grid entrance
+      gsap.to(".gsap-hex", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "back.out(1.4)",
+        scrollTrigger: {
+          trigger: ".services-container",
+          start: "top 75%",
+        },
+      });
+
+      initHexTracker();
+    }
+  });
+</script>
+
+<script>
+  function initHexTracker() {
+    const cards = document.querySelectorAll(".service-hex");
+    cards.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const glow = card.querySelector(".hex-border-glow");
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // Move the radial glow with the mouse
+        gsap.to(glow, {
+          x: x - rect.width,
+          y: y - rect.height,
+          duration: 0.3,
+        });
+      });
+    });
+  }
+</script>
+
+<!-- 3 -->
+
+<script>
+  function initTabSystem() {
+    const btns = document.querySelectorAll(".tab-btn");
+    const panels = document.querySelectorAll(".tab-panel");
+
+    btns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-tab");
+
+        // Update Buttons
+        btns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // Animate Content Out/In
+        gsap.to(".tab-panel.active", {
+          opacity: 0,
+          x: -20,
+          duration: 0.3,
+          onComplete: () => {
+            panels.forEach((p) => p.classList.remove("active"));
+            const newPanel = document.getElementById(target);
+            newPanel.classList.add("active");
+
+            gsap.fromTo(
+              newPanel,
+              { opacity: 0, x: 20 },
+              { opacity: 1, x: 0, duration: 0.5 },
+            );
+          },
+        });
+      });
+    });
+  }
+</script>
+
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".service-tabs-section",
+          start: "top 70%",
+        },
+      });
+
+      tl.to(".gsap-tabs-nav", { opacity: 1, x: 0, duration: 0.8 }).to(
+        ".gsap-tabs-content",
+        { opacity: 1, y: 0, duration: 0.8 },
+        "-=0.4",
+      );
+
+      initTabSystem();
+    }
+  });
+</script>
+
+<!-- 4 , 5  -->
+
+<script>
+  // Staggered Steps Reveal
+  gsap.to(".gsap-step", {
+    opacity: 1,
+    x: 0,
+    stagger: 0.3,
+    scrollTrigger: {
+      trigger: ".process-pipeline",
+      start: "top 75%",
+    },
+  });
+
+  // Tool Cards Entrance
+  gsap.to(".gsap-tool-card", {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: ".tools-grid",
+      start: "top 80%",
+    },
+  });
+</script>
+
+<!-- pricing section -->
+<script>
+  // Data for Pricing Toggle
+  const pricingData = {
+    starter: { monthly: "4,999", yearly: "3,999" },
+    professional: { monthly: "15,999", yearly: "12,799" },
+  };
+
+  const priceToggle = document.getElementById("price-toggle");
+
+  priceToggle.addEventListener("change", () => {
+    const isYearly = priceToggle.checked;
+
+    document.querySelectorAll(".price-card").forEach((card) => {
+      const plan = card.getAttribute("data-plan");
+      const priceSpan = card.querySelector(".price-val");
+
+      if (pricingData[plan]) {
+        const targetPrice = isYearly
+          ? pricingData[plan].yearly
+          : pricingData[plan].monthly;
+
+        // Animate price change
+        gsap.to(priceSpan, {
+          opacity: 0,
+          y: -5,
+          duration: 0.2,
+          onComplete: () => {
+            priceSpan.textContent = targetPrice;
+            gsap.to(priceSpan, { opacity: 1, y: 0, duration: 0.2 });
+          },
+        });
+      }
+    });
+  });
+
+  // GSAP Animations with ScrollTrigger
+  window.addEventListener("load", () => {
+    if (window.gsap) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to(".gsap-price", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.2, // Cards enter one after another
+        ease: "expo.out",
+        scrollTrigger: {
+          trigger: ".pricing-grid",
+          start: "top 85%", // Starts when the grid top hits 85% of screen height
+        },
+      });
+    }
+  });
+</script>

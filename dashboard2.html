@@ -1,0 +1,1999 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT Solutions</title>
+    <link rel="icon" href="./Assets/icon.webp" />
+    <link rel="stylesheet" href="./dashboard2.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body class="dashboard-body">
+    <div class="dashboard-layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="logo-wrap">
+            <a href="./index.html">
+              <img
+                src="./Assets/logo.webp"
+                alt="Battery Ops Console"
+                class="logo"
+              />
+            </a>
+          </div>
+          <button class="close-sidebar" id="close-sidebar">
+            <span class="material-icons" style="color: gray">
+              <i class="fa-solid fa-xmark"></i>
+            </span>
+          </button>
+        </div>
+
+        <div
+          class="patient-id-badge"
+          style="
+            background: rgba(139, 0, 0, 0.1);
+            border-left: 3px solid #0fcc7c;
+          "
+        >
+          <span class="material-icons" style="color: #0fcc7c">
+            <i class="fa-solid fa-car-battery"></i>
+          </span>
+          <div>
+            <p
+              class="label"
+              style="
+                color: var(--text-muted);
+                font-size: 0.7rem;
+                text-transform: uppercase;
+              "
+            >
+              Storage Cluster
+            </p>
+            <p class="value" style="font-weight: 600; font-size: 0.85rem">
+              BATT-ARRAY-RED-01
+            </p>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <p
+            class="nav-section-title"
+            style="
+              padding: 10px 16px;
+              font-size: 0.75rem;
+              color: var(--text-muted);
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            "
+          >
+            Operations Control
+          </p>
+
+          <button class="sidebar-link active" data-target="view-infrastructure">
+            <span class="material-icons">
+              <i class="fa-solid fa-charging-station"></i>
+            </span>
+            Grid Topology
+          </button>
+
+          <button class="sidebar-link" data-target="view-compute">
+            <span class="material-icons">
+              <i class="fa-solid fa-microchip"></i>
+            </span>
+            BMS Modules
+          </button>
+
+          <button class="sidebar-link" data-target="view-storage">
+            <span class="material-icons">
+              <i class="fa-solid fa-bolt-lightning"></i>
+            </span>
+            Energy Throughput
+          </button>
+
+          <button class="sidebar-link" data-target="view-security">
+            <span class="material-icons">
+              <i class="fa-solid fa-temperature-half"></i>
+            </span>
+            Thermal Safety
+          </button>
+
+          <button class="sidebar-link" data-target="view-logs">
+            <span class="material-icons">
+              <i class="fa-solid fa-file-waveform"></i>
+            </span>
+            Telemetry Logs
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <a href="index.html" class="sidebar-link logout-link">
+            <span class="material-icons">
+              <i class="fa-solid fa-house"></i>
+            </span>
+            Back to Home
+          </a>
+          <a
+            href="login.html"
+            class="sidebar-link logout-link"
+            style="
+              color: #0fcc7c;
+              border-top: 1px solid rgba(255, 255, 255, 0.05);
+              margin-top: 10px;
+              padding-top: 15px;
+            "
+          >
+            <span class="material-icons">
+              <i class="fa-solid fa-power-off"></i>
+            </span>
+            System Shutdown
+          </a>
+        </div>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="top-header">
+          <div class="header-left">
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+              <span class="material-icons" style="color: #0fcc7c">
+                <i class="fa-solid fa-bars"></i>
+              </span>
+            </button>
+            <div>
+              <h1 id="greeting" style="color: #f8fafc">
+                Charge Command: Michael
+              </h1>
+              <p class="subtitle" style="color: var(--text-muted)">
+                Chief Battery Systems Engineer
+              </p>
+            </div>
+          </div>
+
+          <div class="header-right">
+            <div style="display: flex; align-items: center; gap: 15px">
+              <div
+                class="status-monitor"
+                style="
+                  text-align: right;
+                  display: block;
+                  border-right: 1px solid rgba(255, 255, 255, 0.1);
+                  padding-right: 15px;
+                "
+              >
+                <p
+                  style="
+                    font-size: 0.7rem;
+                    color: var(--text-muted);
+                    text-transform: uppercase;
+                    margin-bottom: 2px;
+                  "
+                >
+                  Cell Balancing
+                </p>
+                <p
+                  style="font-size: 0.85rem; font-weight: 600; color: #0fcc7c"
+                >
+                  98.2% (Synced)
+                </p>
+              </div>
+
+              <button
+                onclick="window.location.href = './error.html'"
+                class="icon-btn"
+                style="
+                  position: relative;
+                  background: none;
+                  border: none;
+                  cursor: pointer;
+                  padding: 5px;
+                "
+              >
+                <span class="material-icons" style="color: #f8fafc">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                </span>
+                <span
+                  class="notification-dot"
+                  style="
+                    position: absolute;
+                    top: 2px;
+                    right: 2px;
+                    width: 8px;
+                    height: 8px;
+                    background: #0fcc7c;
+                    border-radius: 50%;
+                    border: 1px solid #000;
+                  "
+                ></span>
+              </button>
+            </div>
+
+            <div
+              class="profile-menu-wrap"
+              style="position: relative; margin-left: 10px"
+            >
+              <div
+                class="user-avatar"
+                id="profile-avatar"
+                style="
+                  cursor: pointer;
+                  background: #0fcc7c;
+                  color: white;
+                  font-weight: bold;
+                  width: 38px;
+                  height: 38px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border-radius: 8px;
+                  border: 2px solid rgba(255, 255, 255, 0.1);
+                "
+              >
+                MR
+              </div>
+
+              <div class="profile-dropdown glass-card" id="profile-dropdown">
+                <div class="profile-dropdown-header">
+                  <p class="text-muted text-sm" style="font-size: 0.75rem">
+                    Ops Supervisor Account
+                  </p>
+                  <h4
+                    id="dropdown-email"
+                    style="
+                      word-break: break-all;
+                      margin-top: 4px;
+                      color: var(--text-muted);
+                      font-size: 0.85rem;
+                    "
+                  >
+                    m.ross@cellcore.ops.global
+                  </h4>
+                </div>
+                <hr
+                  class="divider"
+                  style="
+                    margin: 12px 0;
+                    border: none;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
+                  "
+                />
+
+                <a href="./error.html" style="text-decoration: none">
+                  <button
+                    class="sidebar-link"
+                    style="
+                      margin: 0;
+                      padding: 10px;
+                      width: 100%;
+                      display: flex;
+                      align-items: center;
+                      gap: 10px;
+                      background: none;
+                      border: none;
+                      color: white;
+                      cursor: pointer;
+                    "
+                  >
+                    <span
+                      class="material-icons"
+                      style="font-size: 1.1rem; color: #0fcc7c"
+                    >
+                      <i class="fa-solid fa-microchip"></i>
+                    </span>
+                    BMS Safety Protocols
+                  </button>
+                </a>
+
+                <button
+                  class="sidebar-link logout-link"
+                  onclick="
+                    sessionStorage.clear();
+                    window.location.href = 'login.html';
+                  "
+                  style="
+                    margin: 0;
+                    padding: 10px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    background: none;
+                    border: none;
+                    color: #0fcc7c;
+                    cursor: pointer;
+                  "
+                >
+                  <span class="material-icons" style="font-size: 1.1rem">
+                    <i class="fa-solid fa-power-off"></i>
+                  </span>
+                  System Shutdown
+                </button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="dashboard-content">
+          <section id="view-infrastructure" class="content-view active-view">
+            <div class="overview-grid">
+              <div class="glass-card">
+                <div class="card-header">
+                  <h4 class="text-muted text-sm">Global Energy Uptime</h4>
+                  <span class="material-icons" style="color: #0fcc7c">
+                    <i class="fa-solid fa-bolt"></i>
+                  </span>
+                </div>
+                <h2 class="mt-2">99.998%</h2>
+                <p class="text-sm mt-1" style="color: #0fcc7c">
+                  <i class="fa-solid fa-arrow-trend-up"></i> +0.002%
+                  <span class="text-muted">vs last 30d</span>
+                </p>
+              </div>
+
+              <div class="glass-card">
+                <div class="card-header">
+                  <h4 class="text-muted text-sm">Active Battery Units</h4>
+                  <span class="material-icons" style="color: #0fcc7c">
+                    <i class="fa-solid fa-car-battery"></i>
+                  </span>
+                </div>
+                <h2 class="mt-2">4,812</h2>
+                <p class="text-sm mt-1">
+                  <span class="text-muted">Avg Cell Temp: </span> 24°C
+                </p>
+              </div>
+
+              <div class="glass-card">
+                <div class="card-header">
+                  <h4 class="text-muted text-sm">BMS Safety Status</h4>
+                  <span class="material-icons" style="color: #f5c518">
+                    <i class="fa-solid fa-shield-heart"></i>
+                  </span>
+                </div>
+                <h2 class="mt-2">Optimal</h2>
+                <p class="text-sm mt-1" style="color: #0fcc7c">
+                  Thermal Regulation: Active
+                  <i class="fa-solid fa-circle-check"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="grid-2-col mt-4">
+              <div class="glass-card">
+                <div class="section-header">
+                  <h3>Energy Distribution Pipeline</h3>
+                  <span
+                    class="badge"
+                    style="background: rgba(139, 0, 0, 0.1); color: #0fcc7c"
+                    >Live Load</span
+                  >
+                </div>
+                <div class="funnel-container mt-4">
+                  <div
+                    class="funnel-step"
+                    style="
+                      width: 100%;
+                      background: rgba(139, 0, 0, 0.15);
+                      border-left: 4px solid #0fcc7c;
+                      padding: 12px;
+                      margin-bottom: 8px;
+                      border-radius: 4px;
+                    "
+                  >
+                    <div style="display: flex; justify-content: space-between">
+                      <span>Grid Intake (GWh)</span>
+                      <strong>84.2</strong>
+                    </div>
+                  </div>
+                  <div
+                    class="funnel-step"
+                    style="
+                      width: 80%;
+                      background: rgba(139, 0, 0, 0.1);
+                      border-left: 4px solid #0fcc7c;
+                      padding: 12px;
+                      margin-bottom: 8px;
+                      border-radius: 4px;
+                    "
+                  >
+                    <div style="display: flex; justify-content: space-between">
+                      <span>Transformer Conversion</span>
+                      <strong>78.5</strong>
+                    </div>
+                  </div>
+                  <div
+                    class="funnel-step"
+                    style="
+                      width: 60%;
+                      background: rgba(139, 0, 0, 0.08);
+                      border-left: 4px solid #0fcc7c;
+                      padding: 12px;
+                      margin-bottom: 8px;
+                      border-radius: 4px;
+                    "
+                  >
+                    <div style="display: flex; justify-content: space-between">
+                      <span>Storage Array Injection</span>
+                      <strong>76.1</strong>
+                    </div>
+                  </div>
+                  <div
+                    class="funnel-step"
+                    style="
+                      width: 40%;
+                      background: rgba(139, 0, 0, 0.05);
+                      border-left: 4px solid #0fcc7c;
+                      padding: 12px;
+                      border-radius: 4px;
+                    "
+                  >
+                    <div style="display: flex; justify-content: space-between">
+                      <span>End-User Delivery</span>
+                      <strong>72.4</strong>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-muted text-sm mt-3">
+                  Round-trip Efficiency: <strong>86.5%</strong>
+                </p>
+              </div>
+
+              <div class="glass-card">
+                <h3>Energy Allocation</h3>
+                <div class="vitals-list mt-4">
+                  <div class="vital-item">
+                    <span class="vital-label">EV Charging Stations</span>
+                    <div style="display: flex; align-items: center; gap: 10px">
+                      <div
+                        style="
+                          width: 100px;
+                          height: 8px;
+                          background: #333;
+                          border-radius: 4px;
+                          overflow: hidden;
+                        "
+                      >
+                        <div
+                          style="
+                            width: 65%;
+                            height: 100%;
+                            background: #0fcc7c;
+                          "
+                        ></div>
+                      </div>
+                      <span class="vital-value">65%</span>
+                    </div>
+                  </div>
+                  <div class="vital-item">
+                    <span class="vital-label">Industrial Reserve</span>
+                    <div style="display: flex; align-items: center; gap: 10px">
+                      <div
+                        style="
+                          width: 100px;
+                          height: 8px;
+                          background: #333;
+                          border-radius: 4px;
+                          overflow: hidden;
+                        "
+                      >
+                        <div
+                          style="
+                            width: 45%;
+                            height: 100%;
+                            background: #0fcc7c;
+                          "
+                        ></div>
+                      </div>
+                      <span class="vital-value">45%</span>
+                    </div>
+                  </div>
+                  <div class="vital-item">
+                    <span class="vital-label">Residential Backup</span>
+                    <div style="display: flex; align-items: center; gap: 10px">
+                      <div
+                        style="
+                          width: 100px;
+                          height: 8px;
+                          background: #333;
+                          border-radius: 4px;
+                          overflow: hidden;
+                        "
+                      >
+                        <div
+                          style="
+                            width: 30%;
+                            height: 100%;
+                            background: #0fcc7c;
+                          "
+                        ></div>
+                      </div>
+                      <span class="vital-value">30%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card mt-4">
+              <div class="section-header">
+                <h3>Regional Battery Clusters</h3>
+                <a href="./error.html">
+                  <button
+                    class="btn-outline btn-sm"
+                    style="
+                      border: 1px solid #0fcc7c;
+                      color: #0fcc7c;
+                      background: transparent;
+                      padding: 5px 15px;
+                      border-radius: 8px;
+                      cursor: pointer;
+                    "
+                  >
+                    Cell Health Audit
+                  </button>
+                </a>
+              </div>
+              <div class="data-table-wrapper">
+                <table class="clinical-table">
+                  <thead>
+                    <tr>
+                      <th>Cluster ID</th>
+                      <th>Storage Type</th>
+                      <th>Region</th>
+                      <th>Cell Health</th>
+                      <th>Current Load</th>
+                      <th>Grid Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>BATT-US-EAST-01</strong></td>
+                      <td>Lithium-Ion Array</td>
+                      <td>Northern Virginia</td>
+                      <td>
+                        <div
+                          style="display: flex; align-items: center; gap: 5px"
+                        >
+                          <div
+                            style="width: 50px; height: 4px; background: #333"
+                          >
+                            <div
+                              style="
+                                width: 98%;
+                                height: 100%;
+                                background: #0fcc7c;
+                              "
+                            ></div>
+                          </div>
+                          <small>Nominal</small>
+                        </div>
+                      </td>
+                      <td>42%</td>
+                      <td>
+                        <span
+                          class="badge"
+                          style="
+                            background: rgba(139, 0, 0, 0.1);
+                            color: #0fcc7c;
+                          "
+                          >Exporting</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>BATT-EU-CENT-04</strong></td>
+                      <td>Solid State Pilot</td>
+                      <td>Frankfurt, DE</td>
+                      <td>
+                        <div
+                          style="display: flex; align-items: center; gap: 5px"
+                        >
+                          <div
+                            style="width: 50px; height: 4px; background: #333"
+                          >
+                            <div
+                              style="
+                                width: 35%;
+                                height: 100%;
+                                background: #f5c518;
+                              "
+                            ></div>
+                          </div>
+                          <small>Thermal Warning</small>
+                        </div>
+                      </td>
+                      <td>89%</td>
+                      <td>
+                        <span
+                          class="badge"
+                          style="
+                            background: rgba(245, 197, 24, 0.1);
+                            color: #f5c518;
+                          "
+                          >Regulating</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-compute" class="content-view active-view">
+            <div class="section-header">
+              <div>
+                <h2
+                  style="margin-bottom: 10px; color: #f8fafc; margin-top: 15px"
+                >
+                  BMS Module & Cell Diagnostics
+                </h2>
+                <p class="text-muted">
+                  Real-time telemetry for battery management systems, thermal
+                  regulation, and cell balancing efficiency across the global
+                  energy network.
+                </p>
+              </div>
+              <form class="search-box" action="./error.html">
+                <span class="material-icons" style="color: #0fcc7c">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input
+                  type="text"
+                  placeholder="Search Module ID or Rack Tag (e.g. BMS-TX-04)..."
+                />
+              </form>
+            </div>
+
+            <div class="data-table-wrapper glass-card">
+              <table class="clinical-table">
+                <thead>
+                  <tr>
+                    <th>Module ID</th>
+                    <th>Chemistry Type</th>
+                    <th>SoC (Charge)</th>
+                    <th>Core Temp</th>
+                    <th>Cell Delta</th>
+                    <th>BMS Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>BMS-LFP-NY-01</strong></td>
+                    <td>LiFePO4 (LFP)</td>
+                    <td style="color: #f5c518">
+                      94.2%
+                      <span class="material-icons" style="font-size: 1rem">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                      </span>
+                    </td>
+                    <td>38°C</td>
+                    <td class="text-muted">12mV</td>
+                    <td>
+                      <span
+                        class="badge"
+                        style="
+                          background: rgba(245, 197, 24, 0.1);
+                          color: #f5c518;
+                        "
+                        >Near Peak</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        onclick="window.location.href = './error.html'"
+                        class="btn-outline btn-sm"
+                      >
+                        BALANCE CELLS
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>BMS-NMC-FRA-02</strong></td>
+                    <td>NiMnCo (NMC)</td>
+                    <td style="color: #0fcc7c">
+                      42.8%
+                      <span class="material-icons" style="font-size: 1rem">
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+                    </td>
+                    <td>32°C</td>
+                    <td class="text-muted">4mV</td>
+                    <td>
+                      <span
+                        class="badge"
+                        style="
+                          background: rgba(139, 0, 0, 0.1);
+                          color: #0fcc7c;
+                        "
+                        >Stable</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        onclick="window.location.href = './error.html'"
+                        class="btn-outline btn-sm"
+                      >
+                        RECALIBRATE
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>BMS-SS-HK-09</strong></td>
+                    <td>Solid State</td>
+                    <td style="color: #f8fafc">12.1%</td>
+                    <td>24°C</td>
+                    <td class="text-muted">0.8mV</td>
+                    <td>
+                      <span
+                        class="badge"
+                        style="
+                          background: rgba(139, 0, 0, 0.1);
+                          color: #0fcc7c;
+                        "
+                        >Standby</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        onclick="window.location.href = './error.html'"
+                        class="btn-outline btn-sm"
+                      >
+                        INITIATE
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="mt-4 mb-4" style="color: #f8fafc">
+              Safety Governance & Thermal Profiles
+            </h3>
+            <div class="grid-2-col">
+              <div
+                class="consent-item glass-card"
+                style="justify-content: space-between"
+              >
+                <div style="display: flex; gap: 16px; align-items: center">
+                  <span
+                    class="material-icons file-icon"
+                    style="color: #0fcc7c; margin: 0"
+                  >
+                    <i class="fa-solid fa-temperature-arrow-down"></i>
+                  </span>
+                  <div>
+                    <h4 style="color: #f8fafc">Active Cooling Efficiency</h4>
+                    <p class="text-muted text-sm">
+                      Coolant Flow: 4.2L/min • Healthy
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="icon-btn-small"
+                >
+                  <span class="material-icons"
+                    ><i class="fa-solid fa-gauge-high"></i
+                  ></span>
+                </button>
+              </div>
+              <div
+                class="consent-item glass-card"
+                style="justify-content: space-between"
+              >
+                <div style="display: flex; gap: 16px; align-items: center">
+                  <span
+                    class="material-icons file-icon"
+                    style="color: #0fcc7c; margin: 0"
+                  >
+                    <i class="fa-solid fa-bolt-lightning"></i>
+                  </span>
+                  <div>
+                    <h4 style="color: #f8fafc">Module Power Discharge</h4>
+                    <p class="text-muted text-sm">
+                      Current Load: 24.8 kW / Module Rack
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="icon-btn-small"
+                >
+                  <span class="material-icons"
+                    ><i class="fa-solid fa-chart-line"></i
+                  ></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="glass-card mt-4">
+              <h3>Scheduled Firmware & Maintenance</h3>
+              <p class="text-muted mb-3">
+                Cell equalization cycles and BMS firmware security updates.
+              </p>
+              <div class="data-table-wrapper">
+                <table class="clinical-table">
+                  <thead>
+                    <tr>
+                      <th>Patch ID</th>
+                      <th>Task Date</th>
+                      <th>Stage</th>
+                      <th>Offline Estimate</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>#BMS-992-SECURE</strong></td>
+                      <td>Apr 14, 2026</td>
+                      <td>
+                        <span
+                          class="badge"
+                          style="
+                            background: rgba(139, 0, 0, 0.1);
+                            color: #0fcc7c;
+                          "
+                        >
+                          Pending Deployment
+                        </span>
+                      </td>
+                      <td class="text-muted">320ms (Fail-Over)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div
+              class="glass-card mt-4"
+              style="border-left: 4px solid #0fcc7c"
+            >
+              <div class="section-header">
+                <h3>Cell Voltage Distribution Heatmap</h3>
+                <span class="text-muted text-sm"
+                  >Real-time Module Balancing</span
+                >
+              </div>
+              <div
+                style="
+                  width: 100%;
+                  height: 250px;
+                  background: rgba(139, 0, 0, 0.02);
+                  border-radius: 8px;
+                  border: 1px dashed rgba(139, 0, 0, 0.2);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-direction: column;
+                "
+              >
+                <span
+                  class="material-icons"
+                  style="font-size: 3rem; color: #0fcc7c"
+                >
+                  <i class="fa-solid fa-braille"></i>
+                </span>
+                <p class="text-muted mt-2">
+                  Individual Cell Voltage Variance Visualization (Active)
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-storage" class="content-view active-view">
+            <h2 style="margin-bottom: 10px; color: #f8fafc; margin-top: 15px">
+              Grid Stability & Energy Throughput
+            </h2>
+            <p class="text-muted mb-4">
+              Monitor high-voltage transmission efficiency, supervise
+              distributed energy resource (DER) ingestion, and manage grid-scale
+              storage discharge within the secure infrastructure.
+            </p>
+
+            <div class="grid-2-col">
+              <div class="timeline glass-card">
+                <h3>Load Distribution & Storage Timeline</h3>
+                <hr class="divider" style="opacity: 0.1; margin: 15px 0" />
+                <div class="timeline-item mt-4">
+                  <div
+                    class="timeline-marker active-marker"
+                    style="
+                      background: #0fcc7c;
+                      box-shadow: 0 0 10px #0fcc7c;
+                    "
+                  ></div>
+                  <div class="timeline-content">
+                    <h4 style="color: #0fcc7c">BESS Synchronization</h4>
+                    <h3>Quarterly Capacity Expansion</h3>
+                    <p class="text-muted">
+                      Integrating 450MWh of new solid-state storage into the
+                      regional cluster. Expect brief fluctuations in
+                      load-balancing response times during synchronization.
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h4>Grid Protocol Update</h4>
+                    <h3>Phase-Shift v5.1 Deployment</h3>
+                    <p class="text-muted">
+                      Global update to the smart-grid routing logic. Enhanced
+                      fault detection for cross-border transmission lines is now
+                      active.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glass-card">
+                <h3>Infrastructure & Electrical Engineering Leads</h3>
+                <hr class="divider" style="opacity: 0.1; margin: 15px 0" />
+                <div class="vital-item mt-3">
+                  <div>
+                    <h4 style="color: #f8fafc">Marcus Thorne</h4>
+                    <p class="text-muted text-sm">
+                      Chief Power Systems Architect
+                    </p>
+                  </div>
+                  <button
+                    onclick="window.location.href = './error.html'"
+                    class="btn-outline btn-sm"
+                  >
+                    Status
+                  </button>
+                </div>
+                <div class="vital-item mt-3">
+                  <div>
+                    <h4 style="color: #f8fafc">Sarah Jenkins</h4>
+                    <p class="text-muted text-sm">
+                      Director of Grid Resilience & Safety
+                    </p>
+                  </div>
+                  <button
+                    onclick="window.location.href = './error.html'"
+                    class="btn-outline btn-sm"
+                  >
+                    Message
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card mt-4">
+              <h3>Active Energy Ingestion (Peak Shaving Active)</h3>
+              <div class="data-table-wrapper mt-3">
+                <table class="clinical-table">
+                  <thead>
+                    <tr>
+                      <th>Source ID</th>
+                      <th>Grid Node</th>
+                      <th>Stabilization Status</th>
+                      <th>Power Flux</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>#PWR-SOLAR-NY</strong></td>
+                      <td>
+                        PV-Array Archive
+                        <small class="text-muted">(Utility Scale)</small>
+                      </td>
+                      <td>
+                        <span
+                          class="badge"
+                          style="
+                            background: rgba(139, 0, 0, 0.1);
+                            color: #0fcc7c;
+                          "
+                        >
+                          <i class="fa-solid fa-check-double"></i> Phase-Aligned
+                        </span>
+                      </td>
+                      <td>1.2 GW Surge</td>
+                      <td>
+                        <button
+                          onclick="window.location.href = './error.html'"
+                          class="btn-outline btn-sm"
+                        >
+                          Divert
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>#PWR-WIND-EU</strong></td>
+                      <td>Offshore-Hub</td>
+                      <td>
+                        <span
+                          class="badge"
+                          style="
+                            background: rgba(245, 197, 24, 0.1);
+                            color: #f5c518;
+                          "
+                        >
+                          <i class="fa-solid fa-spinner fa-spin"></i> Frequency
+                          Tuning
+                        </span>
+                      </td>
+                      <td>450 MW Active</td>
+                      <td>
+                        <button
+                          onclick="window.location.href = './error.html'"
+                          class="btn-outline btn-sm"
+                        >
+                          Throttle
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="glass-card mt-4">
+              <h3>Manual Grid Intervention & Emergency Purge</h3>
+              <p class="text-muted mb-4">
+                Manually isolate faulty circuits, adjust transformer tap
+                settings, or flag specific substations for physical maintenance.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 12px;
+                  margin-bottom: 16px;
+                "
+              >
+                <input
+                  type="text"
+                  placeholder="Search by Circuit ID, Substation Hash, or Zone..."
+                  style="
+                    flex-grow: 1;
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    color: white;
+                    padding: 12px;
+                    border-radius: 4px;
+                  "
+                />
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="btn-primary"
+                  style="
+                    background: #0fcc7c;
+                    border: none;
+                    padding: 12px 24px;
+                    border-radius: 4px;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                  "
+                >
+                  Locate Circuit
+                </button>
+              </div>
+              <div class="grid-2-col">
+                <div
+                  class="vital-item"
+                  style="
+                    background: rgba(229, 9, 20, 0.05);
+                    border: 1px solid rgba(229, 9, 20, 0.2);
+                    border-radius: 4px;
+                    padding: 10px;
+                  "
+                >
+                  <span style="color: #e50914; font-weight: bold"
+                    >Load Shedding (Disconnect)</span
+                  >
+                  <small class="text-muted">Emergency circuit isolation</small>
+                </div>
+                <div
+                  class="vital-item"
+                  style="
+                    background: rgba(139, 0, 0, 0.05);
+                    border: 1px solid rgba(139, 0, 0, 0.2);
+                    border-radius: 4px;
+                    padding: 10px;
+                  "
+                >
+                  <span style="color: #0fcc7c; font-weight: bold"
+                    >Harmonic Balancing</span
+                  >
+                  <small class="text-muted">Adjust reactive power flow</small>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-security" class="content-view active-view">
+            <h2 style="color: #f8fafc; margin-top: 15px">
+              Thermal Management & Cooling Infrastructure
+            </h2>
+
+            <div class="grid-2-col mt-4">
+              <div class="glass-card">
+                <h3>Active Cooling Loop</h3>
+                <hr class="divider" style="opacity: 0.1; margin: 15px 0" />
+                <p>
+                  <strong>Primary Coolant:</strong>
+                  Liquid Nitrogen / Dielectric Submersion
+                </p>
+                <p><strong>Zone:</strong> Cluster-Delta (High Heat Density)</p>
+                <p><strong>Pump ID:</strong> THERM-88372-910X</p>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="btn-outline btn-sm mt-3"
+                >
+                  View Thermal Mapping
+                </button>
+              </div>
+
+              <div class="glass-card">
+                <h3>System Heat & Regulation</h3>
+                <hr class="divider" style="opacity: 0.1; margin: 15px 0" />
+                <div class="consent-item">
+                  <span
+                    class="material-icons status-good"
+                    style="color: #0fcc7c"
+                  >
+                    <i class="fa-solid fa-circle-check"></i>
+                  </span>
+                  <div>
+                    <p><strong>Core Core Temperature</strong></p>
+                    <p class="text-muted text-sm">
+                      Status: Stable | 42°C Average | Real-time Thermal
+                      Dissipation
+                    </p>
+                  </div>
+                </div>
+                <div class="consent-item mt-2">
+                  <span
+                    class="material-icons status-good"
+                    style="color: #0fcc7c"
+                  >
+                    <i class="fa-solid fa-circle-check"></i>
+                  </span>
+                  <div>
+                    <p><strong>Redundant Airflow Verified</strong></p>
+                    <p class="text-muted text-sm">
+                      Fan Array: Active | 12,000 RPM | Next Maintenance: Jan
+                      2027
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card mt-4">
+              <div class="section-header">
+                <h3>Live Thermal Fluctuations & Heat Ledger</h3>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="btn-outline btn-sm"
+                >
+                  Download Thermal Logs (CSV)
+                </button>
+              </div>
+              <div class="data-table-wrapper">
+                <table class="clinical-table">
+                  <thead>
+                    <tr>
+                      <th>Timestamp</th>
+                      <th>Hardware Node / Component</th>
+                      <th>Ambient Temp</th>
+                      <th>Core Temp</th>
+                      <th>Fan Speed</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>16:05:22 UTC</td>
+                      <td>Phase-Shift Transformer A1</td>
+                      <td>24°C</td>
+                      <td>58°C</td>
+                      <td><strong>92% PWM</strong></td>
+                      <td>
+                        <span
+                          class="badge badge-completed"
+                          style="
+                            background: rgba(139, 0, 0, 0.1);
+                            color: #0fcc7c;
+                          "
+                          >Optimal</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>16:04:10 UTC</td>
+                      <td>BESS Inverter Rack 04</td>
+                      <td>26°C</td>
+                      <td>64°C</td>
+                      <td><strong>100% PWM</strong></td>
+                      <td>
+                        <span
+                          class="badge badge-completed"
+                          style="
+                            background: rgba(139, 0, 0, 0.1);
+                            color: #0fcc7c;
+                          "
+                          >Mitigating</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>16:02:45 UTC</td>
+                      <td>Main Busbar Junction</td>
+                      <td>22°C</td>
+                      <td>38°C</td>
+                      <td><strong>45% PWM</strong></td>
+                      <td>
+                        <span
+                          class="badge badge-processing"
+                          style="
+                            background: rgba(59, 130, 246, 0.2);
+                            color: #3b82f6;
+                          "
+                          >Idling</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="glass-card mt-4">
+              <div class="section-header">
+                <h3>Critical Heat Thresholds & Fire Suppression</h3>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="icon-btn-small"
+                >
+                  <span class="material-icons"
+                    ><i class="fa-solid fa-fire-extinguisher"></i
+                  ></span>
+                </button>
+              </div>
+              <hr class="divider" style="opacity: 0.1; margin: 15px 0" />
+              <div class="grid-2-col">
+                <div>
+                  <p class="text-muted text-sm">Emergency Trip Point</p>
+                  <h4 class="mt-2" style="color: #f8fafc">
+                    95°C (Auto-Shutdown)
+                  </h4>
+                  <p
+                    class="mt-2"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 8px;
+                      font-size: 0.9rem;
+                    "
+                  >
+                    <span
+                      class="material-icons text-muted"
+                      style="font-size: 1rem; color: #0fcc7c"
+                    >
+                      <i class="fa-solid fa-triangle-exclamation"></i>
+                    </span>
+                    Failsafe Isolation Enabled
+                  </p>
+                </div>
+                <div>
+                  <p class="text-muted text-sm">Exhaust Protocol</p>
+                  <h4 class="mt-2" style="color: #f8fafc">
+                    Cryo-Vent Induction
+                  </h4>
+                  <p
+                    class="mt-2"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 8px;
+                      font-size: 0.9rem;
+                    "
+                  >
+                    <span
+                      class="material-icons text-muted"
+                      style="font-size: 1rem"
+                    >
+                      <i class="fa-solid fa-wind"></i>
+                    </span>
+                    Negative Pressure Active
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="glass-card mt-4"
+              style="border-left: 4px solid #0fcc7c"
+            >
+              <div class="section-header">
+                <h3>Thermal Dissipation Units</h3>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="btn-outline btn-sm"
+                >
+                  Calibrate Sensors
+                </button>
+              </div>
+              <div
+                class="consent-item mt-3"
+                style="justify-content: space-between"
+              >
+                <div style="display: flex; gap: 16px; align-items: center">
+                  <span
+                    class="material-icons"
+                    style="font-size: 2rem; color: #0fcc7c"
+                  >
+                    <i class="fa-solid fa-snowflake"></i>
+                  </span>
+                  <div>
+                    <h4 style="color: #f8fafc">
+                      Industrial Chiller Node •••• 9801
+                    </h4>
+                    <p class="text-muted text-sm">
+                      Refrigerant Flow: Stable | Current Load: 42%
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="icon-btn-small"
+                >
+                  <span class="material-icons"
+                    ><i class="fa-regular fa-snowflake"></i
+                  ></span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-logs" class="content-view active-view">
+            <div class="section-header">
+              <div>
+                <h2
+                  style="margin-bottom: 10px; color: #f8fafc; margin-top: 15px"
+                >
+                  Clinical Safety & Algorithmic Governance
+                </h2>
+                <p class="text-muted">
+                  Monitor real-time patient bio-telemetry, sensor calibration
+                  accuracy, and regulatory safety protocols across all
+                  autonomous diagnostic units.
+                </p>
+              </div>
+            </div>
+
+            <div class="data-table-wrapper glass-card">
+              <table class="clinical-table">
+                <thead>
+                  <tr>
+                    <th>Last Audit Scan</th>
+                    <th>Medical Entity</th>
+                    <th>Sensor Variance (SV)</th>
+                    <th>Clinical Alignment</th>
+                    <th>Ethical Status</th>
+                    <th>Compliance Log</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Apr 08, 14:30</td>
+                    <td><strong>VitalSync Monitor v3</strong></td>
+                    <td style="color: #0fcc7c">Negligible (0.02%)</td>
+                    <td>
+                      99.8%
+                      <span class="material-icons" style="font-size: 1rem">
+                        <i class="fa-solid fa-check-double"></i>
+                      </span>
+                    </td>
+                    <td>
+                      <span
+                        class="badge"
+                        style="
+                          background: rgba(139, 0, 0, 0.1);
+                          color: #0fcc7c;
+                          border: 1px solid rgba(139, 0, 0, 0.2);
+                        "
+                        >Certified</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        onclick="window.location.href = './error.html'"
+                        class="btn-outline btn-sm"
+                      >
+                        REVIEW
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Apr 08, 12:15</td>
+                    <td><strong>Dosage Control Node</strong></td>
+                    <td style="color: #0fcc7c">Optimal (LCR 120%)</td>
+                    <td>98.5%</td>
+                    <td>
+                      <span
+                        class="badge"
+                        style="
+                          background: rgba(139, 0, 0, 0.1);
+                          color: #0fcc7c;
+                          border: 1px solid rgba(139, 0, 0, 0.2);
+                        "
+                        >Certified</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        onclick="window.location.href = './error.html'"
+                        class="btn-outline btn-sm"
+                      >
+                        REVIEW
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Apr 07, 22:00</td>
+                    <td><strong>Diagnostic Inference Bot</strong></td>
+                    <td style="color: #f5c518">Drift Detected (High)</td>
+                    <td style="color: #f5c518">
+                      84.2%
+                      <span class="material-icons" style="font-size: 1rem">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                      </span>
+                    </td>
+                    <td>
+                      <span
+                        class="badge"
+                        style="
+                          background: rgba(245, 197, 24, 0.1);
+                          color: #f5c518;
+                          border: 1px solid rgba(245, 197, 24, 0.2);
+                        "
+                        >Recalibrating</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        onclick="window.location.href = './error.html'"
+                        class="btn-outline btn-sm"
+                      >
+                        FIX BIAS
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="mt-4 mb-4" style="color: #f8fafc">
+              Patient Safety Rails & Bio-Ethical Gateways
+            </h3>
+            <div class="grid-2-col">
+              <div
+                class="consent-item glass-card"
+                style="justify-content: space-between"
+              >
+                <div style="display: flex; gap: 16px; align-items: center">
+                  <span
+                    class="material-icons file-icon"
+                    style="color: #0fcc7c; margin: 0"
+                  >
+                    <i class="fa-solid fa-scale-balanced"></i>
+                  </span>
+                  <div>
+                    <h4>Explainable Med-AI (XMAI)</h4>
+                    <p class="text-muted text-sm">
+                      STATUS: Online | Traceable Diagnostic Logic
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="icon-btn-small"
+                >
+                  <span class="material-icons"
+                    ><i class="fa-solid fa-code-compare"></i
+                  ></span>
+                </button>
+              </div>
+              <div
+                class="consent-item glass-card"
+                style="justify-content: space-between"
+              >
+                <div style="display: flex; gap: 16px; align-items: center">
+                  <span
+                    class="material-icons file-icon"
+                    style="color: #0fcc7c; margin: 0"
+                  >
+                    <i class="fa-solid fa-user-shield"></i>
+                  </span>
+                  <div>
+                    <h4>HIPAA Privacy Compute</h4>
+                    <p class="text-muted text-sm">
+                      Zero-Knowledge Proofs Active | 100% PHI Masked
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="icon-btn-small"
+                >
+                  <span class="material-icons"
+                    ><i class="fa-solid fa-fingerprint"></i
+                  ></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="glass-card mt-4">
+              <h3>Regulatory Framework & Audit Trail</h3>
+              <p class="text-muted mb-3">
+                Real-time monitoring of device decisions against FDA Class
+                II/III standards, ISO 13485 requirements, and international
+                patient safety mandates.
+              </p>
+              <div class="data-table-wrapper">
+                <table class="clinical-table">
+                  <thead>
+                    <tr>
+                      <th>Regulatory Body</th>
+                      <th>Compliance Tier</th>
+                      <th>Last Verification</th>
+                      <th>Operational Outlook</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>#FDA-21-CFR-11 (Digital Health)</strong></td>
+                      <td>Class II (High-Risk Dx)</td>
+                      <td>
+                        <span
+                          class="badge"
+                          style="
+                            background: rgba(59, 130, 246, 0.2);
+                            color: #3b82f6;
+                          "
+                          >Verified Active</span
+                        >
+                      </td>
+                      <td class="text-muted">Full Adherence</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div
+              class="glass-card mt-4"
+              style="border-left: 4px solid #0fcc7c"
+            >
+              <div class="section-header">
+                <h3>Clinical Integrity Reconciliation</h3>
+                <span class="text-muted text-sm"
+                  >Neural Diagnostic Audit - Last 24 Hours</span
+                >
+              </div>
+              <div
+                style="
+                  width: 100%;
+                  height: 250px;
+                  background: rgba(139, 0, 0, 0.02);
+                  border-radius: 8px;
+                  border: 1px dashed rgba(139, 0, 0, 0.2);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-direction: column;
+                  padding: 20px;
+                  text-align: center;
+                "
+              >
+                <span
+                  class="material-icons"
+                  style="font-size: 3rem; color: #0fcc7c; opacity: 0.6"
+                >
+                  <i class="fa-solid fa-heart-pulse"></i>
+                </span>
+                <p class="text-muted mt-2">
+                  Diagnostic networks are currently synchronized with the
+                  Medical Ethics Ledger. All therapeutic decision-making paths
+                  have been audited for clinical accuracy and
+                  non-discrimination.
+                </p>
+                <a href="./error.html">
+                  <button
+                    class="btn-outline btn-sm mt-3"
+                    style="color: #0fcc7c; border-color: #0fcc7c"
+                  >
+                    Generate Clinical Certificate (PDF)
+                  </button>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./script.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 1000,
+    easing: "ease-out-cubic",
+    startEvent: "aos:ready", // manual trigger
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // =========================
+    // ✅ GET USER EMAIL
+    // =========================
+    const userEmailDisplay = document.getElementById("userEmailDisplay");
+    const dropdownEmail = document.getElementById("dropdown-email");
+    const greetingEl = document.getElementById("greeting");
+    const avatarBtn = document.getElementById("profile-avatar");
+
+    const activeEmail =
+      sessionStorage.getItem("userEmail") ||
+      sessionStorage.getItem("adminEmail");
+
+    if (!activeEmail) {
+      window.location.href = "login.html";
+      return;
+    }
+
+    // Show email
+    if (userEmailDisplay) {
+      userEmailDisplay.textContent = activeEmail;
+    }
+
+    if (dropdownEmail) {
+      dropdownEmail.textContent = activeEmail;
+    }
+
+    // Greeting (name from email)
+    if (greetingEl) {
+      let name = activeEmail.split("@")[0];
+      name = name.charAt(0).toUpperCase() + name.slice(1);
+      greetingEl.textContent = `Hello, ${name}`;
+    }
+
+    // Avatar first letter
+    if (avatarBtn) {
+      avatarBtn.textContent = activeEmail.charAt(0).toUpperCase();
+    }
+
+    // =========================
+    // ✅ PROFILE DROPDOWN
+    // =========================
+    const profileDropdown = document.getElementById("profile-dropdown");
+
+    if (avatarBtn && profileDropdown) {
+      avatarBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        profileDropdown.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (event) => {
+        if (
+          profileDropdown.classList.contains("active") &&
+          !profileDropdown.contains(event.target) &&
+          event.target !== avatarBtn
+        ) {
+          profileDropdown.classList.remove("active");
+        }
+      });
+    }
+
+    // =========================
+    // ✅ CHARTS FUNCTION
+    // =========================
+    function initCharts() {
+      const glucoseCtx = document.getElementById("glucoseChart");
+      if (glucoseCtx) {
+        new Chart(glucoseCtx, {
+          type: "line",
+          data: {
+            labels: ["Jan", "Feb", "Mar"],
+            datasets: [
+              {
+                label: "Glucose",
+                data: [95, 102, 110],
+                borderColor: "#00D4FF",
+                backgroundColor: "rgba(0,212,255,0.1)",
+                tension: 0.4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      }
+
+      const cholCtx = document.getElementById("cholesterolChart");
+      if (cholCtx) {
+        new Chart(cholCtx, {
+          type: "bar",
+          data: {
+            labels: ["LDL", "HDL", "Total"],
+            datasets: [
+              {
+                label: "Cholesterol",
+                data: [95, 55, 180],
+                backgroundColor: "rgba(16,185,129,0.6)",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      }
+    }
+
+    // =========================
+    // ✅ SIDEBAR NAVIGATION
+    // =========================
+    const sidebarLinks = document.querySelectorAll(
+      ".sidebar-link[data-target]",
+    );
+    const contentViews = document.querySelectorAll(".content-view");
+    const sidebar = document.getElementById("sidebar");
+
+    sidebarLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        sidebarLinks.forEach((l) => l.classList.remove("active"));
+        this.classList.add("active");
+
+        contentViews.forEach((view) => view.classList.remove("active-view"));
+
+        const targetId = this.getAttribute("data-target");
+        const targetView = document.getElementById(targetId);
+
+        if (targetView) {
+          targetView.classList.add("active-view");
+
+          // Load charts only when analytics tab opens
+          if (targetId === "view-analytics") {
+            initCharts();
+          }
+        }
+
+        if (window.innerWidth <= 768 && sidebar) {
+          sidebar.classList.remove("mobile-open");
+        }
+      });
+    });
+
+    // =========================
+    // ✅ MOBILE SIDEBAR
+    // =========================
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const closeSidebarBtn = document.getElementById("close-sidebar");
+
+    if (mobileMenuBtn && sidebar) {
+      mobileMenuBtn.addEventListener("click", () => {
+        sidebar.classList.add("mobile-open");
+      });
+    }
+
+    if (closeSidebarBtn && sidebar) {
+      closeSidebarBtn.addEventListener("click", () => {
+        sidebar.classList.remove("mobile-open");
+      });
+    }
+
+    document.addEventListener("click", (event) => {
+      if (!sidebar || !mobileMenuBtn) return;
+
+      const isClickInsideSidebar = sidebar.contains(event.target);
+      const isClickOnHamburger = mobileMenuBtn.contains(event.target);
+
+      if (
+        !isClickInsideSidebar &&
+        !isClickOnHamburger &&
+        sidebar.classList.contains("mobile-open")
+      ) {
+        sidebar.classList.remove("mobile-open");
+      }
+    });
+  });
+</script> -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const userEmailDisplay = document.getElementById("userEmailDisplay");
+    const dropdownEmail = document.getElementById("dropdown-email");
+    const greetingEl = document.getElementById("greeting");
+    const avatarBtn = document.getElementById("profile-avatar");
+
+    // ✅ Correct keys
+    const activeEmail = sessionStorage.getItem("loggedInUser");
+    const role = sessionStorage.getItem("role");
+
+    if (!activeEmail) {
+      window.location.href = "login.html";
+      return;
+    }
+
+    // 🔐 Restrict admin page
+    if (role !== "admin") {
+      window.location.href = "dashboard.html";
+      return;
+    }
+
+    // ✅ Show email
+    if (userEmailDisplay) userEmailDisplay.textContent = activeEmail;
+    if (dropdownEmail) dropdownEmail.textContent = activeEmail;
+
+    // ✅ Greeting
+    if (greetingEl) {
+      let name = activeEmail.split("@")[0];
+      name = name.charAt(0).toUpperCase() + name.slice(1);
+      greetingEl.textContent = `Hey, ${name}`;
+    }
+
+    // ✅ Avatar
+    if (avatarBtn) {
+      avatarBtn.textContent = activeEmail.charAt(0).toUpperCase();
+    }
+
+    // =========================
+    // PROFILE DROPDOWN
+    // =========================
+    const profileDropdown = document.getElementById("profile-dropdown");
+
+    if (avatarBtn && profileDropdown) {
+      avatarBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        profileDropdown.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (event) => {
+        if (
+          profileDropdown.classList.contains("active") &&
+          !profileDropdown.contains(event.target) &&
+          event.target !== avatarBtn
+        ) {
+          profileDropdown.classList.remove("active");
+        }
+      });
+    }
+
+    // =========================
+    // CHARTS
+    // =========================
+    function initCharts() {
+      const glucoseCtx = document.getElementById("glucoseChart");
+      if (glucoseCtx) {
+        new Chart(glucoseCtx, {
+          type: "line",
+          data: {
+            labels: ["Jan", "Feb", "Mar"],
+            datasets: [
+              {
+                label: "Glucose",
+                data: [95, 102, 110],
+                borderColor: "#00D4FF",
+                backgroundColor: "rgba(0,212,255,0.1)",
+                tension: 0.4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      }
+
+      const cholCtx = document.getElementById("cholesterolChart");
+      if (cholCtx) {
+        new Chart(cholCtx, {
+          type: "bar",
+          data: {
+            labels: ["LDL", "HDL", "Total"],
+            datasets: [
+              {
+                label: "Cholesterol",
+                data: [95, 55, 180],
+                backgroundColor: "rgba(16,185,129,0.6)",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      }
+    }
+
+    // =========================
+    // SIDEBAR NAV
+    // =========================
+    const sidebarLinks = document.querySelectorAll(
+      ".sidebar-link[data-target]",
+    );
+    const contentViews = document.querySelectorAll(".content-view");
+    const sidebar = document.getElementById("sidebar");
+
+    sidebarLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        sidebarLinks.forEach((l) => l.classList.remove("active"));
+        this.classList.add("active");
+
+        contentViews.forEach((view) => view.classList.remove("active-view"));
+
+        const targetId = this.getAttribute("data-target");
+        const targetView = document.getElementById(targetId);
+
+        if (targetView) {
+          targetView.classList.add("active-view");
+
+          if (targetId === "view-analytics") {
+            initCharts();
+          }
+        }
+
+        if (window.innerWidth <= 768 && sidebar) {
+          sidebar.classList.remove("mobile-open");
+        }
+      });
+    });
+
+    // =========================
+    // MOBILE SIDEBAR
+    // =========================
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const closeSidebarBtn = document.getElementById("close-sidebar");
+
+    if (mobileMenuBtn && sidebar) {
+      mobileMenuBtn.addEventListener("click", () => {
+        sidebar.classList.add("mobile-open");
+      });
+    }
+
+    if (closeSidebarBtn && sidebar) {
+      closeSidebarBtn.addEventListener("click", () => {
+        sidebar.classList.remove("mobile-open");
+      });
+    }
+
+    document.addEventListener("click", (event) => {
+      if (!sidebar || !mobileMenuBtn) return;
+
+      if (
+        !sidebar.contains(event.target) &&
+        !mobileMenuBtn.contains(event.target) &&
+        sidebar.classList.contains("mobile-open")
+      ) {
+        sidebar.classList.remove("mobile-open");
+      }
+    });
+  });
+</script>

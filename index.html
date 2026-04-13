@@ -1,0 +1,2409 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electric Battery Industry</title>
+    <link rel="icon" href="./Assets/icon.webp" />
+    <link rel="stylesheet" href="./index.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header1">
+        <div class="container1">
+          <h3>Welcome to Stackly – Shopping Service Connect and Enjoy</h3>
+        </div>
+        <div class="container2">
+          <div>
+            <i class="fa-solid fa-phone-volume"></i>
+            <p>(123)456-7890</p>
+          </div>
+          <div>
+            <i class="fa-regular fa-envelope"></i>
+            <p>Support@stackly.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="header2">
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./Assets/logo.webp" alt="Logo" />
+          </a>
+        </div>
+
+        <div class="div">
+          <nav>
+            <ul>
+              <li class="dropdown">
+                <a href="./index.html">Home</a>
+
+                <!-- <span class="drop-toggle">
+                  <i class="fa-solid fa-caret-down"></i>
+                </span> -->
+
+                <ul class="dropdown-menu">
+                  <li><a href="./index2.html">Home 2</a></li>
+                </ul>
+              </li>
+
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./service.html">Services</a></li>
+              <li><a href="./blog.html">Blog</a></li>
+              <li><a href="./contact.html">Contact Us</a></li>
+              <!-- <li><a href="./dashboard.html">Dashboard</a></li> -->
+            </ul>
+          </nav>
+
+          <div class="icons">
+            <div
+              class="cart-trigger"
+              onclick="toggleCart()"
+              style="
+                cursor: pointer;
+                color: #0fcc7c;
+                position: relative;
+                font-size: 24px;
+              "
+            >
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span
+                id="cart-count"
+                style="
+                  position: absolute;
+                  top: -10px;
+                  right: -10px;
+                  background: white;
+                  color: black;
+                  font-size: 12px;
+                  padding: 2px 6px;
+                  border-radius: 50%;
+                  font-weight: bold;
+                "
+                >0</span
+              >
+            </div>
+
+            <div class="login">
+              <a href="./login.html">
+                <button class="log-btn">Login</button>
+              </a>
+            </div>
+
+            <div class="mobilebar">
+              <div class="hamburger-box">
+                <div class="hamburger">
+                  <div class="line line1"></div>
+                  <div class="line line2"></div>
+                  <div class="line line3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li class="has-dropdown menu-item">
+          <div class="dropdown-header">
+            <a href="./index.html">Home</a>
+            <!-- <span class="drop-caret" id="home-caret">▾</span> -->
+          </div>
+          <!-- <ul class="submenu" id="home-dropdown">
+            <li><a href="./index2.html">Home 2</a></li>
+          </ul> -->
+        </li>
+
+        <li class="menu-item">
+          <a href="./about.html">About</a>
+        </li>
+        <li class="menu-item">
+          <a href="./service.html">Services</a>
+        </li>
+        <li class="menu-item">
+          <a href="./blog.html">Blog</a>
+        </li>
+        <li class="menu-item">
+          <a href="./contact.html">Contact Us</a>
+        </li>
+        <!-- <li class="menu-item">
+          <a href="./dashboard.html">Dashboard</a>
+        </li> -->
+        <li class="menu-item">
+          <a href="./login.html">Login</a>
+        </li>
+      </ul>
+
+      <div class="sidebar-login">
+        <!-- <a href="./app.html">
+            <button class="login-btn">Buy Now</button>
+          </a> -->
+      </div>
+    </div>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h2 style="color: #90ee90">Shopping Cart</h2>
+        <span class="close-cart" onclick="toggleCart()">&times;</span>
+      </div>
+      <div id="cart-items-container">
+        <p style="text-align: center; margin-top: 50px; color: #666">
+          Your cart is empty.
+        </p>
+      </div>
+      <div class="cart-footer">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+          "
+        >
+          <span>Total:</span>
+          <span style="color: #90ee90; font-weight: bold"
+            >$<span id="total-price">0</span></span
+          >
+        </div>
+        <a href="./error.html">
+          <button
+            class="login-btn"
+            style="width: 100%; background: #90ee90; color: black; border: none"
+          >
+            Checkout Now
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- hero -->
+
+    <section class="hero-split">
+      <div class="hero-container">
+        <div class="hero-text-side">
+          <div class="badge" style="border-color: #0fcc7c; color: #0fcc7c">
+            Next-Gen Energy Solutions 2026
+          </div>
+
+          <h1 class="hero-title">
+            Powering Progress.
+            <span class="neon-text" style="color: #0fcc7c">Charge Faster.</span>
+          </h1>
+
+          <p class="hero-subtext">
+            Revolutionizing the electric industry with high-density lithium-ion
+            technology. From sustainable grid storage to ultra-long-range EV
+            battery packs designed for the future of mobility.
+          </p>
+
+          <div class="hero-btns">
+            <a href="./error.html">
+              <button
+                class="btn-primary"
+                style="background-color: #0fcc7c; border: none"
+              >
+                <i class="fa-solid fa-bolt-lightning"></i> View Solutions
+              </button>
+            </a>
+            <a href="./error.html">
+              <button
+                class="btn-secondary"
+                style="border-color: #0fcc7c; color: #0fcc7c"
+              >
+                <i class="fa-solid fa-microchip"></i> Our Technology
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image-side">
+          <div class="main-image-wrapper">
+            <div class="inner-carousel">
+              <img
+                src="./Assets/EV Charging Station_11zon_11zon.webp"
+                class="slide active"
+                alt="EV Charging Station"
+              />
+              <img
+                src="./Assets/Lithium Battery Cells_11zon_11zon.webp"
+                class="slide"
+                alt="Lithium Battery Cells"
+              />
+              <img
+                src="./Assets/Renewable Energy Storage_11zon_11zon.webp"
+                class="slide"
+                alt="Renewable Energy Storage"
+              />
+            </div>
+
+            <div class="floating-item item-1" style="background: #0fcc7c">
+              <i class="fa-solid fa-car-battery"></i>
+            </div>
+            <div class="floating-item item-2" style="background: #0fcc7c">
+              <i class="fa-solid fa-charging-station"></i>
+            </div>
+            <div class="floating-item item-3" style="background: #0fcc7c">
+              <i class="fa-solid fa-solar-panel"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- sections -->
+
+    <!-- 1 -->
+
+    <section class="categories-section">
+      <div class="section-header">
+        <h2 class="gradient-title">Industrial Battery Solutions</h2>
+        <p>
+          Discover the future of energy storage through our high-performance
+          categories.
+        </p>
+      </div>
+
+      <div class="categories-wrapper">
+        <div class="categories-track">
+          <div class="category-card">
+            <div class="card-img">
+              <img
+                src="./Assets/EV Battery Packs_11zon_11zon.webp"
+                alt="EV Battery Packs"
+              />
+            </div>
+            <div class="card-content">
+              <h3 style="color: #0fcc7c">EV Battery Packs</h3>
+              <p>“High-Density Mobility Power”</p>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="card-img">
+              <img
+                src="./Assets/Solid State Labs_11zon_11zon.webp"
+                alt="Solid State Research"
+              />
+            </div>
+            <div class="card-content">
+              <h3 style="color: #0fcc7c">Solid State Labs</h3>
+              <p>“The Next Frontier of Safety”</p>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="card-img">
+              <img
+                src="./Assets/grid storage_11zon_11zon.webp"
+                alt="Grid Storage"
+              />
+            </div>
+            <div class="card-content">
+              <h3 style="color: #0fcc7c">Grid Storage</h3>
+              <p>“Sustainable Urban Support”</p>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="card-img">
+              <img
+                src="./Assets/battery recycling_11zon_11zon.webp"
+                alt="Battery Recycling"
+              />
+            </div>
+            <div class="card-content">
+              <h3 style="color: #0fcc7c">Circular Economy</h3>
+              <p>“Eco-Friendly Cell Recovery”</p>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="card-img">
+              <img
+                src="./Assets/Industrial Robotics_11zon_11zon.webp"
+                alt="Industrial Robotics"
+              />
+            </div>
+            <div class="card-content">
+              <h3 style="color: #0fcc7c">Industrial Power</h3>
+              <p>“Heavy-Duty Automation Cells”</p>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="card-img">
+              <img
+                src="./Assets/BMS Technology_11zon_11zon.webp"
+                alt="BMS Technology"
+              />
+            </div>
+            <div class="card-content">
+              <h3 style="color: #0fcc7c">BMS Intelligence</h3>
+              <p>“Smart Thermal Monitoring”</p>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="card-img">
+              <img
+                src="./Assets/Aerospace Battery Tech_11zon_11zon.webp"
+                alt="Aerospace Battery Tech"
+              />
+            </div>
+            <div class="card-content">
+              <h3 style="color: #0fcc7c">Aerospace Power</h3>
+              <p>“Lightweight High-Altitude Cells”</p>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="card-img">
+              <img
+                src="./Assets/Hydrogen Fuel Cell_11zon_11zon.webp"
+                alt="Hydrogen Fuel Cell"
+              />
+            </div>
+            <div class="card-content">
+              <h3 style="color: #0fcc7c">Hybrid Solutions</h3>
+              <p>“Hydrogen-Electric Integration”</p>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="card-img">
+              <img
+                src="./Assets/Power Station_11zon_11zon.webp"
+                alt="Portable Power Station"
+              />
+            </div>
+            <div class="card-content">
+              <h3 style="color: #0fcc7c">Portable Storage</h3>
+              <p>“Off-Grid Energy Independence”</p>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="card-img">
+              <img
+                src="./Assets/Lithium Mining_11zon_11zon.webp"
+                alt="Lithium Mining"
+              />
+            </div>
+            <div class="card-content">
+              <h3 style="color: #0fcc7c">Resource Supply</h3>
+              <p>“Sustainable Lithium Sourcing”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+
+    <section class="trending-section">
+      <div class="section-header">
+        <h2 class="gradient-title">Trending Energy Solutions</h2>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="wishlist-btn"><i class="fa-regular fa-heart"></i></div>
+          <div class="product-img">
+            <img
+              src="./Assets/EV Battery Packs_11zon_11zon.webp"
+              alt="EV Battery Pack"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="bat-001"
+                data-name="Lithium-Ion EV Pack"
+                data-price="4500"
+                data-img="./Assets/EV Battery Packs_11zon_11zon.webp"
+              >
+                Add To Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Next-Gen Lithium-Ion EV Battery Pack</h3>
+            <div class="product-meta">
+              <span class="price">₹4,500</span>
+              <span class="rating">⭐ 4.9</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="wishlist-btn"><i class="fa-regular fa-heart"></i></div>
+          <div class="product-img">
+            <img
+              src="./Assets/Solar Battery_11zon_11zon.webp"
+              alt="Solar Battery"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="bat-002"
+                data-name="Home Solar Wall"
+                data-price="125000"
+                data-img="./Assets/Solar Battery_11zon_11zon.webp"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Residential Solar Storage Wall - 10kWh</h3>
+            <div class="product-meta">
+              <span class="price">₹1,25,000</span>
+              <span class="rating">⭐ 4.8</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="wishlist-btn"><i class="fa-regular fa-heart"></i></div>
+          <div class="product-img">
+            <img
+              src="./Assets/Power Station_11zon_11zon.webp"
+              alt="Power Station"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="bat-003"
+                data-name="Portable Power Station"
+                data-price="94999"
+                data-img="./Assets/Power Station_11zon_11zon.webp"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Portable 500W Power Station</h3>
+            <div class="product-meta">
+              <span class="price">₹94,999</span>
+              <span class="rating">⭐ 4.7</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="wishlist-btn"><i class="fa-regular fa-heart"></i></div>
+          <div class="product-img">
+            <img
+              src="./Assets/BMS Controller_11zon_11zon.webp"
+              alt="BMS Controller"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="bat-004"
+                data-name="Industrial BMS"
+                data-price="15900"
+                data-img="./Assets/BMS Controller_11zon_11zon.webp"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Advanced Battery Management System (BMS)</h3>
+            <div class="product-meta">
+              <span class="price">₹15,900</span>
+              <span class="rating">⭐ 4.6</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="wishlist-btn"><i class="fa-regular fa-heart"></i></div>
+          <div class="product-img">
+            <img
+              src="./Assets/Lithium Cells_11zon_11zon.webp"
+              alt="Lithium Cells"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="bat-005"
+                data-name="LiFePO4 Cell Kit"
+                data-price="8500"
+                data-img="./Assets/Lithium Cells_11zon_11zon.webp"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Prismatic LiFePO4 Cell - 3.2V 200Ah</h3>
+            <div class="product-meta">
+              <span class="price">₹8,500</span>
+              <span class="rating">⭐ 4.8</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="wishlist-btn"><i class="fa-regular fa-heart"></i></div>
+          <div class="product-img">
+            <img
+              src="./Assets/Marine Battery_11zon_11zon.webp"
+              alt="Marine Battery"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="bat-006"
+                data-name="Deep Cycle Marine"
+                data-price="24500"
+                data-img="./Assets/Marine Battery_11zon_11zon.webp"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Deep Cycle Marine Lithium Battery</h3>
+            <div class="product-meta">
+              <span class="price">₹24,500</span>
+              <span class="rating">⭐ 4.5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="wishlist-btn"><i class="fa-regular fa-heart"></i></div>
+          <div class="product-img">
+            <img
+              src="./Assets/EV Charger_11zon_11zon.webp"
+              alt="EV Charger"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="bat-007"
+                data-name="Wallbox Charger"
+                data-price="65000"
+                data-img="./Assets/EV Charger_11zon_11zon.webp"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>7.4kW Smart EV Wallbox Charger</h3>
+            <div class="product-meta">
+              <span class="price">₹65,000</span>
+              <span class="rating">⭐ 4.9</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="wishlist-btn"><i class="fa-regular fa-heart"></i></div>
+          <div class="product-img">
+            <img
+              src="./Assets/Battery Tester_11zon_11zon.webp"
+              alt="Battery Tester"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="bat-008"
+                data-name="Cell Tester Pro"
+                data-price="12999"
+                data-img="./Assets/Battery Tester_11zon_11zon.webp"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Digital Internal Resistance Tester</h3>
+            <div class="product-meta">
+              <span class="price">₹12,999</span>
+              <span class="rating">⭐ 4.7</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="wishlist-btn"><i class="fa-regular fa-heart"></i></div>
+          <div class="product-img">
+            <img
+              src="./Assets/Inverter_11zon_11zon.webp"
+              alt="Inverter"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="bat-009"
+                data-name="Hybrid Inverter"
+                data-price="48500"
+                data-img="./Assets/Inverter_11zon_11zon.webp"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>5kVA Pure Sine Wave Hybrid Inverter</h3>
+            <div class="product-meta">
+              <span class="price">₹48,500</span>
+              <span class="rating">⭐ 4.6</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="wishlist-btn"><i class="fa-regular fa-heart"></i></div>
+          <div class="product-img">
+            <img
+              src="./Assets/Thermal Liquid_11zon_11zon.webp"
+              alt="Thermal Liquid"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="bat-010"
+                data-name="Thermal Coolant"
+                data-price="4500"
+                data-img="./Assets/Thermal Liquid_11zon_11zon.webp"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>EV Dielectric Battery Coolant Liquid</h3>
+            <div class="product-meta">
+              <span class="price">₹4,500</span>
+              <span class="rating">⭐ 4.8</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 -->
+
+    <section class="flash-sale-wrap">
+      <div class="flash-container">
+        <div class="sale-info">
+          <div class="sale-badge">⚡ Limited Time Battery Launch Sale</div>
+          <h2 class="sale-headline">
+            High-Capacity Deals <br />
+            <span class="neon-text" style="color: #0fcc7c"
+              >Live For 365 Days!</span
+            >
+          </h2>
+          <p class="sale-subtext">
+            Our biggest energy innovation event is here. Grab high-density
+            lithium-ion cells and advanced storage solutions at baseline prices
+            all year round.
+          </p>
+
+          <div class="countdown-grid">
+            <div class="time-block">
+              <span id="days-val">000</span>
+              <p>Days</p>
+            </div>
+            <div class="time-sep">:</div>
+            <div class="time-block">
+              <span id="hours-val">00</span>
+              <p>Hours</p>
+            </div>
+            <div class="time-sep">:</div>
+            <div class="time-block">
+              <span id="minutes-val">00</span>
+              <p>Mins</p>
+            </div>
+            <div class="time-sep">:</div>
+            <div class="time-block">
+              <span id="seconds-val">00</span>
+              <p>Secs</p>
+            </div>
+          </div>
+
+          <div class="stock-container">
+            <div class="stock-meta">
+              <span>Production Batch Progress: 15%</span>
+              <span class="pulse-dot" style="background: #0fcc7c"></span>
+            </div>
+            <div class="progress-track">
+              <div
+                class="progress-fill"
+                id="deal-progress"
+                style="background: #0fcc7c; width: 15%"
+              ></div>
+            </div>
+          </div>
+
+          <a href="/error.html">
+            <button
+              class="cta-deal-btn"
+              style="
+                background: #0fcc7c;
+                border: none;
+                color: #fff;
+                padding: 12px 24px;
+                cursor: pointer;
+              "
+            >
+              Explore Battery Deals
+            </button>
+          </a>
+        </div>
+
+        <div class="sale-visual">
+          <div class="image-border-glow" style="border-color: #0fcc7c">
+            <img
+              src="./Assets/ad_11zon_11zon.webp"
+              alt="Electric Battery Sale"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 -->
+
+    <section class="best-sellers-section">
+      <div class="section-header">
+        <div class="gradient-title">🔥 Best Seller</div>
+        <h2 class="section-title">
+          Industry favorites
+          <span class="green-glow" style="color: #0fcc7c">you can’t miss</span>
+        </h2>
+      </div>
+
+      <div class="horizontal-scroll-wrapper">
+        <div class="scroll-container" id="best-seller-loop">
+          <div class="seller-card featured">
+            <div class="card-img-wrap">
+              <img
+                src="./Assets/Titan-Cell EV Pack_11zon_11zon.webp"
+                alt="EV Battery Pack"
+              />
+              <div class="card-overlay">
+                <a href="./error.html">
+                  <button class="view-btn">Quick View</button>
+                </a>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3>Titan-Cell EV Pack</h3>
+              <p>₹4,50,000</p>
+            </div>
+          </div>
+
+          <div class="seller-card">
+            <div class="card-img-wrap">
+              <img
+                src="./Assets/Solar Wall Pro 10k_11zon_11zon.webp"
+                alt="Home Storage"
+              />
+              <div class="card-overlay">
+                <a href="./error.html">
+                  <button class="view-btn">Quick View</button>
+                </a>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3>Solar Wall Pro 10k</h3>
+              <p>₹1,25,000</p>
+            </div>
+          </div>
+
+          <div class="seller-card">
+            <div class="card-img-wrap">
+              <img
+                src="./Assets/Hyper-Charge Wallbox_11zon_11zon.webp"
+                alt="EV Charger"
+              />
+              <div class="card-overlay">
+                <a href="./error.html">
+                  <button class="view-btn">Quick View</button>
+                </a>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3>Hyper-Charge Wallbox</h3>
+              <p>₹65,000</p>
+            </div>
+          </div>
+
+          <div class="seller-card">
+            <div class="card-img-wrap">
+              <img
+                src="./Assets/Nomad Power Hub 500_11zon_11zon.webp"
+                alt="Portable Station"
+              />
+              <div class="card-overlay">
+                <a href="./error.html">
+                  <button class="view-btn">Quick View</button>
+                </a>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3>Nomad Power Hub 500</h3>
+              <p>₹34,999</p>
+            </div>
+          </div>
+
+          <div class="seller-card">
+            <div class="card-img-wrap">
+              <img
+                src="./Assets/BMS Controller_11zon_11zon.webp"
+                alt="BMS Unit"
+              />
+              <div class="card-overlay">
+                <a href="./error.html">
+                  <button class="view-btn">Quick View</button>
+                </a>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3>Smart BMS Controller</h3>
+              <p>₹12,499</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 -->
+
+    <section class="new-arrivals-section">
+      <div class="section-header">
+        <h2 class="gradient-title">
+          Energy Innovation. <span class="neon-highlight">Just released.</span>
+        </h2>
+      </div>
+
+      <div class="arrivals-slider-wrapper">
+        <div class="arrivals-track" id="arrivals-track">
+          <div class="arrival-card">
+            <div class="new-tag">NEW</div>
+            <div class="item-price">₹85,000</div>
+            <img
+              src="./Assets/Graphene Cell_11zon.webp"
+              alt="Graphene Cell"
+            />
+            <div class="card-action-overlay">
+              <button
+                class="add-to-cart-btn"
+                onclick="
+                  handleQuickAdd(
+                    this,
+                    'bt-03',
+                    'Graphene Supercell',
+                    85000,
+                    './Assets/Graphene Cell_11zon.webp',
+                  )
+                "
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="arrival-card">
+            <div class="new-tag">NEW</div>
+            <div class="item-price">₹42,500</div>
+            <img
+              src="./Assets/Active Balancer_11zon_11zon.webp"
+              alt="Active Balancer"
+            />
+            <div class="card-action-overlay">
+              <button
+                class="add-to-cart-btn"
+                onclick="
+                  handleQuickAdd(
+                    this,
+                    'bt-04',
+                    'Active Cell Balancer Pro',
+                    42500,
+                    './Assets/Active Balancer_11zon_11zon.webp',
+                  )
+                "
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="arrival-card">
+            <div class="new-tag">NEW</div>
+            <div class="item-price">₹12,999</div>
+            <img
+              src="./Assets/Mini-Storage Module_11zon_11zon.webp"
+              alt="Portable Module"
+            />
+            <div class="card-action-overlay">
+              <button
+                class="add-to-cart-btn"
+                onclick="
+                  handleQuickAdd(
+                    this,
+                    'bt-05',
+                    'Mini-Storage Module',
+                    12999,
+                    './Assets/Mini-Storage Module_11zon_11zon.webp',
+                  )
+                "
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="arrival-card">
+            <div class="new-tag">NEW</div>
+            <div class="item-price">₹1,15,400</div>
+            <img
+              src="./Assets/Solid State Battery Lab_11zon_11zon.webp"
+              alt="Solid State Battery"
+            />
+            <div class="card-action-overlay">
+              <button
+                class="add-to-cart-btn"
+                onclick="
+                  handleQuickAdd(
+                    this,
+                    'bt-06',
+                    'Solid State Gen-1 Pack',
+                    115400,
+                    './Assets/Solid State Battery Lab_11zon_11zon.webp',
+                  )
+                "
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="arrival-card">
+            <div class="new-tag">NEW</div>
+            <div class="item-price">₹68,000</div>
+            <img
+              src="./Assets/Ultra-Rapid DC Charger_11zon_11zon.webp"
+              alt="Fast Charger"
+            />
+            <div class="card-action-overlay">
+              <button
+                class="add-to-cart-btn"
+                onclick="
+                  handleQuickAdd(
+                    this,
+                    'bt-07',
+                    'Ultra-Rapid DC Charger',
+                    68000,
+                    './Assets/Ultra-Rapid DC Charger_11zon_11zon.webp',
+                  )
+                "
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="arrival-card">
+            <div class="new-tag">NEW</div>
+            <div class="item-price">₹5,200</div>
+            <img
+              src="./Assets/IoT Thermal Monitor_11zon_11zon.webp"
+              alt="IoT Sensor"
+            />
+            <div class="card-action-overlay">
+              <button
+                class="add-to-cart-btn"
+                onclick="
+                  handleQuickAdd(
+                    this,
+                    'bt-08',
+                    'IoT Thermal Monitor',
+                    5200,
+                    './Assets/IoT Thermal Monitor_11zon_11zon.webp',
+                  )
+                "
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section class="brands-section">
+      <div class="brands-container">
+        <p class="brands-subtitle">
+          Powered by industry-leading energy partners
+        </p>
+        <div class="marquee-wrapper">
+          <div class="marquee-content" id="brand-marquee">
+            
+            <div class="brand-item">
+              <a href="./error.html">
+                <img
+                  src="./Assets/Panasonic_11zon-removebg-preview.webp"
+                  alt="Panasonic"
+                />
+              </a>
+            </div>
+            <div class="brand-item">
+              <a href="./error.html">
+                <img
+                  src="./Assets/CATL_11zon-removebg-preview.webp"
+                  alt="CATL"
+                />
+              </a>
+            </div>
+            <div class="brand-item">
+              <a href="./error.html">
+                <img
+                  src="./Assets/BYD_11zon-removebg-preview.webp"
+                  alt="BYD"
+                />
+              </a>
+            </div>
+            <div class="brand-item">
+              <a href="./error.html">
+                <img
+                  src="./Assets/LG_Energy_11zon-removebg-preview.webp"
+                  alt="LG Energy"
+                />
+              </a>
+            </div>
+            <div class="brand-item">
+              <a href="./error.html">
+                <img
+                  src="./Assets/Samsung_SDI_11zon-removebg-preview.webp"
+                  alt="Samsung SDI"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="showcase-banner">
+      <div class="parallax-bg"></div>
+
+      <div class="showcase-content">
+        <h1 class="showcase-title">
+          Power Your
+          <span class="neon-text" style="color: #0fcc7c">Future</span>
+        </h1>
+        <p class="showcase-description">
+          Experience next-gen energy density with high-performance lithium cells
+          and sustainable storage systems.
+        </p>
+        <div class="showcase-actions">
+          <a href="./error.html">
+            <button
+              class="glow-cta"
+              style="
+                background: #0fcc7c;
+                color: #fff;
+                border: none;
+                padding: 15px 30px;
+                font-weight: bold;
+                cursor: pointer;
+                border-radius: 5px;
+                box-shadow: 0 0 15px rgba(15, 204, 124, 0.4);
+              "
+            >
+              Shop Collection
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- pricing -->
+
+    <section class="pricing-section">
+      <div class="section-header">
+        <h2 class="gradient-title">Flexible Energy Solutions</h2>
+        <div class="billing-toggle">
+          <span>Monthly</span>
+          <label class="switch">
+            <input type="checkbox" id="price-toggle" />
+            <span class="slider round"></span>
+          </label>
+          <span
+            >Yearly
+            <small class="discount" style="color: #0fcc7c">-20%</small></span
+          >
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card gsap-price" data-plan="starter">
+          <div class="plan-header">
+            <h3>Starter</h3>
+            <p>Small-scale energy needs</p>
+          </div>
+          <div class="amount">
+            ₹<span class="price-val">4,999</span><small>/mo</small>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> 5kWh Storage Capacity</li>
+            <li><i class="fa-solid fa-check"></i> Single-Phase Support</li>
+            <li><i class="fa-solid fa-check"></i> Mobile App Access</li>
+            <li class="disabled">
+              <i class="fa-solid fa-xmark"></i> Industrial BMS
+            </li>
+          </ul>
+          <a href="./error.html">
+            <button class="plan-btn">Choose Starter</button>
+          </a>
+        </div>
+
+        <div class="price-card popular gsap-price" data-plan="professional">
+          <div class="popular-tag">Most Recommended</div>
+          <div class="plan-header">
+            <h3>Professional</h3>
+            <p>Commercial applications</p>
+          </div>
+          <div class="amount">
+            ₹<span class="price-val">15,999</span><small>/mo</small>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> 25kWh Storage Capacity</li>
+            <li><i class="fa-solid fa-check"></i> Three-Phase Support</li>
+            <li><i class="fa-solid fa-check"></i> Advanced Smart BMS</li>
+            <li><i class="fa-solid fa-check"></i> 24/7 Remote Monitoring</li>
+          </ul>
+          <a href="./error.html">
+            <button class="plan-btn">Go Professional</button>
+          </a>
+        </div>
+
+        <div class="price-card gsap-price" data-plan="enterprise">
+          <div class="plan-header">
+            <h3>Enterprise</h3>
+            <p>Industrial & Grid solutions</p>
+          </div>
+          <div class="amount">Custom</div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> 1MWh+ Grid Storage</li>
+            <li><i class="fa-solid fa-check"></i> Custom System Design</li>
+            <li><i class="fa-solid fa-check"></i> On-site Maintenance</li>
+            <li><i class="fa-solid fa-check"></i> Dedicated Engineer</li>
+          </ul>
+          <a href="./error.html">
+            <button class="plan-btn">Contact Sales</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team  -->
+
+    <section class="team-section">
+      <div class="section-header gsap-reveal">
+        <h2 class="gradient-title">Meet Our Energy Experts</h2>
+        <p class="section-subtitle">
+          A dedicated team of engineers, scientists, and innovators driving the
+          future of energy storage.
+        </p>
+      </div>
+
+      <div class="team-hex-grid">
+        <div class="hex-cell gsap-team-member">
+          <div class="hex-inner">
+            <div class="hex-front">
+              <img
+                src="./Assets/11_11zon.webp"
+                alt="Dr. Aris Thorne"
+              />
+              <div class="hex-glow"></div>
+            </div>
+            <div class="hex-back">
+              <div class="hex-back-content">
+                <h4>Dr. Aris Thorne</h4>
+                <p class="role">Chief Scientist</p>
+                <div class="hex-details">
+                  <span class="detail-item">Lithium-Ion+</span>
+                  <span class="detail-item">Solid State</span>
+                  <span class="detail-item">Quantum Anodes</span>
+                </div>
+                <div class="team-social">
+                  <a href="./error.html"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a href="./error.html"><i class="fa-solid fa-flask"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <svg class="hex-svg" viewBox="0 0 100 115.47">
+            <polygon
+              points="50 0 100 28.867 100 86.603 50 115.47 0 86.603 0 28.867"
+            ></polygon>
+          </svg>
+        </div>
+
+        <div class="hex-cell gsap-team-member">
+          <div class="hex-inner">
+            <div class="hex-front">
+              <img
+                src="./Assets/2_11zon.webp"
+                alt="Elena Petrova"
+              />
+              <div class="hex-glow"></div>
+            </div>
+            <div class="hex-back">
+              <div class="hex-back-content">
+                <h4>Elena Petrova</h4>
+                <p class="role">BMS Engineer</p>
+                <div class="hex-details">
+                  <span class="detail-item">Circuit Design</span>
+                  <span class="detail-item">AI Monitoring</span>
+                  <span class="detail-item">Thermal Opt.</span>
+                </div>
+                <div class="team-social">
+                  <a href="./error.html"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a href="./error.html"
+                    ><i class="fa-solid fa-microchip"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <svg class="hex-svg" viewBox="0 0 100 115.47">
+            <polygon
+              points="50 0 100 28.867 100 86.603 50 115.47 0 86.603 0 28.867"
+            ></polygon>
+          </svg>
+        </div>
+
+        <div class="hex-cell gsap-team-member">
+          <div class="hex-inner">
+            <div class="hex-front">
+              <img
+                src="./Assets/4_11zon.webp"
+                alt="Marcus Chen"
+              />
+              <div class="hex-glow"></div>
+            </div>
+            <div class="hex-back">
+              <div class="hex-back-content">
+                <h4>Marcus Chen</h4>
+                <p class="role">Grid Architect</p>
+                <div class="hex-details">
+                  <span class="detail-item">Micro-Grid Sync</span>
+                  <span class="detail-item">Smart Distribution</span>
+                  <span class="detail-item">Frequency Reg.</span>
+                </div>
+                <div class="team-social">
+                  <a href="./error.html"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a href="./error.html"
+                    ><i class="fa-solid fa-network-wired"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <svg class="hex-svg" viewBox="0 0 100 115.47">
+            <polygon
+              points="50 0 100 28.867 100 86.603 50 115.47 0 86.603 0 28.867"
+            ></polygon>
+          </svg>
+        </div>
+
+        <div class="hex-cell gsap-team-member">
+          <div class="hex-inner">
+            <div class="hex-front">
+              <img
+                src="./Assets/17_11zon.webp"
+                alt="Aisha Khan"
+              />
+              <div class="hex-glow"></div>
+            </div>
+            <div class="hex-back">
+              <div class="hex-back-content">
+                <h4>Aisha Khan</h4>
+                <p class="role">Sustainability Lead</p>
+                <div class="hex-details">
+                  <span class="detail-item">Life-Cycle Audit</span>
+                  <span class="detail-item">Recycling Loop</span>
+                  <span class="detail-item">Carbon Analytics</span>
+                </div>
+                <div class="team-social">
+                  <a href="./error.html"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a href="./error.html"><i class="fa-solid fa-leaf"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <svg class="hex-svg" viewBox="0 0 100 115.47">
+            <polygon
+              points="50 0 100 28.867 100 86.603 50 115.47 0 86.603 0 28.867"
+            ></polygon>
+          </svg>
+        </div>
+
+        <div class="hex-cell gsap-team-member">
+          <div class="hex-inner">
+            <div class="hex-front">
+              <img
+                src="./Assets/Alex Rivers_11zon.webp"
+                alt="Julian Vane"
+              />
+              <div class="hex-glow"></div>
+            </div>
+            <div class="hex-back">
+              <div class="hex-back-content">
+                <h4>Julian Vane</h4>
+                <p class="role">Hardware Specialist</p>
+                <div class="hex-details">
+                  <span class="detail-item">Module Assembly</span>
+                  <span class="detail-item">Ruggedization</span>
+                  <span class="detail-item">Prototyping</span>
+                </div>
+                <div class="team-social">
+                  <a href="./error.html"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a href="./error.html"
+                    ><i class="fa-solid fa-screwdriver-wrench"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <svg class="hex-svg" viewBox="0 0 100 115.47">
+            <polygon
+              points="50 0 100 28.867 100 86.603 50 115.47 0 86.603 0 28.867"
+            ></polygon>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section class="reviews-section">
+      <div class="section-header">
+        <h2 class="gradient-title">
+          What Our
+          <span class="neon-text" style="color: #0fcc7c">Industry</span> Says
+        </h2>
+      </div>
+
+      <div class="reviews-container" id="reviews-slider">
+        <div class="review-card">
+          <div class="rating">⭐⭐⭐⭐⭐ <span>4.8</span></div>
+          <p class="review-text">
+            “The energy density on these cells is unmatched. Our EV prototypes
+            are showing 15% better range. Truly next-gen battery tech.”
+          </p>
+          <div class="user-info">
+            <img src="./Assets/2_11zon.webp" alt="User" />
+            <div>
+              <h4>Rahul Sharma</h4>
+              <span>Fleet Manager</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="rating">⭐⭐⭐⭐⭐ <span>5.0</span></div>
+          <p class="review-text">
+            “Integrated their BMS with our solar farm last month. The UI is
+            incredibly smooth and the thermal monitoring is fire.”
+          </p>
+          <div class="user-info">
+            <img src="./Assets/17_11zon.webp" alt="User" />
+            <div>
+              <h4>Sarah Jenkins</h4>
+              <span>Energy Consultant</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="rating">⭐⭐⭐⭐⭐ <span>4.9</span></div>
+          <p class="review-text">
+            “Support helped me calculate the exact KWh needed for my off-grid
+            setup. Shipping was overnight to Mumbai!”
+          </p>
+          <div class="user-info">
+            <img src="./Assets/4_11zon.webp" alt="User" />
+            <div>
+              <h4>Arjun Mehta</h4>
+              <span>Solar Engineer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="rating">⭐⭐⭐⭐⭐ <span>4.7</span></div>
+          <p class="review-text">
+            “High-grade prismatic cells that actually meet their spec sheet.
+            Highly recommend for industrial power storage.”
+          </p>
+          <div class="user-info">
+            <img src="./Assets/11_11zon.webp" alt="User" />
+            <div>
+              <h4>Priya Das</h4>
+              <span>Systems Architect</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 -->
+    <section class="why-us-section">
+      <div class="section-header">
+        <h2 class="gradient-title">
+          Why
+          <span class="neon-text" style="color: #0fcc7c">Industry Leaders</span>
+          Choose Us
+        </h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="icon-wrap">⚡</div>
+          <h3>Rapid Delivery</h3>
+          <p>Hazardous-grade certified logistics across India.</p>
+        </div>
+        <div class="why-item">
+          <div class="icon-wrap">🛡️</div>
+          <h3>Extended Warranty</h3>
+          <p>Up to 5 years performance guarantee on all cells.</p>
+        </div>
+        <div class="why-item">
+          <div class="icon-wrap">🔬</div>
+          <h3>Quality Certified</h3>
+          <p>BIS, UL, and CE certified energy solutions.</p>
+        </div>
+        <div class="why-item">
+          <div class="icon-wrap">🛠️</div>
+          <h3>Technical Support</h3>
+          <p>Expert engineering assistance for system integration.</p>
+        </div>
+      </div>
+    </section>
+    <!-- 10 -->
+
+    <footer class="main-footer">
+      <div class="footer-grid">
+        <div class="footer-brand gsap-contact">
+          <div class="logo" style="margin-bottom: 20px">
+            <a href="./index.html">
+              <img
+                src="./Assets/logo.webp"
+                alt="Logo"
+                style="max-width: 180px"
+              />
+            </a>
+          </div>
+
+          <p>
+            Powering the future of sustainable mobility. Enter your email to
+            receive technical datasheets and exclusive updates on our latest
+            lithium-ion and solid-state battery innovations.
+          </p>
+        </div>
+
+        <div class="footer-links gsap-contact">
+          <h4>Quick Links</h4>
+
+          <a href="./about.html">About Us</a>
+          <a href="./service.html">Services</a>
+          <a href="./blog.html">Blog</a>
+          <a href="./contact.html">Contact</a>
+          <a href="./login.html">Login</a>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>
+            Stay ahead in energy storage. Subscribe to get notified about
+            production batch availability and high-density cell breakthroughs.
+          </p>
+          <form action="./error.html">
+            <div class="news-input">
+              <input
+                type="email"
+                placeholder="Corporate Email Address"
+                required
+              />
+              <button type="submit">→</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Battery Innovations Ltd. All Rights Reserved.</p>
+        <div class="legal-links">
+          <a href="./error.html">Privacy Policy</a>
+          <a href="./error.html">ISO 9001 Compliance</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./script.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 1000,
+    easing: "ease-out-cubic",
+    startEvent: "aos:ready", // manual trigger
+  });
+</script>
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- hero  / button-->
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+
+    // 1. Reveal Animations
+    tl.to(".badge", { opacity: 1, y: 0, duration: 1 })
+      .to(".hero-title", { opacity: 1, y: 0, duration: 1 }, "-=0.8")
+      .to(".hero-subtext", { opacity: 1, y: 0, duration: 1 }, "-=0.8")
+      .to(".hero-btns", { opacity: 1, y: 0, duration: 1 }, "-=0.8")
+      .to(
+        ".main-image-wrapper",
+        { opacity: 1, scale: 1, duration: 1.2 },
+        "-=1",
+      );
+
+    // 2. Infinite Icon Drift
+    gsap.to(".floating-item", {
+      y: 15,
+      duration: 2.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      stagger: 0.4,
+    });
+
+    // 3. Right-Side Image Loop Logic
+    const slides = document.querySelectorAll(".inner-carousel .slide");
+    let current = 0;
+
+    function cycleImages() {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }
+
+    setInterval(cycleImages, 4000); // Changes image every 4 seconds
+  });
+</script>
+
+<script>
+  document
+    .querySelectorAll(".btn-primary, .btn-secondary")
+    .forEach((button) => {
+      button.addEventListener("click", function (e) {
+        const ripple = document.createElement("span");
+        ripple.classList.add("ripple");
+        this.appendChild(ripple);
+
+        // Calculate position
+        const diameter = Math.max(this.clientWidth, this.clientHeight);
+        const radius = diameter / 2;
+        const rect = this.getBoundingClientRect();
+
+        ripple.style.width = ripple.style.height = `${diameter}px`;
+        ripple.style.left = `${e.clientX - rect.left - radius}px`;
+        ripple.style.top = `${e.clientY - rect.top - radius}px`;
+
+        ripple.addEventListener("animationend", () => {
+          ripple.remove();
+        });
+      });
+    });
+</script>
+
+<!-- sections -->
+
+<!-- 1 -->
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const wrapper = document.querySelector(".categories-wrapper");
+    const firstCard = document.querySelector(".category-card");
+    let isPaused = false;
+
+    // 1. GSAP Entrance Animations
+    // Header fade-in
+    gsap.to(".section-header", {
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      stagger: 0.15,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".categories-section",
+        start: "top 80%",
+      },
+    });
+
+    // Staggered card appearance
+    gsap.to(".category-card", {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".categories-wrapper",
+        start: "top 85%",
+      },
+    });
+
+    // 2. Precise Auto-Scroll Logic
+    function autoScroll() {
+      if (isPaused || !firstCard) return;
+
+      // Calculate gap dynamically from CSS
+      const cardStyle = window.getComputedStyle(firstCard);
+      const gap = parseInt(cardStyle.marginRight) || 30; // Fallback to 30px
+      const scrollDistance = firstCard.offsetWidth + gap;
+
+      const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
+
+      // Reset to beginning if at the end, otherwise move one card over
+      if (wrapper.scrollLeft >= maxScroll - 10) {
+        wrapper.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        wrapper.scrollBy({ left: scrollDistance, behavior: "smooth" });
+      }
+    }
+
+    // 3. Interval & Interaction Management
+    let scrollInterval = setInterval(autoScroll, 3000);
+
+    const stopAuto = () => {
+      isPaused = true;
+    };
+    const startAuto = () => {
+      isPaused = false;
+    };
+
+    // Desktop Pause
+    wrapper.addEventListener("mouseenter", stopAuto);
+    wrapper.addEventListener("mouseleave", startAuto);
+
+    // Mobile Pause (Crucial for UX)
+    wrapper.addEventListener("touchstart", stopAuto, { passive: true });
+    wrapper.addEventListener("touchend", startAuto, { passive: true });
+
+    // Reset timer on manual scroll to prevent "jumping"
+    wrapper.addEventListener(
+      "scroll",
+      () => {
+        clearInterval(scrollInterval);
+        scrollInterval = setInterval(autoScroll, 3000);
+      },
+      { passive: true },
+    );
+  });
+</script>
+
+<!-- 2 -->
+<script>
+  // 1. Initialize Cart and Selectors
+  // We use 'var' or omit 'let' inside a non-module script to ensure global scope for inline onclicks
+  window.cart = [];
+
+  function updateCartUI() {
+    const cartCount = document.getElementById("cart-count");
+    const cartItemsContainer = document.getElementById("cart-items-container");
+    const totalPriceEl = document.getElementById("total-price");
+
+    if (!cartItemsContainer) return;
+
+    // Update Badge Count
+    if (cartCount) cartCount.innerText = window.cart.length;
+
+    // Update List Content
+    if (window.cart.length === 0) {
+      cartItemsContainer.innerHTML =
+        '<p style="text-align:center; margin-top:50px; color:#666;">Your cart is empty.</p>';
+    } else {
+      cartItemsContainer.innerHTML = window.cart
+        .map(
+          (item, index) => `
+            <div class="cart-item" style="display:flex; align-items:center; gap:15px; padding:15px; border-bottom:1px solid #222; background: #111; margin-bottom:10px; border-radius:10px;">
+                <img src="${item.img}" style="width:40px; height:40px; border-radius:5px; object-fit:cover;">
+                <div style="flex:1;">
+                    <h5 style="margin:0; font-size:14px; color:white;">${item.name}</h5>
+                    <small style="color:#90ee90; font-weight:bold;">₹${item.price}</small>
+                </div>
+                <button onclick="removeFromCart(${index})" style="background:none; border:none; color:#ff4d4d; cursor:pointer; font-size:18px;">&times;</button>
+            </div>
+        `,
+        )
+        .join("");
+    }
+
+    // Update Total Price
+    const total = window.cart.reduce((sum, item) => sum + item.price, 0);
+    if (totalPriceEl) totalPriceEl.innerText = total.toLocaleString();
+  }
+
+  // Global functions so HTML onclick can find them
+  window.addToCart = function (product) {
+    window.cart.push(product);
+    updateCartUI();
+
+    if (typeof gsap !== "undefined") {
+      gsap.fromTo(
+        ".cart-trigger",
+        { scale: 1 },
+        {
+          scale: 1.4,
+          duration: 0.3,
+          yoyo: true,
+          repeat: 1,
+          ease: "back.out(1.7)",
+        },
+      );
+    }
+  };
+
+  window.removeFromCart = function (index) {
+    window.cart.splice(index, 1);
+    updateCartUI();
+  };
+
+  window.toggleCart = function () {
+    const sidebar = document.getElementById("cart-sidebar");
+    if (sidebar) sidebar.classList.toggle("active");
+  };
+
+  // Initialize Event Listeners
+  document.addEventListener("DOMContentLoaded", () => {
+    const cartButtons = document.querySelectorAll(".add-to-cart-btn");
+
+    cartButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent page jump
+        const product = {
+          id: button.getAttribute("data-id"),
+          name: button.getAttribute("data-name"),
+          price: parseInt(button.getAttribute("data-price")) || 0,
+          img: button.getAttribute("data-img") || "",
+        };
+        window.addToCart(product);
+      });
+    });
+  });
+</script>
+
+<script>
+  function initWishlistToggle() {
+    const wishlistButtons = document.querySelectorAll(".wishlist-btn");
+
+    wishlistButtons.forEach((btn) => {
+      btn.addEventListener("click", function (e) {
+        // Stop the click from triggering the product card hover/click
+        e.stopPropagation();
+
+        const icon = this.querySelector("i");
+        const isLiked = icon.classList.contains("fa-solid");
+
+        if (!isLiked) {
+          // --- STATE: LIKED ---
+          icon.classList.replace("fa-regular", "fa-solid");
+          this.style.color = "#ff3939"; // High-end Red
+
+          // GSAP "Heartbeat" Animation
+          if (typeof gsap !== "undefined") {
+            gsap.fromTo(
+              this,
+              { scale: 1 },
+              {
+                scale: 1.5,
+                duration: 0.3,
+                yoyo: true,
+                repeat: 1,
+                ease: "back.out(1.7)",
+              },
+            );
+          }
+          console.log("Item added to favorites");
+        } else {
+          // --- STATE: UNLIKED ---
+          icon.classList.replace("fa-solid", "fa-regular");
+          this.style.color = "#ffffff"; // Back to White
+
+          // Small "shrink" feedback
+          if (typeof gsap !== "undefined") {
+            gsap.to(this, { scale: 1, duration: 0.2 });
+          }
+          console.log("Item removed from favorites");
+        }
+      });
+    });
+  }
+
+  // Initialize when the page loads
+  document.addEventListener("DOMContentLoaded", initWishlistToggle);
+</script>
+<!-- 3 -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // 1. Set Target: Exactly 365 Days from now
+    const targetTime = new Date().getTime() + 3 * 24 * 60 * 60 * 1000;
+
+    const runCountdown = () => {
+      const now = new Date().getTime();
+      const gap = targetTime - now;
+
+      if (gap <= 0) {
+        clearInterval(timerInterval);
+        document.querySelector(".countdown-grid").innerHTML =
+          "<h2>ANNUAL SALE ENDED</h2>";
+        return;
+      }
+
+      // Expanded Calculations for Days, Hours, Mins, Secs
+      const d = Math.floor(gap / (1000 * 60 * 60 * 24));
+      const h = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((gap % (1000 * 60)) / 1000);
+
+      // Update DOM elements
+      const daysEl = document.getElementById("days-val");
+      const hoursEl = document.getElementById("hours-val");
+      const minsEl = document.getElementById("minutes-val");
+      const secsEl = document.getElementById("seconds-val");
+
+      if (daysEl) daysEl.innerText = d.toString().padStart(3, "0");
+      if (hoursEl) hoursEl.innerText = h.toString().padStart(2, "0");
+      if (minsEl) minsEl.innerText = m.toString().padStart(2, "0");
+      if (secsEl) secsEl.innerText = s.toString().padStart(2, "0");
+    };
+
+    const timerInterval = setInterval(runCountdown, 1000);
+    runCountdown(); // Run immediately on load
+
+    // 2. GSAP Animations
+    if (typeof gsap !== "undefined") {
+      gsap.from(".sale-info > *", {
+        opacity: 1,
+        y: 30,
+        stagger: 0.15,
+        duration: 1.2,
+        ease: "expo.out",
+      });
+
+      // Pulse effect for Neon Blue text
+      gsap.to(".neon-text", {
+        textShadow:
+          "0 0 25px rgba(32, 146, 192, 0.8), 0 0 10px rgba(32, 146, 192, 0.3)",
+        duration: 1.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+    }
+  });
+</script>
+<!-- 4 -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const scrollContainer = document.getElementById("best-seller-loop");
+    const cards = document.querySelectorAll(".seller-card");
+
+    if (scrollContainer && typeof gsap !== "undefined") {
+      // 1. Double items for infinite loop
+      scrollContainer.innerHTML += scrollContainer.innerHTML;
+
+      // 2. Continuous Loop Animation
+      const scrollWidth = scrollContainer.scrollWidth / 2;
+      const timeScale = { value: 1 }; // For smooth deceleration
+
+      const loop = gsap.to(scrollContainer, {
+        x: `-=${scrollWidth}`,
+        duration: 35,
+        ease: "none",
+        repeat: -1,
+        modifiers: {
+          x: gsap.utils.unitize((x) => parseFloat(x) % scrollWidth),
+        },
+      });
+
+      // 3. Super Hover Logic: Tilt + Smooth Stop
+      cards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const xc = rect.width / 2;
+          const yc = rect.height / 2;
+
+          const dx = x - xc;
+          const dy = y - yc;
+
+          // Subtle 3D Tilt
+          gsap.to(card, {
+            rotationY: dx / 10,
+            rotationX: -dy / 10,
+            perspective: 1000,
+            duration: 0.5,
+            ease: "power2.out",
+          });
+        });
+
+        card.addEventListener("mouseenter", () => {
+          // Smoothly slow down the loop
+          gsap.to(timeScale, {
+            value: 0,
+            duration: 0.8,
+            onUpdate: () => loop.timeScale(timeScale.value),
+          });
+        });
+
+        card.addEventListener("mouseleave", () => {
+          // Smoothly speed back up
+          gsap.to(timeScale, {
+            value: 1,
+            duration: 0.8,
+            onUpdate: () => loop.timeScale(timeScale.value),
+          });
+          // Reset tilt
+          gsap.to(card, { rotationY: 0, rotationX: 0, duration: 0.5 });
+        });
+      });
+
+      // 4. Initial Staggered Reveal
+      gsap.from(".seller-card", {
+        opacity: 0,
+        duration: 1.2,
+        stagger: 0.1,
+        ease: "expo.out",
+        scrollTrigger: {
+          trigger: ".best-sellers-section",
+          start: "top 80%",
+        },
+      });
+    }
+  });
+</script>
+
+<!-- 5 -->
+
+<script>
+  // 1. GLOBAL CART LOGIC
+  window.cart = window.cart || [];
+
+  window.handleQuickAdd = function (btn, id, name, price, img) {
+    const product = { id, name, price, img };
+    window.cart.push(product);
+
+    // Update UI if the function exists
+    if (typeof window.updateCartUI === "function") {
+      window.updateCartUI();
+    }
+
+    // --- GSAP Feedback Animation ---
+    if (typeof gsap !== "undefined") {
+      const originalText = btn.innerText; // Defined locally to prevent errors
+      btn.innerText = "✓ ADDED";
+      btn.style.backgroundColor = "#ffffff";
+
+      // Button Pop
+      gsap.fromTo(
+        btn,
+        { scale: 0.8 },
+        { scale: 1, duration: 0.4, ease: "back.out(2)" },
+      );
+
+      // Cart Icon Flash
+      gsap.to(".cart-trigger", {
+        scale: 1.3,
+        duration: 0.2,
+        yoyo: true,
+        repeat: 1,
+      });
+
+      // Reset Button State
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.style.backgroundColor = "#0fcc7c";
+        btn.style.color = "#000000";
+      }, 1000);
+    }
+  };
+
+  // 2. GSAP INFINITE SCROLL & HOVER LOGIC
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById("arrivals-track");
+
+    if (track && typeof gsap !== "undefined") {
+      // Clone items for infinite effect
+      const originalContent = track.innerHTML;
+      track.innerHTML += originalContent;
+
+      const totalWidth = track.scrollWidth / 2;
+
+      // Continuous Loop Animation
+      const scrollAnim = gsap.to(track, {
+        x: `+=${totalWidth}`,
+        duration: 30,
+        ease: "none",
+        repeat: -1,
+        modifiers: {
+          x: gsap.utils.unitize((x) => {
+            const val = parseFloat(x);
+            return val > 0 ? val - totalWidth : val;
+          }),
+        },
+      });
+
+      // Handle Hover Slowdown (Using Event Delegation for clones)
+      track.addEventListener("mouseenter", (e) => {
+        if (e.target.closest(".arrival-card")) {
+          gsap.to(scrollAnim, { timeScale: 0.1, duration: 1 });
+        }
+      });
+
+      track.addEventListener("mouseleave", (e) => {
+        if (e.target.closest(".arrival-card")) {
+          gsap.to(scrollAnim, { timeScale: 1, duration: 1 });
+        }
+      });
+    }
+  });
+</script>
+
+<script>
+  window.handleQuickAdd = function (btn, id, name, price, img) {
+    const product = { id, name, price, img };
+
+    // 1. Add to the global cart array
+    window.cart.push(product);
+
+    // 2. Refresh the Sidebar UI
+    if (typeof window.updateCartUI === "function") {
+      window.updateCartUI();
+    }
+
+    // 3. GSAP Feedback Animation
+    if (typeof gsap !== "undefined") {
+      const originalText = "Add to Cart";
+      btn.innerText = "✓ ADDED";
+
+      // Using your signature green for the feedback state
+      btn.style.backgroundColor = "#7cfc00";
+      btn.style.color = "#000000";
+
+      gsap.fromTo(
+        btn,
+        { scale: 0.8 },
+        { scale: 1, duration: 0.4, ease: "back.out(2)" },
+      );
+
+      // Cart Icon Flash
+      gsap.to(".cart-trigger", {
+        scale: 1.3,
+        duration: 0.2,
+        yoyo: true,
+        repeat: 1,
+      });
+
+      // Reset Button State after 1 second
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.style.backgroundColor = ""; // Resets to CSS default
+        btn.style.color = "";
+      }, 1000);
+    }
+  };
+</script>
+
+<!-- 6 -->
+<script>
+  function initBrandMarquee() {
+    const marquee = document.getElementById("brand-marquee");
+    if (!marquee) return;
+
+    // Clone content for seamless loop
+    marquee.innerHTML += marquee.innerHTML;
+
+    const scrollWidth = marquee.scrollWidth / 2;
+
+    const marqueeTween = gsap.to(marquee, {
+      x: -scrollWidth,
+      duration: 20,
+      ease: "none",
+      repeat: -1,
+      modifiers: {
+        x: gsap.utils.unitize((x) => parseFloat(x) % scrollWidth),
+      },
+    });
+
+    // Pause on hover
+    marquee.addEventListener("mouseenter", () => marqueeTween.pause());
+    marquee.addEventListener("mouseleave", () => marqueeTween.play());
+  }
+  initBrandMarquee();
+</script>
+<!-- 7 -->
+<script>
+  function initShowcaseParallax() {
+    if (typeof gsap === "undefined") return;
+
+    // Background Parallax
+    gsap.to(".parallax-bg", {
+      yPercent: 20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".showcase-banner",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    // Content Fade-in
+    gsap.from(".showcase-content > *", {
+      opacity: 0,
+      y: 100,
+      stagger: 0.2,
+      duration: 1.5,
+      ease: "expo.out",
+      scrollTrigger: {
+        trigger: ".showcase-banner",
+        start: "top 70%",
+      },
+    });
+  }
+  initShowcaseParallax();
+</script>
+<!-- 8 , 9 -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof gsap === "undefined") return;
+
+    // 1. Review Floating Animation
+    const cards = document.querySelectorAll(".review-card");
+
+    // 2. Entrance Animations (Opacity + Slide)
+    gsap.from(".review-card", {
+      opacity: 1,
+
+      stagger: 0.2,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".reviews-section",
+        start: "top 70%",
+      },
+    });
+
+    gsap.from(".why-item", {
+      opacity: 1,
+
+      stagger: 0.15,
+      duration: 1.2,
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: ".why-us-section",
+        start: "top 80%",
+      },
+    });
+
+    // 3. Optional: Horizontal Mouse Drag for Reviews
+    const slider = document.getElementById("reviews-slider");
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener("mousedown", (e) => {
+      isDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener("mouseleave", () => (isDown = false));
+    slider.addEventListener("mouseup", () => (isDown = false));
+    slider.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  });
+</script>
+
+<!-- pricing section -->
+<script>
+  // Data for Pricing Toggle
+  const pricingData = {
+    starter: { monthly: "4,999", yearly: "3,999" },
+    professional: { monthly: "15,999", yearly: "12,799" },
+  };
+
+  const priceToggle = document.getElementById("price-toggle");
+
+  priceToggle.addEventListener("change", () => {
+    const isYearly = priceToggle.checked;
+
+    document.querySelectorAll(".price-card").forEach((card) => {
+      const plan = card.getAttribute("data-plan");
+      const priceSpan = card.querySelector(".price-val");
+
+      if (pricingData[plan]) {
+        const targetPrice = isYearly
+          ? pricingData[plan].yearly
+          : pricingData[plan].monthly;
+
+        // Animate price change
+        gsap.to(priceSpan, {
+          opacity: 0,
+          y: -5,
+          duration: 0.2,
+          onComplete: () => {
+            priceSpan.textContent = targetPrice;
+            gsap.to(priceSpan, { opacity: 1, y: 0, duration: 0.2 });
+          },
+        });
+      }
+    });
+  });
+
+  // GSAP Animations with ScrollTrigger
+  window.addEventListener("load", () => {
+    if (window.gsap) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to(".gsap-price", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.2, // Cards enter one after another
+        ease: "expo.out",
+        scrollTrigger: {
+          trigger: ".pricing-grid",
+          start: "top 85%", // Starts when the grid top hits 85% of screen height
+        },
+      });
+    }
+  });
+</script>
+
+<!-- team -->
+<script>
+  window.addEventListener("load", () => {
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Entrance Animation
+      gsap.to(".gsap-reveal", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: { trigger: ".team-section", start: "top 80%" },
+      });
+
+      gsap.to(".gsap-team-member", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "back.out(1.2)",
+        scrollTrigger: { trigger: ".team-hex-grid", start: "top 75%" },
+      });
+
+      // MOUSE TILT EFFECT (Unique Interaction)
+      const cards = document.querySelectorAll(".hex-cell");
+
+      cards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = (y - centerY) / 10;
+          const rotateY = (centerX - x) / 10;
+
+          // Apply a slight tilt to the hex cell
+          gsap.to(card, {
+            rotateX: rotateX,
+            rotateY: rotateY,
+            duration: 0.5,
+            ease: "power2.out",
+          });
+        });
+
+        card.addEventListener("mouseleave", () => {
+          gsap.to(card, {
+            rotateX: 0,
+            rotateY: 0,
+            duration: 0.5,
+            ease: "elastic.out(1, 0.3)",
+          });
+        });
+      });
+    }
+  });
+</script>
+<!-- 12 -->
+
+<!-- buttons -->
+
+<script>
+  gsap.to(".plan-btn, .glow-cta, .view-btn", {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    stagger: 0.15,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: ".main-container", // or the specific parent section
+      start: "top 85%",
+    },
+  });
+</script>
